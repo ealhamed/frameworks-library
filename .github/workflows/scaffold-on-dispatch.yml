@@ -1,0 +1,124 @@
+name: Scaffold module on Canvas update
+
+on:
+  repository_dispatch:
+    types: [new-canvas-module]
+
+  workflow_dispatch:
+    inputs:
+      course:
+        description: 'Course code (lpo | fa | da | me | el)'
+        required: true
+      number:
+        description: 'Module number (e.g. 06)'
+        required: true
+      title:
+        description: 'Module title'
+        required: true
+      topic:
+        description: 'Topic (optional)'
+        required: false
+        default: 'TODO'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Read payload
+        id: payload
+        env:
+          COURSE_DISPATCH: ${{ github.event.client_payload.course }}
+          NUMBER_DISPATCH: ${{ github.event.client_payload.number }}
+          TITLE_DISPATCH: ${{ github.event.client_payload.title }}
+          TOPIC_DISPATCH: ${{ github.event.client_payload.topic }}
+          COURSE_INPUT: ${{ github.event.inputs.course }}
+          NUMBER_INPUT: ${{ github.event.inputs.number }}
+          TITLE_INPUT: ${{ github.event.inputs.title }}
+          TOPIC_INPUT: ${{ github.event.inputs.topic }}
+        run: |
+          COURSE="${COURSE_DISPATCH:-$COURSE_INPUT}"
+          NUMBER="${NUMBER_DISPATCH:-$NUMBER_INPUT}"
+          TITLE="${TITLE_DISPATCH:-$TITLE_INPUT}"
+          TOPIC="${TOPIC_DISPATCH:-${TOPIC_INPUT:-TODO}}"
+
+          if [ -z "$COURSE" ] || [ -z "$NUMBER" ] || [ -z "$TITLE" ]; then
+            echo "::error::Missing required fields: course, number, title"
+            exit 1
+          fi
+
+          NUMBER_PADDED=$(printf "%02d" "$NUMBER")
+          BRANCH="scaffold/${COURSE}-m${NUMBER_PADDED}"
+
+          echo "course=$COURSE" >> "$GITHUB_OUTPUT"
+          echo "number=$NUMBER_PADDED" >> "$GITHUB_OUTPUT"
+          echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+          echo "topic=$TOPIC" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Configure git
+        run: |
+          git config user.name "canvas-watcher"
+          git config user.email "canvas-watcher@users.noreply.github.com"
+
+      - name: Create branch
+        env:
+          BRANCH: ${{ steps.payload.outputs.branch }}
+        run: git checkout -b "$BRANCH"
+
+      - name: Run scaffold
+        env:
+          COURSE: ${{ steps.payload.outputs.course }}
+          NUMBER: ${{ steps.payload.outputs.number }}
+          TITLE: ${{ steps.payload.outputs.title }}
+          TOPIC: ${{ steps.payload.outputs.topic }}
+        run: node scripts/scaffold-module.js "$COURSE" "$NUMBER" "$TITLE" --topic "$TOPIC"
+
+      - name: Rebuild HTML
+        run: node scripts/build.js
+
+      - name: Commit
+        env:
+          COURSE: ${{ steps.payload.outputs.course }}
+          NUMBER: ${{ steps.payload.outputs.number }}
+          TITLE: ${{ steps.payload.outputs.title }}
+        run: |
+          git add -A
+          git commit -m "Scaffold ${COURSE}.m${NUMBER}: ${TITLE}
+
+          Auto-generated from Canvas update. Fill in TODOs before merging."
+
+      - name: Push and open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.payload.outputs.branch }}
+          COURSE: ${{ steps.payload.outputs.course }}
+          NUMBER: ${{ steps.payload.outputs.number }}
+          TITLE: ${{ steps.payload.outputs.title }}
+          TOPIC: ${{ steps.payload.outputs.topic }}
+        run: |
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --draft \
+            --title "Scaffold ${COURSE}.m${NUMBER}: ${TITLE}" \
+            --body "Auto-generated stub for a newly-released Canvas module.
+
+          **Course:** ${COURSE}
+          **Module:** m${NUMBER}
+          **Title:** ${TITLE}
+          **Topic:** ${TOPIC}
+
+          Replace the TODO fields in \`data/${COURSE}.js\` with real content. See AUTHORING.md for the checklist. Then mark this PR ready for review and merge."
