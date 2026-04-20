@@ -408,21 +408,21 @@ ${FONTS_LINK}
     <p class="section-tag" style="margin-top: 40px;">A note, before you click around</p>
     <div class="prose">
       <p class="lede" style="max-width: 62ch;">
-        The truth is I was forgetting everything almost as fast as we covered it.
+        The EMBA teaches us things that genuinely change how we think. That isn&rsquo;t the problem.
       </p>
       <p style="max-width: 62ch;">
-        I'd walk out of a block feeling smart, and three weeks later I couldn't tell you
-        what the four challenges were, or why Dweck mattered. Just that there was something
-        about mindset, and something about a guy called Nadler.
+        The problem is recall. You&rsquo;re in a meeting, or writing a deck, and you know there&rsquo;s
+        a framework from some session that would help here &mdash; you just can&rsquo;t fetch it.
+        And going back through the slides to find it is, honestly, punishment.
       </p>
       <p style="max-width: 62ch;">
-        So I started writing things down. This is what it turned into. One page per module.
-        The idea on top, the diagram, the frameworks with their actual names. A short note
-        at the bottom on how to use them when it actually matters.
+        So I put this together. One page per module, in a shape I can actually scan fast. The core
+        idea, the diagram, the frameworks with their names, and a short note on how to use them
+        when the moment actually comes.
       </p>
       <p style="max-width: 62ch;">
-        These are my notes, not the course. If any of it is useful, take it. If any of it is
-        wrong, tell me.
+        These are my notes, not the course. If any of it is useful, take it. If any of it is wrong,
+        tell me.
       </p>
       <p class="muted" style="max-width: 62ch;">
         &mdash; Ebrahim Alhamed
