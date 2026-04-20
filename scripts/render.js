@@ -69,7 +69,11 @@ function renderDiagram(diagram) {
   else if (t === '2x2')          svg = diagrams.matrix2x2(diagram);
   else if (t === 'hexagon')      svg = diagrams.hexagon(diagram);
   else if (t === 'curve-invertedU') svg = diagrams.curveInvertedU(diagram);
+  else if (t === 'curve-u')      svg = diagrams.curveU(diagram);
   else if (t === 'curve-s')      svg = diagrams.curveS(diagram);
+  else if (t === 'bell-family')  svg = diagrams.bellFamily(diagram);
+  else if (t === 'supply-demand') svg = diagrams.supplyDemand(diagram);
+  else if (t === 'monopoly')     svg = diagrams.monopoly(diagram);
   else if (t === 'scatter')      svg = diagrams.scatter(diagram);
   else if (t === 'network')      svg = diagrams.network(diagram);
   else if (t === 'linear')       svg = diagrams.linear(diagram);
@@ -208,6 +212,7 @@ function renderModulePage({ course, module, prevNext }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${FONTS_LINK}
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -240,6 +245,8 @@ ${FONTS_LINK}
   <nav class="sub-nav" aria-label="Section navigation">
     <a href="#idea">Idea</a>
     ${module.diagram ? '<a href="#diagram">Diagram</a>' : ''}
+    ${module.method ? '<a href="#steps">Steps</a>' : ''}
+    ${module.diagnostics ? '<a href="#diagnostics">Diagnose</a>' : ''}
     ${module.frameworks && module.frameworks.length ? '<a href="#frameworks">Frameworks</a>' : ''}
     ${module.apply ? '<a href="#apply">Apply</a>' : ''}
     ${module.keyReading ? '<a href="#reading">Reading</a>' : ''}
@@ -260,7 +267,7 @@ ${FONTS_LINK}
   <div class="colophon">
     <span>${prevNext.prev ? `<a href="./m${prevNext.prev.number}.html">← m.${prevNext.prev.number} ${esc(prevNext.prev.title)}</a>` : `<a href="./">← back to ${esc(course.courseShort || course.courseName)}</a>`}</span>
     <span class="dots">···</span>
-    <span>${prevNext.next ? `<a href="./m${prevNext.next.number}.html">m.${prevNext.next.number} ${esc(prevNext.next.title)} →</a>` : `<a href="../">home</a>`}</span>
+    <span>${prevNext.next ? `<a href="./m${prevNext.next.number}.html">m.${prevNext.next.number} ${esc(prevNext.next.title)} →</a>` : `<a href="./">back to ${esc(course.courseShort || course.courseName)}</a>`}</span>
   </div>
 
 </main>
@@ -307,6 +314,7 @@ function renderCoursePage(course) {
 <title>${esc(course.courseName)} · Frameworks</title>
 <meta name="description" content="${esc(course.courseCode)} — ${esc(course.courseName)}. Frameworks and how to use them.">
 ${FONTS_LINK}
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -367,10 +375,11 @@ function renderHomePage(courses) {
     const clsAttr = isLive ? 'course-card' : 'course-card coming-soon';
     const hrefAttr = isLive ? `href="./${c.code}/"` : '';
     const nameRaw = c.courseDisplayName || c.courseName;
-    // escape first, then replace the already-escaped ampersand with a break
-    const nameHtml = esc(nameRaw).replace(' &amp; ', '<br>&amp; ');
+    // escape first, then replace the already-escaped ampersand with a break (keep a space so screen readers still hear "and")
+    const nameHtml = esc(nameRaw).replace(' &amp; ', '<br aria-hidden="true">&amp; ');
+    const ariaLabel = isLive ? `${nameRaw} — ${label}` : `${nameRaw} — ${label}`;
     return `
-      <${isLive ? 'a' : 'div'} class="${clsAttr}" ${hrefAttr} style="--course: var(${c.courseAccent});">
+      <${isLive ? 'a' : 'div'} class="${clsAttr}" ${hrefAttr} style="--course: var(${c.courseAccent});" aria-label="${esc(ariaLabel)}">
         <p class="code">${esc(c.courseCode)}${c.professor ? ` · ${esc(c.professor)}` : ''}</p>
         <div class="name">${nameHtml}</div>
         <div class="meta">${esc(label)}</div>
@@ -385,6 +394,7 @@ function renderHomePage(courses) {
 <title>Frameworks · Ebrahim Alhamed</title>
 <meta name="description" content="A personal library of frameworks from the London Business School EMBA programme.">
 ${FONTS_LINK}
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>

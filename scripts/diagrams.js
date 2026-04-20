@@ -92,7 +92,7 @@ function matrix2x2({ xAxis, yAxis, quadrants }) {
     const p = posMap[q.pos];
     const fill = q.highlight ? ACCENT : INK;
     const fillOpacity = q.highlight ? 0.92 : 0.06;
-    const textFill = q.highlight ? '#fffdf8' : INK;
+    const textFill = q.highlight ? 'var(--bg-elevated, #fffdf8)' : INK;
     const textWeight = q.highlight ? 500 : 500;
     return `
         <rect x="${p.x - 110}" y="${p.y - 70}" width="220" height="140" fill="${fill}" fill-opacity="${fillOpacity}" stroke="${INK}" stroke-width="2"/>
@@ -185,15 +185,176 @@ function curveInvertedU({ xAxis, yAxis, peakLabel }) {
     </svg>`;
 }
 
-// ── S-curve (prospect theory) ─────────────────────────────
-function curveS({ xLabels = { left: 'Losses', right: 'Gains' }, yLabel = 'Value' }) {
-  return `<svg viewBox="0 0 640 440" role="img" aria-label="S-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+// ── S-curve (prospect theory, asymmetric loss aversion) ─────
+function curveS({ xLabels = { left: 'Losses', right: 'Gains' }, yLabel = 'Value', lossAversion = true }) {
+  // Left branch (losses) drops sharply below origin; right branch (gains) rises gently.
+  // Origin at (320, 220). Kink at origin when lossAversion=true.
+  const path = lossAversion
+    ? 'M 100 420 C 180 410 260 400 310 240 L 320 220 L 330 200 C 380 130 460 100 540 90'
+    : 'M 100 380 C 220 360 280 310 320 220 C 360 130 450 90 540 80';
+  const guide = lossAversion ? `
+      <line x1="100" y1="220" x2="100" y2="420" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+      <line x1="540" y1="220" x2="540" y2="90"  stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+      <text x="100" y="440" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">pain</text>
+      <text x="540" y="440" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">pleasure</text>` : '';
+  return `<svg viewBox="0 0 640 460" role="img" aria-label="Asymmetric S-curve (loss aversion)" xmlns="http://www.w3.org/2000/svg" class="curve">
       <line x1="70" y1="220" x2="570" y2="220" stroke="${INK}" stroke-width="1"/>
       <line x1="320" y1="60" x2="320" y2="400" stroke="${INK}" stroke-width="1"/>
-      <path d="M 100 380 C 220 360 280 310 320 220 C 360 130 450 90 540 80" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
-      <text x="100" y="422" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xLabels.left)}</text>
-      <text x="540" y="422" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xLabels.right)}</text>
+      <path d="${path}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      ${guide}
+      <text x="180" y="210" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xLabels.left)}</text>
+      <text x="460" y="210" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xLabels.right)}</text>
       <text x="330" y="76" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(yLabel)}</text>
+    </svg>`;
+}
+
+// ── U-curve with bottom sweet spot (overfitting valley) ─────
+function curveU({ xAxis, yAxis, bottomLabel = 'sweet spot', leftCurveLabel, rightCurveLabel }) {
+  // Two curves: training error monotonically falling; validation error U-shaped.
+  const training = 'M 100 120 C 200 180 320 280 540 370';
+  const validation = 'M 100 110 C 200 240 320 340 420 320 C 480 310 520 330 540 120';
+  return `<svg viewBox="0 0 640 440" role="img" aria-label="Training vs validation error U-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="70" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
+      <line x1="70" y1="380" x2="70" y2="60" stroke="${INK}" stroke-width="1"/>
+      <path d="${training}" fill="none" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <path d="${validation}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      ${leftCurveLabel ? `<text x="180" y="230" font-family="${FONT_SUB}" font-size="12" fill="${MUTED}" font-style="italic">${esc(leftCurveLabel)}</text>` : ''}
+      ${rightCurveLabel ? `<text x="350" y="360" font-family="${FONT_SUB}" font-size="12" fill="${MUTED}" font-style="italic">${esc(rightCurveLabel)}</text>` : ''}
+      <circle cx="420" cy="320" r="8" fill="${ACCENT}"/>
+      <text x="420" y="300" text-anchor="middle" font-family="${FONT_LABEL}" font-size="17" fill="${ACCENT}">${esc(bottomLabel)}</text>
+      <text x="320" y="422" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xAxis)}</text>
+      <text x="30" y="220" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic" transform="rotate(-90, 30, 220)">${esc(yAxis)}</text>
+    </svg>`;
+}
+
+// ── Bell family (Central Limit Theorem — distributions tightening) ─
+function bellFamily({ xAxis = 'sample mean', yAxis = 'density', centerLabel = 'true mean', curveLabels = ['n small', 'n medium', 'n large'] }) {
+  // Three overlapping bell curves, same center, progressively tighter.
+  const cx = 320;
+  // Approximate bell: M (cx-w) 360 Q cx peakY (cx+w) 360
+  const bells = [
+    { w: 200, peakY: 180, opacity: 0.35, label: curveLabels[0] },
+    { w: 130, peakY: 140, opacity: 0.6,  label: curveLabels[1] },
+    { w:  70, peakY:  90, opacity: 1.0,  label: curveLabels[2] }
+  ];
+  const paths = bells.map(b =>
+    `<path d="M ${cx - b.w} 360 Q ${cx} ${b.peakY} ${cx + b.w} 360" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round" opacity="${b.opacity}"/>`
+  ).join('\n      ');
+  const bellLabels = bells.map((b, i) => {
+    const lx = cx + b.w + 8;
+    const ly = 356 - i * 4;
+    return `<text x="${lx}" y="${ly}" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic" opacity="${b.opacity}">${esc(b.label)}</text>`;
+  }).join('\n      ');
+  return `<svg viewBox="0 0 640 440" role="img" aria-label="Distributions tightening with sample size" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="70" y1="360" x2="570" y2="360" stroke="${INK}" stroke-width="1"/>
+      <line x1="${cx}" y1="360" x2="${cx}" y2="70" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4"/>
+      ${paths}
+      ${bellLabels}
+      <text x="${cx}" y="60" text-anchor="middle" font-family="${FONT_LABEL}" font-size="16" fill="${ACCENT}">${esc(centerLabel)}</text>
+      <text x="320" y="410" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xAxis)}</text>
+      <text x="40" y="220" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic" transform="rotate(-90, 40, 220)">${esc(yAxis)}</text>
+    </svg>`;
+}
+
+// ── Supply & Demand (X-crossing with optional shift) ──────
+function supplyDemand({
+  title: _t, // unused, for caller readability
+  shift = null,               // null | 'demand-right' | 'demand-left' | 'supply-right' | 'supply-left'
+  xAxis = 'quantity',
+  yAxis = 'price',
+  equilibriumLabel = 'equilibrium',
+  shiftedLabel = "equilibrium'"
+} = {}) {
+  // Axis box: x 90..570, y 60..380.
+  // Demand (downward): (110, 90) → (560, 350)
+  // Supply (upward):   (110, 350) → (560, 90)
+  // Original equilibrium at the cross: (335, 220).
+  const demand = 'M 110 90 L 560 350';
+  const supply = 'M 110 350 L 560 90';
+  let shiftedPath = '';
+  let shiftedEq = null;
+  if (shift === 'demand-right') {
+    shiftedPath = 'M 200 90 L 640 350';
+    shiftedEq = { x: 410, y: 170 };
+  } else if (shift === 'demand-left') {
+    shiftedPath = 'M 40 90 L 490 350';
+    shiftedEq = { x: 265, y: 270 };
+  } else if (shift === 'supply-right') {
+    shiftedPath = 'M 200 350 L 640 90';
+    shiftedEq = { x: 410, y: 270 };
+  } else if (shift === 'supply-left') {
+    shiftedPath = 'M 40 350 L 490 90';
+    shiftedEq = { x: 265, y: 170 };
+  }
+  return `<svg viewBox="0 0 640 440" role="img" aria-label="Supply and demand" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="90" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
+      <line x1="90" y1="380" x2="90" y2="60" stroke="${INK}" stroke-width="1"/>
+      <path d="${demand}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      <path d="${supply}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      <text x="565" y="355" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">D</text>
+      <text x="565" y="95"  font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">S</text>
+      ${shiftedPath ? `<path d="${shiftedPath}" fill="none" stroke="${ACCENT}" stroke-width="2" stroke-linecap="round" stroke-dasharray="7 5" opacity="0.85"/>` : ''}
+      <circle cx="335" cy="220" r="7" fill="${INK}"/>
+      <text x="335" y="205" text-anchor="middle" font-family="${FONT_LABEL}" font-size="15" fill="${INK}">${esc(equilibriumLabel)}</text>
+      ${shiftedEq ? `<circle cx="${shiftedEq.x}" cy="${shiftedEq.y}" r="7" fill="${ACCENT}"/>
+      <text x="${shiftedEq.x}" y="${shiftedEq.y - 15}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="15" fill="${ACCENT}">${esc(shiftedLabel)}</text>` : ''}
+      <text x="320" y="418" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xAxis)}</text>
+      <text x="50" y="220" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic" transform="rotate(-90, 50, 220)">${esc(yAxis)}</text>
+    </svg>`;
+}
+
+// ── Monopoly pricing (D, MR, MC with surplus regions) ─────
+function monopoly({ xAxis = 'quantity', yAxis = 'price' } = {}) {
+  // Geometry: Demand P = 400 - Q, MR = 400 - 2Q, MC = horizontal at p=150.
+  // In SVG units: x-axis q=0..400 maps to px=90..570. y-axis p=0..400 maps to py=380..60.
+  // So q px per unit = (570-90)/400 = 1.2 ; p px per unit = (380-60)/400 = 0.8.
+  // Demand line from (0,400) to (400,0) → (90, 60) to (570, 380)
+  // MR line from (0,400) to (200,0) → (90, 60) to (330, 380)
+  // MC horizontal at p=150 → py=380-150*0.8=260, from x=90 to x=570
+  // Monopoly: MR=MC → 400-2Q=150 → Q=125, P=275, px(Q)=90+125*1.2=240, py(P)=380-275*0.8=160
+  // Perfect comp: P=MC → 400-Q=150 → Q=250, P=150, px=90+250*1.2=390, py=260
+  // Profit rectangle: from Q=0 at P=150 to Q=125 at P=275 → (90,160)→(240,260)
+  // Deadweight loss triangle: (240,160) (240,260) (390,260) — no wait:
+  //   DWL is between MC and D, from Q_monop (125) to Q_comp (250).
+  //   Vertices: monopoly point on D (240,160), perfect-comp point (390,260), and monopoly point on MC (240,260).
+  // Consumer surplus (monopoly): triangle (90,60), (90,160), (240,160)
+  return `<svg viewBox="0 0 640 440" role="img" aria-label="Monopoly vs competitive pricing" xmlns="http://www.w3.org/2000/svg" class="curve monopoly">
+      <line x1="90" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
+      <line x1="90" y1="380" x2="90" y2="60" stroke="${INK}" stroke-width="1"/>
+      <!-- CS (monopoly) -->
+      <polygon points="90,60 90,160 240,160" fill="${ACCENT}" fill-opacity="0.12"/>
+      <!-- Profit rectangle -->
+      <polygon points="90,160 240,160 240,260 90,260" fill="${ACCENT}" fill-opacity="0.35"/>
+      <!-- DWL triangle -->
+      <polygon points="240,160 390,260 240,260" fill="${INK}" fill-opacity="0.22"/>
+      <!-- Demand -->
+      <path d="M 90 60 L 570 380" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      <!-- MR -->
+      <path d="M 90 60 L 330 380" fill="none" stroke="${INK}" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <!-- MC -->
+      <path d="M 90 260 L 570 260" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
+      <!-- Curve labels -->
+      <text x="575" y="382" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">D</text>
+      <text x="335" y="382" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">MR</text>
+      <text x="575" y="258" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">MC</text>
+      <!-- Monopoly point -->
+      <circle cx="240" cy="160" r="6" fill="${INK}"/>
+      <line x1="240" y1="160" x2="240" y2="380" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+      <line x1="240" y1="160" x2="90" y2="160" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Perfect comp point -->
+      <circle cx="390" cy="260" r="6" fill="${INK}" fill-opacity="0.55"/>
+      <line x1="390" y1="260" x2="390" y2="380" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+      <!-- Labels -->
+      <text x="82" y="164" text-anchor="end" font-family="${FONT_LABEL}" font-size="13" fill="${INK}">Pₘ</text>
+      <text x="82" y="264" text-anchor="end" font-family="${FONT_LABEL}" font-size="13" fill="${INK}">P_c = MC</text>
+      <text x="240" y="400" text-anchor="middle" font-family="${FONT_LABEL}" font-size="13" fill="${INK}">Qₘ</text>
+      <text x="390" y="400" text-anchor="middle" font-family="${FONT_LABEL}" font-size="13" fill="${INK}">Q_c</text>
+      <!-- Region labels -->
+      <text x="155" y="115" text-anchor="middle" font-family="${FONT_SUB}" font-size="12" fill="${ACCENT}" font-style="italic">CS</text>
+      <text x="165" y="215" text-anchor="middle" font-family="${FONT_SUB}" font-size="12" fill="${ACCENT}" font-weight="600">profit</text>
+      <text x="295" y="222" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${INK}" font-style="italic">DWL</text>
+      <text x="320" y="428" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xAxis)}</text>
+      <text x="50" y="220" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic" transform="rotate(-90, 50, 220)">${esc(yAxis)}</text>
     </svg>`;
 }
 
@@ -304,7 +465,7 @@ function network({ center, satellites }) {
         ${lines}
       </g>
       <circle cx="${cx}" cy="${cy}" r="34" fill="${INK}"/>
-      <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="#fffdf8">${esc(center)}</text>
+      <text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="var(--bg-elevated, #fffdf8)">${esc(center)}</text>
       ${dots}
       ${labels}
     </svg>`;
@@ -345,4 +506,4 @@ function custom({ svg }) {
   return svg;
 }
 
-module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveS, scatter, network, linear, equation, custom };
+module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveU, curveS, bellFamily, supplyDemand, monopoly, scatter, network, linear, equation, custom };

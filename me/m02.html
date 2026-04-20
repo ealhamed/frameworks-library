@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -40,6 +41,8 @@
   <nav class="sub-nav" aria-label="Section navigation">
     <a href="#idea">Idea</a>
     <a href="#diagram">Diagram</a>
+    
+    
     <a href="#frameworks">Frameworks</a>
     <a href="#apply">Apply</a>
     <a href="#reading">Reading</a>
@@ -67,20 +70,19 @@
       <h2 class="display">Supply meets demand.</h2>
       <p class="prose muted">Downward demand, upward supply, intersection at equilibrium price and quantity.</p>
       <div class="hero-diagram">
-        <svg viewBox="0 0 640 440" role="img" aria-label="Inverted-U curve" xmlns="http://www.w3.org/2000/svg" class="curve">
-      <defs>
-        <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
-          <feDisplacementMap in="SourceGraphic" scale="1"/>
-        </filter>
-      </defs>
-      <line x1="70" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
-      <line x1="70" y1="380" x2="70" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
-      <path d="M 100 380 Q 300 80 500 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" filter="url(#ink)"/>
-      <circle cx="300" cy="155" r="8" fill="var(--accent, #b05a3a)"/>
-      <text x="300" y="140" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--accent, #b05a3a)">equilibrium</text>
-      <text x="320" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
-      <text x="30" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 30, 220)">price</text>
+        <svg viewBox="0 0 640 440" role="img" aria-label="Supply and demand" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="90" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="90" y1="380" x2="90" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 110 90 L 560 350" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 110 350 L 560 90" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <text x="565" y="355" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">D</text>
+      <text x="565" y="95"  font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">S</text>
+      
+      <circle cx="335" cy="220" r="7" fill="var(--text, #1a1714)"/>
+      <text x="335" y="205" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="15" fill="var(--text, #1a1714)">equilibrium</text>
+      
+      <text x="320" y="418" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
+      <text x="50" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 50, 220)">price</text>
     </svg>
       </div>
     </section>

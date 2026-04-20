@@ -31,12 +31,13 @@ module.exports = {
         attr: 'after the Central Limit Theorem'
       },
       diagram: {
-        type: 'curve-invertedU',
+        type: 'bell-family',
         title: 'The sampling distribution.',
         intro: 'As n grows, the distribution of sample means tightens around the true population mean. That tightening is the standard error.',
         xAxis: 'sample mean',
-        yAxis: 'probability',
-        peakLabel: 'true mean'
+        yAxis: 'density',
+        centerLabel: 'true mean',
+        curveLabels: ['n small', 'n medium', 'n large']
       },
       frameworks: [
         { name: 'Central Limit Theorem', author: 'Statistical foundation', components: ['sample means → normal as n grows', 'SE = SD / √n'], rule: 'With n ≥ 30, the sampling distribution is normal regardless of source shape.' },
@@ -174,12 +175,14 @@ module.exports = {
         attr: 'after Hastie, Tibshirani & Friedman'
       },
       diagram: {
-        type: 'curve-invertedU',
+        type: 'curve-u',
         title: 'Training vs validation error.',
-        intro: 'Training error always falls as you add variables. Validation error falls, then rises. Stop at the bottom of the U.',
+        intro: 'Training error (dashed) always falls. Validation error (solid) falls, then rises. Stop at the bottom of the U.',
         xAxis: 'model complexity',
-        yAxis: 'validation error',
-        peakLabel: 'sweet spot'
+        yAxis: 'error',
+        bottomLabel: 'sweet spot',
+        leftCurveLabel: 'validation',
+        rightCurveLabel: 'training'
       },
       frameworks: [
         { name: 'Dummy Variables', author: 'Categorical encoding', components: ['k categories → k−1 binary variables', 'reference category = all zeros', 'coefficient = gap vs reference'], rule: 'Interpret dummy coefficients as "difference from the reference group, other things equal".' },
@@ -229,7 +232,7 @@ module.exports = {
       },
       frameworks: [
         { name: 'Analytics Workflow', author: 'Christodoulou', components: ['Problem → Data → Analysis → Action'], rule: 'Without the fourth step, it is homework.' },
-        { name: 'Known-Unknowns', author: 'Strategic thinking', components: ['known-knowns', 'known-unknowns', 'unknown-knowns', 'unknown-unknowns'], rule: 'Use data to move unknowns into knowns. Guard against unknown-knowns (gut feels).' },
+        { name: 'Known-Unknowns', author: 'Rumsfeld · 2002', components: ['known-knowns', 'known-unknowns', 'unknown-knowns', 'unknown-unknowns'], rule: 'Use data to move unknowns into knowns. Guard against unknown-knowns (gut feels).' },
         { name: 'Data Maturity', author: 'Analytics leadership', components: ['raw → cleaned → statistical → predictive → prescriptive'], rule: 'Climb one rung at a time. Level 5 requires all four below.' },
         { name: 'Statistical vs Practical', author: 'Executive decision-making', components: ['significant: real, not noise', 'practical: worth the rollout'], rule: 'Both must be true before you act.' }
       ],

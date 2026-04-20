@@ -840,6 +840,13 @@ ol.apply li .txt {
   gap: 12px;
 }
 
+.colophon a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 14px 0;
+  line-height: 1.4;
+}
+
 .colophon .dots {
   color: var(--accent);
   letter-spacing: 0.3em;

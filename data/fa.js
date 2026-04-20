@@ -82,8 +82,8 @@ module.exports = {
         quadrants: [
           { pos: 'tl', label: 'Accrued revenue' },
           { pos: 'tr', label: 'Cash sale' },
-          { pos: 'bl', label: 'Prepaid / contract' },
-          { pos: 'br', label: 'Deferred revenue' }
+          { pos: 'bl', label: 'Executory contract' },
+          { pos: 'br', label: 'Deferred revenue', highlight: true }
         ]
       },
       frameworks: [
@@ -227,7 +227,7 @@ module.exports = {
       },
       frameworks: [
         { name: 'Liability Recognition', author: 'IAS 37', components: ['past event', 'probable outflow', 'measurable'], rule: 'All three or nothing goes on the balance sheet.' },
-        { name: 'Current vs Long-term', author: 'Present value', components: ['Current: face value', 'Long-term: present value of future cash'], rule: 'Time value of money kicks in after 3–6 months.' },
+        { name: 'Current vs Long-term', author: 'Present value', components: ['Current: face value', 'Long-term: present value of future cash'], rule: 'Discount obligations beyond 12 months (or sooner if the discount effect is material).' },
         { name: 'Contingent Classification', author: 'IAS 37', components: ['Remote: ignore', 'Possible: disclose in footnotes', 'Probable: book a provision'], rule: 'Three buckets. Management judgement decides which.' },
         { name: 'Provision Measurement', author: 'Liability measurement', components: ['one-off: most likely amount', 'large population: expected value'], rule: 'Review and adjust every reporting period.' }
       ],
@@ -272,8 +272,8 @@ module.exports = {
         quadrants: [
           { pos: 'tl', label: 'Sunk fixed' },
           { pos: 'tr', label: 'Avoidable fixed', highlight: true },
-          { pos: 'bl', label: 'Sunk variable' },
-          { pos: 'br', label: 'Variable', highlight: true }
+          { pos: 'bl', label: 'Committed spend' },
+          { pos: 'br', label: 'Future variable', highlight: true }
         ]
       },
       frameworks: [
@@ -363,7 +363,7 @@ module.exports = {
       diagram: {
         type: 'network',
         title: 'Internal transfers.',
-        intro: 'Divisions as nodes. Transfer prices as the edges.',
+        intro: 'Divisions orbit the parent. Each spoke is a transfer price — the number that decides where group profit gets booked.',
         center: 'firm',
         satellites: [
           { label: 'Division A' },
@@ -422,7 +422,7 @@ module.exports = {
         ]
       },
       frameworks: [
-        { name: 'DuPont Decomposition', author: 'DuPont', components: ['ROE = Net margin × Asset turnover × Leverage'], rule: 'Three levers for ROE. Most firms overuse one and underuse two.' },
+        { name: 'DuPont Decomposition', author: 'DuPont', components: ['ROE = Net margin × Asset turnover × Equity multiplier', '(Equity multiplier = Assets / Equity)'], rule: 'Three levers for ROE. Most firms overuse one and underuse two.' },
         { name: 'Liquidity Ratios', author: 'Working capital', components: ['Current', 'Quick', 'Cash'], rule: 'Can the firm survive the next 90 days?' },
         { name: 'Solvency Ratios', author: 'Leverage', components: ['Debt/Equity', 'Debt/Assets', 'Interest coverage'], rule: 'Can the firm survive a downturn?' },
         { name: 'Efficiency Ratios', author: 'Asset utilisation', components: ['Asset turnover', 'Receivables days', 'Inventory turnover'], rule: 'How much revenue per pound of asset?' },

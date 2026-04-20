@@ -85,8 +85,13 @@ module.exports = {
           'The job is never to write a better plan. It is to find the two oars pulling against each other, and fix that pair.'
         ]
       },
+      frameworks: [
+        { name: 'Congruence Model', author: 'Nadler & Tushman', components: ['Strategy', 'Tasks', 'People', 'Culture', 'PPS'], rule: 'Friction lives in the pair, not the element. Adjust the element causing the miss — not the one complaining.' },
+        { name: 'The Eleven Pairs', author: 'Nadler & Tushman', components: ['S–T', 'S–P', 'S–C', 'S–PPS', 'T–P', 'T–C', 'C–P', 'PPS–T', 'PPS–T/P', 'PPS–P', 'PPS–C'], rule: 'Walk every pair. The first "no" is where to start.' },
+        { name: 'Kerr\'s Folly', author: 'Kerr · 1975 (reprinted 1995)', components: ['what you reward', 'what you actually want', 'the gap'], rule: 'You get what you measure — not what you asked for.' }
+      ],
       keyReading: {
-        cite: 'Key reading · Academy of Management · 1995',
+        cite: 'Key reading · Kerr · AMJ 1975 (reprinted AME 1995)',
         title: 'On the folly of rewarding A, while hoping for B.',
         prose: 'Steven Kerr\'s classic paper names the most common source of PPS–Strategy incongruence: we measure one thing and then act surprised when people optimise for what we measured instead of what we wanted. Three everyday examples:',
         pairs: [
@@ -145,7 +150,7 @@ module.exports = {
       keyReading: {
         cite: 'Key reading · Harvard Business Review · Edmondson',
         title: 'The fearless organisation.',
-        prose: 'Edmondson\'s research — from hospital error rates to Google\'s Project Aristotle — shows that psychological safety is the single best predictor of team performance. Not talent, not tenure, not structure. Safety.',
+        prose: 'Edmondson\'s research — from her own hospital-error studies to Google\'s Project Aristotle, which built on her construct — shows that psychological safety is the single best predictor of team performance. Not talent, not tenure, not structure. Safety.',
         kicker: 'Build the room before you demand the ideas.'
       }
     },
@@ -162,12 +167,12 @@ module.exports = {
       diagram: {
         type: 'equation',
         title: 'The team performance equation.',
-        intro: 'From Steiner (1972). Every team-leadership act is a move on one of these four terms.',
+        intro: 'Steiner (1972) gave the first two terms; the + synergy extension comes from later team research (Hackman, Larson & LaFasto). Every team-leadership act is a move on one of these terms.',
         lhs: 'ACTUAL',
         rhs: 'POTENTIAL − LOSSES + SYNERGY'
       },
       frameworks: [
-        { name: '4 Founding Conditions', author: 'Hackman (2002)', components: ['Clarify the task', 'Decide who is in', 'Build relationships', 'Design the process'], rule: 'Get all four right up front. Firefighting later is expensive.' },
+        { name: 'Four Founding Acts', author: 'after Hackman', components: ['Clarify the task', 'Decide who is in', 'Build relationships', 'Design the process'], rule: 'A course distillation — Hackman\'s own Leading Teams (2002) lists five conditions. Get the setup right; firefighting later is expensive.' },
         { name: 'Four Decision Failures', author: 'Hackman', components: ['Suboptimal team formation', 'Shared-information bias', 'Group polarisation', 'Groupthink'], rule: 'Knowing the failure modes is half the defence.' },
         { name: 'Diversity Paradox', author: 'Phillips et al.', components: ['Socially diverse teams feel worse', 'Socially diverse teams perform better'], rule: 'Comfort and performance are decoupled. Optimise the latter.' }
       ],
@@ -207,13 +212,13 @@ module.exports = {
       },
       diagram: {
         type: 'linear',
-        title: 'The expectation loop.',
-        intro: 'Your belief shapes your behaviour shapes their belief shapes their result.',
+        title: 'The expectation chain.',
+        intro: 'Your belief shapes your behaviour shapes their belief shapes their result — and their result reinforces your belief next time round.',
         steps: ['Belief', 'Behaviour', 'Their belief', 'Their result']
       },
       frameworks: [
         { name: 'Growth vs Fixed Mindset', author: 'Dweck', components: ['fixed: ability is given', 'growth: ability is made'], rule: 'Praise effort, not talent.' },
-        { name: 'Pygmalion / Self-Fulfilling Prophecy', author: 'Rosenthal', components: ['belief → treatment → their belief → their behaviour'], rule: 'Your expectations are a management tool you are already using — usually unconsciously.' },
+        { name: 'Pygmalion / Self-Fulfilling Prophecy', author: 'Merton (1948) · Rosenthal & Jacobson (1968)', components: ['belief → treatment → their belief → their behaviour'], rule: 'Your expectations are a management tool you are already using — usually unconsciously.' },
         { name: 'Fundamental Attribution Error', author: 'Jones & Harris', components: ['explain others by character', 'explain self by context'], rule: 'When someone underperforms, check the context before the person.' }
       ],
       apply: {
@@ -258,7 +263,7 @@ module.exports = {
       },
       frameworks: [
         { name: 'SAID Feedback Model', author: 'Hardy', components: ['Situation — specific moment', 'Action — observable behaviour', 'Impact — effect on others / work', 'Do — what to do next'], rule: 'Separate behaviour from person. Speak to the first three or four sentences.' },
-        { name: 'Scharmer\'s 4 Levels of Listening', author: 'Scharmer', components: ['Downloading — I already know', 'Factual — I notice new data', 'Empathetic — I feel what they feel', 'Generative — I sense where we are going'], rule: 'Most leaders listen at Level 1. Level 3 is where trust is built.' },
+        { name: 'Scharmer\'s 4 Levels of Listening', author: 'Scharmer', components: ['Downloading — I already know', 'Factual — I notice new data', 'Empathic — I feel what they feel', 'Generative — I sense where we are going'], rule: 'Most leaders listen at Level 1. Level 3 is where trust is built.' },
         { name: 'Active-Listening 5', author: 'O\'Connor', components: ['Attend', 'Withhold', 'Reflect', 'Clarify', 'Summarise'], rule: 'Don\'t rehearse your reply. Create space for theirs.' },
         { name: 'Plus / Delta', author: 'Hardy', components: ['+ what worked', 'Δ what could be even better'], rule: 'Two columns. Thirty seconds. End every meeting with it.' }
       ],
@@ -349,12 +354,12 @@ module.exports = {
         title: 'The four social styles.',
         intro: 'Assertiveness on one axis, responsiveness on the other. You default to one of four.',
         xAxis: { label: 'assertiveness', lo: 'asking', hi: 'telling' },
-        yAxis: { label: 'responsiveness', lo: 'people', hi: 'task' },
+        yAxis: { label: 'responsiveness', lo: 'task', hi: 'people' },
         quadrants: [
-          { pos: 'tl', label: 'Analytical' },
-          { pos: 'tr', label: 'Driver' },
-          { pos: 'bl', label: 'Amiable' },
-          { pos: 'br', label: 'Expressive' }
+          { pos: 'tl', label: 'Amiable' },
+          { pos: 'tr', label: 'Expressive' },
+          { pos: 'bl', label: 'Analytical' },
+          { pos: 'br', label: 'Driver' }
         ]
       },
       frameworks: [
@@ -448,13 +453,14 @@ module.exports = {
       diagram: {
         type: 'curve-s',
         title: 'Prospect theory.',
-        intro: 'Losses feel steeper than gains. That asymmetry drives most motivational bias.',
+        intro: 'Losses feel steeper than gains. The kink at the origin is the whole point.',
         xLabels: { left: 'losses', right: 'gains' },
-        yLabel: 'felt value'
+        yLabel: 'felt value',
+        lossAversion: true
       },
       frameworks: [
         { name: 'System 1 vs System 2', author: 'Kahneman', components: ['S1: fast, automatic, intuitive', 'S2: slow, deliberate, analytical'], rule: 'Most decisions are S1. Reserve S2 for the ones that will matter in a year.' },
-        { name: 'Bazerman 5 Rational Steps', author: 'Bazerman', components: ['Define', 'Criteria', 'Options', 'Rate', 'Compute'], rule: 'A structured decision beats a brilliant one more often than not.' },
+        { name: 'Bazerman 6 Rational Steps', author: 'Bazerman', components: ['Define', 'Criteria', 'Weight criteria', 'Options', 'Rate', 'Compute'], rule: 'A structured decision beats a brilliant one more often than not.' },
         { name: 'Motivational Biases', author: 'Kahneman', components: ['Positive illusions', 'Escalation of commitment (sunk cost)'], rule: 'You over-rate your own work and under-quit what is failing.' },
         { name: 'Cognitive Biases', author: 'Tversky & Kahneman', components: ['Framing', 'Availability', 'Anchoring', 'Representativeness'], rule: 'The frame decides more than the data. Name the frame before the decision.' },
         { name: 'Prospect Theory', author: 'Kahneman & Tversky', components: ['loss aversion ≈ 2×', 'diminishing sensitivity', 'reference-dependence'], rule: 'Losses hurt more than gains please. Design with that in mind.' }
@@ -510,7 +516,7 @@ module.exports = {
       frameworks: [
         { name: 'Two Routes to Persuasion', author: 'Petty & Cacioppo', components: ['Central — content, logic, evidence', 'Peripheral — cues, source, format'], rule: 'Under time-pressure people default to peripheral. Design your messaging for the route the receiver is actually on.' },
         { name: 'Cialdini\'s 6 Principles', author: 'Cialdini', components: ['Reciprocity', 'Commitment & consistency', 'Social proof', 'Liking', 'Scarcity', 'Authority'], rule: 'They stack. Using two is often more than twice as powerful as one.' },
-        { name: 'Door-in-the-Face / Foot-in-the-Door', author: 'Cialdini', components: ['big-then-small', 'small-then-big'], rule: 'Two opposite mechanics. Both exploit commitment and consistency.' }
+        { name: 'Door-in-the-Face / Foot-in-the-Door', author: 'Cialdini (1975) · Freedman & Fraser (1966)', components: ['DITF: big-then-small (Cialdini)', 'FITD: small-then-big (Freedman & Fraser)'], rule: 'Two opposite mechanics. Both exploit commitment and consistency.' }
       ],
       apply: {
         title: 'Next time you need to change someone\'s mind.',

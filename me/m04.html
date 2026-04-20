@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -40,6 +41,8 @@
   <nav class="sub-nav" aria-label="Section navigation">
     <a href="#idea">Idea</a>
     <a href="#diagram">Diagram</a>
+    
+    
     <a href="#frameworks">Frameworks</a>
     <a href="#apply">Apply</a>
     <a href="#reading">Reading</a>
@@ -64,29 +67,45 @@
     <section id="diagram">
       <p class="section-tag">The hero diagram</p>
       <h2 class="display">Monopoly pricing.</h2>
-      <p class="prose muted">Compare competitive, monopoly and socially optimal outcomes.</p>
+      <p class="prose muted">Demand, marginal revenue, marginal cost. The monopolist stops where MR = MC. Consumer surplus shrinks, profit is captured, deadweight loss appears.</p>
       <div class="hero-diagram">
-        <svg viewBox="20 40 600 400" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
-      <g>
-        
-        <rect x="70" y="60" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
-        <text x="180" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Consumer surplus</text>
-        <rect x="310" y="60" width="220" height="140" fill="var(--accent, #b05a3a)" fill-opacity="0.92" stroke="var(--text, #1a1714)" stroke-width="2"/>
-        <text x="420" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="#fffdf8">Deadweight loss</text>
-        <rect x="70" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
-        <text x="180" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Monopoly profit</text>
-        <rect x="310" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
-        <text x="420" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Lost output</text>
-      </g>
-      <!-- axis labels -->
-      <g font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic">
-        <text x="60" y="230" text-anchor="middle" transform="rotate(-90, 60, 230)">price</text>
-        <text x="60" y="100" text-anchor="middle" transform="rotate(-90, 60, 100)">P*</text>
-        <text x="60" y="360" text-anchor="middle" transform="rotate(-90, 60, 360)">MC</text>
-        <text x="300" y="425" text-anchor="middle">quantity</text>
-        <text x="180" y="410" text-anchor="middle">Q*/2</text>
-        <text x="420" y="410" text-anchor="middle">Q*</text>
-      </g>
+        <svg viewBox="0 0 640 440" role="img" aria-label="Monopoly vs competitive pricing" xmlns="http://www.w3.org/2000/svg" class="curve monopoly">
+      <line x1="90" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="90" y1="380" x2="90" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <!-- CS (monopoly) -->
+      <polygon points="90,60 90,160 240,160" fill="var(--accent, #b05a3a)" fill-opacity="0.12"/>
+      <!-- Profit rectangle -->
+      <polygon points="90,160 240,160 240,260 90,260" fill="var(--accent, #b05a3a)" fill-opacity="0.35"/>
+      <!-- DWL triangle -->
+      <polygon points="240,160 390,260 240,260" fill="var(--text, #1a1714)" fill-opacity="0.22"/>
+      <!-- Demand -->
+      <path d="M 90 60 L 570 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <!-- MR -->
+      <path d="M 90 60 L 330 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+      <!-- MC -->
+      <path d="M 90 260 L 570 260" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Curve labels -->
+      <text x="575" y="382" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">D</text>
+      <text x="335" y="382" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">MR</text>
+      <text x="575" y="258" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">MC</text>
+      <!-- Monopoly point -->
+      <circle cx="240" cy="160" r="6" fill="var(--text, #1a1714)"/>
+      <line x1="240" y1="160" x2="240" y2="380" stroke="var(--muted, #4a4640)" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+      <line x1="240" y1="160" x2="90" y2="160" stroke="var(--muted, #4a4640)" stroke-width="1" stroke-dasharray="3 4" opacity="0.7"/>
+      <!-- Perfect comp point -->
+      <circle cx="390" cy="260" r="6" fill="var(--text, #1a1714)" fill-opacity="0.55"/>
+      <line x1="390" y1="260" x2="390" y2="380" stroke="var(--muted, #4a4640)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+      <!-- Labels -->
+      <text x="82" y="164" text-anchor="end" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="13" fill="var(--text, #1a1714)">Pₘ</text>
+      <text x="82" y="264" text-anchor="end" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="13" fill="var(--text, #1a1714)">P_c = MC</text>
+      <text x="240" y="400" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="13" fill="var(--text, #1a1714)">Qₘ</text>
+      <text x="390" y="400" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="13" fill="var(--text, #1a1714)">Q_c</text>
+      <!-- Region labels -->
+      <text x="155" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="var(--accent, #b05a3a)" font-style="italic">CS</text>
+      <text x="165" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="var(--accent, #b05a3a)" font-weight="600">profit</text>
+      <text x="295" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--text, #1a1714)" font-style="italic">DWL</text>
+      <text x="320" y="428" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
+      <text x="50" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 50, 220)">price</text>
     </svg>
       </div>
     </section>

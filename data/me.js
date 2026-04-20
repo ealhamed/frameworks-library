@@ -78,12 +78,12 @@ module.exports = {
         attr: 'after Myatt'
       },
       diagram: {
-        type: 'curve-invertedU',
+        type: 'supply-demand',
         title: 'Supply meets demand.',
         intro: 'Downward demand, upward supply, intersection at equilibrium price and quantity.',
         xAxis: 'quantity',
         yAxis: 'price',
-        peakLabel: 'equilibrium'
+        equilibriumLabel: 'equilibrium'
       },
       frameworks: [
         { name: 'Cost Taxonomy', author: 'Myatt', components: ['Fixed', 'Variable', 'Marginal', 'Sunk'], rule: 'Short-run: produce if P ≥ AVC. Long-run: enter if P ≥ AC. Always supply where P = MC.' },
@@ -123,15 +123,18 @@ module.exports = {
         attr: 'after Myatt & Galeotti'
       },
       diagram: {
-        type: 'curve-s',
+        type: 'supply-demand',
         title: 'The shock transmission.',
         intro: 'A supply or demand shift moves the equilibrium. How much of the move is price vs quantity depends on the slopes.',
-        xLabels: { left: 'quantity', right: 'quantity' },
-        yLabel: 'price'
+        shift: 'demand-right',
+        xAxis: 'quantity',
+        yAxis: 'price',
+        equilibriumLabel: 'equilibrium',
+        shiftedLabel: "new equilibrium"
       },
       frameworks: [
-        { name: 'Shock Propagation', author: 'Galeotti', components: ['Supply shocks (cost, tech, regulation)', 'Demand shocks (income, preferences)'], rule: 'Supply ↑ → price ↓, quantity ↑. Demand ↑ → both rise.' },
-        { name: 'Price Elasticity', author: 'Mankiw-Taylor', components: ['E = %ΔQ / %ΔP', 'elastic |E| > 1', 'inelastic |E| < 1'], rule: 'Markup rule: (P − MC) / P = 1 / |E|.' },
+        { name: 'Shock Propagation', author: 'Galeotti', components: ['Supply shocks (cost, tech, regulation)', 'Demand shocks (income, preferences)'], rule: 'Supply curve shifts right → price ↓, quantity ↑. Demand curve shifts right → both rise.' },
+        { name: 'Price Elasticity', author: 'Mankiw-Taylor', components: ['E = %ΔQ / %ΔP', 'elastic |E| > 1', 'inelastic |E| < 1'], rule: 'Incidence of a shock falls on the less-elastic side. (Markup rule (P−MC)/P = 1/|E| is the monopoly application — see m.04.)' },
         { name: 'Government Interventions', author: 'Myatt', components: ['taxes', 'subsidies', 'price controls', 'tariffs'], rule: 'Any price away from equilibrium creates deadweight loss. Incidence splits by elasticity.' },
         { name: 'Substitutes & Complements', author: 'Galeotti', components: ['cross-price elasticity'], rule: 'Shocks ripple into related markets. Substitutes gain; complements lose.' }
       ],
@@ -161,24 +164,18 @@ module.exports = {
     m04: {
       id: 'm04', number: '04', topic: 'Exploiting Market Power',
       title: 'The 1/2 Rule & Cournot',
-      hint: 'A monopolist sells half the competitive quantity at twice the margin.',
+      hint: 'A monopolist sells half the competitive quantity at a price halfway between MC and the choke.',
       kicker: 'Myatt · a handful of formulas cover most of real-world pricing decisions.',
       coreIdea: {
         text: 'When a firm has market power it is a price-maker, not a price-taker. Optimal restriction of output raises margin per unit but loses volume — the profit-maximising balance is surprisingly symmetric for linear demand: produce half the competitive output, at a price halfway between marginal cost and the choke price, capturing half the maximum surplus. Cournot extends the result to N firms.',
         attr: 'after Myatt'
       },
       diagram: {
-        type: '2x2',
+        type: 'monopoly',
         title: 'Monopoly pricing.',
-        intro: 'Compare competitive, monopoly and socially optimal outcomes.',
-        xAxis: { label: 'quantity', lo: 'Q*/2', hi: 'Q*' },
-        yAxis: { label: 'price', lo: 'MC', hi: 'P*' },
-        quadrants: [
-          { pos: 'tl', label: 'Consumer surplus' },
-          { pos: 'tr', label: 'Deadweight loss', highlight: true },
-          { pos: 'bl', label: 'Monopoly profit' },
-          { pos: 'br', label: 'Lost output' }
-        ]
+        intro: 'Demand, marginal revenue, marginal cost. The monopolist stops where MR = MC. Consumer surplus shrinks, profit is captured, deadweight loss appears.',
+        xAxis: 'quantity',
+        yAxis: 'price'
       },
       frameworks: [
         { name: 'Monopoly Rules of Thumb', author: 'Myatt', components: ['Q* = Q_max / 2', 'P* = (P_max + MC) / 2', 'Profit = S_max / 2', 'DWL = S_max / 4'], rule: 'For linear demand, the optimum is symmetric. Half the quantity, half the surplus.' },
@@ -233,7 +230,7 @@ module.exports = {
         ]
       },
       frameworks: [
-        { name: 'Herfindahl-Hirschman Index', author: 'Antitrust theory', components: ['HHI = Σ(share)²', 'range 1/N to 1'], rule: 'FTC threshold: HHI > 2500 = highly concentrated.' },
+        { name: 'Herfindahl-Hirschman Index', author: 'Antitrust theory', components: ['HHI = Σ(share%)²', 'range 10,000/N (equal firms) to 10,000 (pure monopoly)'], rule: 'FTC threshold: HHI > 2,500 = highly concentrated. Share expressed in percent.' },
         { name: 'Economic Rents', author: 'Porter / Myatt', components: ['profit above competitive level', 'source: cost, brand, network, IP'], rule: 'Sustainable rents require barriers to replication.' },
         { name: 'Strategic Effects of Innovation', author: 'Myatt', components: ['cost-reducing: winner takes more', 'quality-improving: demand shifts'], rule: 'Innovation by the leader widens the gap; by the follower, may not break even.' },
         { name: 'Entry & Industry Dynamics', author: 'Classical IO', components: ['expected profit vs entry cost', 'equilibrium N'], rule: 'Firms enter until marginal entrant earns zero economic profit.' },
@@ -274,8 +271,8 @@ module.exports = {
       diagram: {
         type: 'linear',
         title: 'The competition spectrum.',
-        intro: 'As you move right, price falls and innovation incentives fall.',
-        steps: ['Monopoly', 'Oligopoly', 'Monopolistic', 'Perfect']
+        intro: 'Left to right: from atomistic competition (P → MC, rents → 0) to monopoly (market power concentrated, rents highest). Regulators pick where along this spectrum a market should sit.',
+        steps: ['Perfect', 'Monopolistic', 'Oligopoly', 'Monopoly']
       },
       frameworks: [
         { name: 'Four Market Structures', author: 'IO canon', components: ['Perfect Competition', 'Monopolistic Competition', 'Oligopoly', 'Monopoly'], rule: 'As N grows and barriers fall, price → MC and consumer surplus grows.' },

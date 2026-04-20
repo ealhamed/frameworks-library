@@ -6,7 +6,7 @@ module.exports = {
   courseShort: 'EL',
   courseDisplayName: 'Executive Leadership',
   courseAccent: '--c-el',
-  professor: 'Lucy Ford',
+  professor: 'Dr Lucy Ford',
   frameworksTag: 'Mirrors worth standing in front of',
   frameworksHeading: 'Things to ask yourself.',
   school: 'London Business School',
@@ -94,7 +94,7 @@ module.exports = {
         ]
       },
       frameworks: [
-        { name: 'Big Five Model (5STeP)', author: 'McCrae & Costa', components: ['N · E · O · A · C'], rule: 'No profile is "better". Fit between profile and role determines effectiveness.' },
+        { name: 'Big Five Model (OCEAN / 5STeP)', author: 'McCrae & Costa', components: ['O · C · E · A · N'], rule: 'No profile is "better". Fit between profile and role determines effectiveness.' },
         { name: 'Nature vs Nurture', author: 'Personality genetics', components: ['~50% heritable', 'rest shaped by environment and experience'], rule: 'Traits are stable but not fixed. Range can be trained.' },
         { name: 'Situation Strength', author: 'Personality research', components: ['strong situations constrain behaviour', 'weak situations reveal traits'], rule: 'In a crisis, personality matters less. In ambiguity, it matters more.' }
       ],
@@ -193,7 +193,7 @@ module.exports = {
           { pos: 'tl', label: 'Wasted talent' },
           { pos: 'tr', label: 'Synergy', highlight: true },
           { pos: 'bl', label: 'Stagnation' },
-          { pos: 'br', label: 'Process loss' }
+          { pos: 'br', label: 'Cosy comfort' }
         ]
       },
       frameworks: [

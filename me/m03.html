@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -40,6 +41,8 @@
   <nav class="sub-nav" aria-label="Section navigation">
     <a href="#idea">Idea</a>
     <a href="#diagram">Diagram</a>
+    
+    
     <a href="#frameworks">Frameworks</a>
     <a href="#apply">Apply</a>
     <a href="#reading">Reading</a>
@@ -67,13 +70,20 @@
       <h2 class="display">The shock transmission.</h2>
       <p class="prose muted">A supply or demand shift moves the equilibrium. How much of the move is price vs quantity depends on the slopes.</p>
       <div class="hero-diagram">
-        <svg viewBox="0 0 640 440" role="img" aria-label="S-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
-      <line x1="70" y1="220" x2="570" y2="220" stroke="var(--text, #1a1714)" stroke-width="1"/>
-      <line x1="320" y1="60" x2="320" y2="400" stroke="var(--text, #1a1714)" stroke-width="1"/>
-      <path d="M 100 380 C 220 360 280 310 320 220 C 360 130 450 90 540 80" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
-      <text x="100" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
-      <text x="540" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
-      <text x="330" y="76" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">price</text>
+        <svg viewBox="0 0 640 440" role="img" aria-label="Supply and demand" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="90" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="90" y1="380" x2="90" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 110 90 L 560 350" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 110 350 L 560 90" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <text x="565" y="355" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">D</text>
+      <text x="565" y="95"  font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">S</text>
+      <path d="M 200 90 L 640 350" fill="none" stroke="var(--accent, #b05a3a)" stroke-width="2" stroke-linecap="round" stroke-dasharray="7 5" opacity="0.85"/>
+      <circle cx="335" cy="220" r="7" fill="var(--text, #1a1714)"/>
+      <text x="335" y="205" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="15" fill="var(--text, #1a1714)">equilibrium</text>
+      <circle cx="410" cy="170" r="7" fill="var(--accent, #b05a3a)"/>
+      <text x="410" y="155" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="15" fill="var(--accent, #b05a3a)">new equilibrium</text>
+      <text x="320" y="418" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
+      <text x="50" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 50, 220)">price</text>
     </svg>
       </div>
     </section>
@@ -87,12 +97,12 @@
       <div class="fw-row">
         <div class="fw-name">Shock Propagation <em class="muted">· Galeotti</em></div>
         <div class="fw-comps mono muted">Supply shocks (cost, tech, regulation) · Demand shocks (income, preferences)</div>
-        <div class="fw-rule serif">Supply ↑ → price ↓, quantity ↑. Demand ↑ → both rise.</div>
+        <div class="fw-rule serif">Supply curve shifts right → price ↓, quantity ↑. Demand curve shifts right → both rise.</div>
       </div>
       <div class="fw-row">
         <div class="fw-name">Price Elasticity <em class="muted">· Mankiw-Taylor</em></div>
         <div class="fw-comps mono muted">E = %ΔQ / %ΔP · elastic |E| &gt; 1 · inelastic |E| &lt; 1</div>
-        <div class="fw-rule serif">Markup rule: (P − MC) / P = 1 / |E|.</div>
+        <div class="fw-rule serif">Incidence of a shock falls on the less-elastic side. (Markup rule (P−MC)/P = 1/|E| is the monopoly application — see m.04.)</div>
       </div>
       <div class="fw-row">
         <div class="fw-name">Government Interventions <em class="muted">· Myatt</em></div>
