@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regression &amp; Correlation · Data Analytics</title>
+<meta name="description" content="Correlation is direction; regression is magnitude.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">DA</a>
+      <a href="./m03.html" class="active">m.03</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">DA</a><span class="sep">/</span>
+    m.03
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.03 · II · Inference &amp; Prediction · Predictive Analytics I</p>
+    <h1>Regression &amp; Correlation</h1>
+    <p class="sub">Correlation is direction; regression is magnitude.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Correlation tells you whether two variables move together. Regression quantifies by how much, in what direction, per unit. The regression coefficient is the single most useful number in business analytics: "for every unit change in X, Y changes by b units, holding everything else constant." With that, you can predict, compare, and — if you controlled the right variables — start to argue about causation.
+        <span class="attr">— after Galton &amp; Fisher</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Salary vs. years of experience.</p>
+        <div class="eli5-body">
+          <p>Plot each employee: years on the x-axis, salary on the y-axis. Fit a line. The line's slope says "each year of experience is worth £2,000." The scatter around the line is what other things (role, skill, luck) are doing.</p>
+          <p>A good regression explains a lot of the scatter. A great one tells you which variables explain which part.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Scatter, line and residual.</h2>
+      <p class="prose muted">The line is what you fit. The residuals are what you missed.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Scatter with fit line" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <!-- axes -->
+      <line x1="90" y1="360" x2="570" y2="360" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="90" y1="360" x2="90" y2="50" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <!-- fitted line -->
+      <line x1="100" y1="309" x2="550" y2="111" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <!-- residual drops -->
+      <g>
+        <line x1="153" y1="284" x2="153" y2="285" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+        <line x1="286" y1="239" x2="286" y2="227" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+        <line x1="414" y1="188" x2="414" y2="171" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+      </g>
+      <!-- dots -->
+      <g>
+        <circle cx="101" cy="280" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="100" cy="314" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="146" cy="325" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="153" cy="284" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="183" cy="296" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="191" cy="227" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="221" cy="280" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="247" cy="261" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="258" cy="214" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="286" cy="239" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="301" cy="181" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="327" cy="174" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="356" cy="218" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="382" cy="194" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="409" cy="162" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="414" cy="188" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="445" cy="189" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="485" cy="152" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="497" cy="122" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="527" cy="138" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="534" cy="114" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="557" cy="75" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+      </g>
+      <!-- axis labels -->
+      <text x="325" y="408" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic">x (years of experience)</text>
+      <text x="54" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 54, 210)">y (salary)</text>
+      <text x="554" y="74" text-anchor="end" font-family="Inter, sans-serif" font-size="13" fill="var(--accent, #b05a3a)" font-style="italic">residual</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The tools on the bench</p>
+      <h2 class="display">Ideas that pay rent.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Simple Linear Regression <em class="muted">· OLS</em></div>
+        <div class="fw-comps mono muted">y = a + b·x + ε · intercept a · slope b · residual ε</div>
+        <div class="fw-rule serif">Minimise the sum of squared residuals. Slope = change in y per unit x.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Correlation <em class="muted">· Pearson</em></div>
+        <div class="fw-comps mono muted">r ∈ [−1, +1] · direction + strength</div>
+        <div class="fw-rule serif">Correlation is not causation. Never.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Multiple Regression <em class="muted">· Multivariate OLS</em></div>
+        <div class="fw-comps mono muted">control for confounders · each coefficient isolates one effect · adjusted R² penalises complexity</div>
+        <div class="fw-rule serif">Add variables for business logic, not for R².</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Model Quality Checklist <em class="muted">· Regression diagnostics</em></div>
+        <div class="fw-comps mono muted">Adjusted R² · p-values and t-stats · coefficient signs · residual patterns</div>
+        <div class="fw-rule serif">High R² + sensible signs + random residuals = a model you can defend.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Building a usable regression.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Plot before you fit.</strong> Scatter plots reveal non-linearity, outliers, and clustering that equations hide.</span></li>
+        <li><span class="txt"><strong>Start simple.</strong> One predictor, then add. Stop adding when Adjusted R² stops rising.</span></li>
+        <li><span class="txt"><strong>Check the signs.</strong> If a coefficient's sign contradicts business sense, look for a confounder.</span></li>
+        <li><span class="txt"><strong>Look at residuals.</strong> Patterns in residuals mean the model is missing something important.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Session 3 · Christodoulou</p>
+      <h3 class="kr-title">Confounding and omitted-variable bias.</h3>
+      <p class="kr-prose">If you regress exam score on study time alone, you might see a negative relationship — because smart students study less and still score higher. Add IQ as a control, and the real (positive) relationship appears. This is why multiple regression is essential for any causal claim.</p>
+      
+      <p class="kr-kicker">Correlation without controls is a ghost story.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m02.html">← m.02 A/B Testing &amp; Hypothesis Logic</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m04.html">m.04 Dummies, Interactions &amp; Validation →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

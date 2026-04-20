@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A/B Testing &amp; Hypothesis Logic · Data Analytics</title>
+<meta name="description" content="The only way to prove causation is to randomise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">DA</a>
+      <a href="./m02.html" class="active">m.02</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">DA</a><span class="sep">/</span>
+    m.02
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.02 · I · Quantifying Uncertainty · Business Experimentation</p>
+    <h1>A/B Testing &amp; Hypothesis Logic</h1>
+    <p class="sub">The only way to prove causation is to randomise.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Correlation can never prove causation. A randomised experiment can. By assigning users to treatment and control by coin-flip, you make the two groups identical on average — so any difference in outcome has to come from the treatment. That one trick, first used by John Snow in 1854, is the backbone of modern A/B testing.
+        <span class="attr">— after Snow, Fisher, and every growth team since</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Courtroom logic.</p>
+        <div class="eli5-body">
+          <p>The null hypothesis is "not guilty." You need strong evidence (p < 0.05) to overturn it. If your data is more than 2 standard errors away from "no effect," you reject the null.</p>
+          <p>A/B testing works because random assignment makes the two groups identical except for the treatment — so any difference in outcome must be caused by the thing you changed.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Decision matrix.</h2>
+      <p class="prose muted">Two axes: is the null actually true, and did you reject it?</p>
+      <div class="hero-diagram">
+        <svg viewBox="20 40 600 400" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
+      <g>
+        
+        <rect x="70" y="60" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Correct (specificity)</text>
+        <rect x="310" y="60" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Type I (false +)</text>
+        <rect x="70" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Type II (false −)</text>
+        <rect x="310" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Correct (power)</text>
+      </g>
+      <!-- axis labels -->
+      <g font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic">
+        <text x="60" y="230" text-anchor="middle" transform="rotate(-90, 60, 230)">truth</text>
+        <text x="60" y="100" text-anchor="middle" transform="rotate(-90, 60, 100)">H₀ true</text>
+        <text x="60" y="360" text-anchor="middle" transform="rotate(-90, 60, 360)">H₀ false</text>
+        <text x="300" y="425" text-anchor="middle">your decision</text>
+        <text x="180" y="410" text-anchor="middle">fail to reject</text>
+        <text x="420" y="410" text-anchor="middle">reject H₀</text>
+      </g>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The tools on the bench</p>
+      <h2 class="display">Ideas that pay rent.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Hypothesis Test <em class="muted">· Statistical inference</em></div>
+        <div class="fw-comps mono muted">H₀ (default / null) · t-statistic = (observed − expected) / SE · p-value · decision threshold</div>
+        <div class="fw-rule serif">If |t| &gt; 2 (roughly), reject H₀. Otherwise do not.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">A/B Testing (RCT) <em class="muted">· Causal inference standard</em></div>
+        <div class="fw-comps mono muted">random assignment · treatment vs control · difference in means is the causal effect</div>
+        <div class="fw-rule serif">Randomisation is the only antidote to confounding.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Type I vs Type II Error <em class="muted">· Decision theory</em></div>
+        <div class="fw-comps mono muted">Type I: false positive (α) · Type II: false negative (β)</div>
+        <div class="fw-rule serif">Every threshold trades one off against the other. Pick deliberately.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Running an experiment you will actually trust.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>State H₀ in one sentence.</strong> "The new button does not change click-through rate."</span></li>
+        <li><span class="txt"><strong>Commit to sample size before starting.</strong> Peeking at results early destroys validity.</span></li>
+        <li><span class="txt"><strong>Randomise the assignment.</strong> Not by date. Not by region. By coin-flip.</span></li>
+        <li><span class="txt"><strong>Report effect size alongside p-value.</strong> Statistical significance is not business significance.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Uber Engineering + Snow (1854)</p>
+      <h3 class="kr-title">The power of randomised experiments.</h3>
+      <p class="kr-prose">Snow's Broad Street pump analysis was the first use of quasi-random assignment to prove causation in public health. Every modern A/B testing stack is a digital re-run of the same logic.</p>
+      
+      <p class="kr-kicker">Randomise or you will never know.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m01.html">← m.01 The Range You Can Defend</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m03.html">m.03 Regression &amp; Correlation →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

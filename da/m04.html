@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dummies, Interactions &amp; Validation · Data Analytics</title>
+<meta name="description" content="The shift from explaining yesterday to predicting tomorrow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">DA</a>
+      <a href="./m04.html" class="active">m.04</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">DA</a><span class="sep">/</span>
+    m.04
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.04 · II · Inference &amp; Prediction · Predictive Analytics II</p>
+    <h1>Dummies, Interactions &amp; Validation</h1>
+    <p class="sub">The shift from explaining yesterday to predicting tomorrow.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Real data is categorical, conditional, and easy to overfit. Dummy variables encode categories into the regression. Interaction terms let a relationship differ by group — temperature might matter more in summer than winter. And the train/validate/test split is the one discipline that separates models that fit yesterday from models that predict tomorrow.
+        <span class="attr">— after Hastie, Tibshirani &amp; Friedman</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Memorising vs learning.</p>
+        <div class="eli5-body">
+          <p>If you memorise every practice question, you will fail the real test, because the questions are different. Models do the same: a big enough model can "memorise" the training data perfectly — and then fail on new data.</p>
+          <p>The validation set is the practice test you did not see while studying. It is the only honest signal of whether you actually learned.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Training vs validation error.</h2>
+      <p class="prose muted">Training error always falls as you add variables. Validation error falls, then rises. Stop at the bottom of the U.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Inverted-U curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <defs>
+        <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
+          <feDisplacementMap in="SourceGraphic" scale="1"/>
+        </filter>
+      </defs>
+      <line x1="70" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="70" y1="380" x2="70" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 100 380 Q 300 80 500 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" filter="url(#ink)"/>
+      <circle cx="300" cy="155" r="8" fill="var(--accent, #b05a3a)"/>
+      <text x="300" y="140" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--accent, #b05a3a)">sweet spot</text>
+      <text x="320" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">model complexity</text>
+      <text x="30" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 30, 220)">validation error</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The tools on the bench</p>
+      <h2 class="display">Ideas that pay rent.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Dummy Variables <em class="muted">· Categorical encoding</em></div>
+        <div class="fw-comps mono muted">k categories → k−1 binary variables · reference category = all zeros · coefficient = gap vs reference</div>
+        <div class="fw-rule serif">Interpret dummy coefficients as &quot;difference from the reference group, other things equal&quot;.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Interaction Terms <em class="muted">· Conditional effects</em></div>
+        <div class="fw-comps mono muted">x₁ × x₂ · effect of x₁ depends on x₂</div>
+        <div class="fw-rule serif">Include interactions when business logic says one variable modulates another.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Overfit vs Underfit <em class="muted">· Bias-variance tradeoff</em></div>
+        <div class="fw-comps mono muted">Underfit: high bias, misses signal · Overfit: high variance, fits noise</div>
+        <div class="fw-rule serif">Optimise validation error, never training error.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Train / Validate / Test <em class="muted">· Model selection</em></div>
+        <div class="fw-comps mono muted">Train ~60%: fit · Validate ~20%: tune · Test ~20%: final report</div>
+        <div class="fw-rule serif">Never touch the test set until the end.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Lift &amp; Gain Charts <em class="muted">· Predictive evaluation</em></div>
+        <div class="fw-comps mono muted">sort predictions · measure % of positives in top decile · lift = captured / base rate</div>
+        <div class="fw-rule serif">Lift &gt; 1 means your model beats random.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Making a model generalise.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Add dummies for all categorical features.</strong> Region, product line, month, gender.</span></li>
+        <li><span class="txt"><strong>Include interactions where business logic demands.</strong> "Temperature effect differs by season" — let the slope differ.</span></li>
+        <li><span class="txt"><strong>Hold out a validation set.</strong> 20% of the data. Never touch it during fitting.</span></li>
+        <li><span class="txt"><strong>Report on the test set once.</strong> That is the number that predicts real-world performance.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Session 4 · Christodoulou</p>
+      <h3 class="kr-title">The bias-variance trade-off.</h3>
+      <p class="kr-prose">Every model balances bias (missing the signal) against variance (fitting the noise). Adding complexity reduces bias but increases variance. The best model is not the most accurate on training data; it is the one that generalises best to new data.</p>
+      
+      <p class="kr-kicker">Training error lies. Validation error tells the truth.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m03.html">← m.03 Regression &amp; Correlation</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m05.html">m.05 From Data to Decision →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

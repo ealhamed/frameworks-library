@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Balance Sheet Equation · Financial Accounting</title>
+<meta name="description" content="Arthur Kraft · the three statements and the equation that keeps them honest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">FA</a>
+      <a href="./m01.html" class="active">m.01</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">FA</a><span class="sep">/</span>
+    m.01
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.01 · I · Reading the Numbers · Accounting Basics &amp; Financial Reports</p>
+    <h1>The Balance Sheet Equation</h1>
+    <p class="sub">Arthur Kraft · the three statements and the equation that keeps them honest.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Accounting is a language for describing economic reality. The three statements — Balance Sheet (position), Income Statement (performance), Cash Flow (liquidity) — are held together by one equation: Assets = Liabilities + Equity. Every transaction is a double entry that keeps the equation true, and that discipline is what makes the numbers comparable.
+        <span class="attr">— after Kraft</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Bank account, income stream, and the cash you actually hold.</p>
+        <div class="eli5-body">
+          <p>The balance sheet is what you own minus what you owe, on one specific day. The income statement is what you earned and spent over a period. The cash flow statement is what cash actually moved — which, because of accruals, is rarely the same as what you earned.</p>
+          <p>Profit is an opinion; cash is a fact. Both statements are useful — they tell different stories.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The equation behind every balance sheet.</h2>
+      <p class="prose muted">Rearrange this however you like. It never breaks.</p>
+      <div class="hero-diagram">
+        <div class="equation"><span class="lhs">ASSETS</span> <span class="eq">=</span> <span class="rhs">LIABILITIES + EQUITY</span></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The rules on the page</p>
+      <h2 class="display">The rules of the game.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Three Statements <em class="muted">· IFRS / US GAAP</em></div>
+        <div class="fw-comps mono muted">Balance Sheet · Income Statement · Cash Flow Statement</div>
+        <div class="fw-rule serif">Retained earnings flow from IS → BS. Operating cash flow starts from IS.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Double-Entry Bookkeeping <em class="muted">· Accounting Convention</em></div>
+        <div class="fw-comps mono muted">Debits · Credits · T-accounts</div>
+        <div class="fw-rule serif">Every transaction affects at least two accounts. Debits = Credits, always.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">First pass at any annual report.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Start with the balance sheet.</strong> Assets on one side, liabilities + equity on the other. They must balance.</span></li>
+        <li><span class="txt"><strong>Trace one transaction.</strong> A cash sale. Where does it appear? IS (revenue), BS (cash up, inventory down), CFS (cash inflow).</span></li>
+        <li><span class="txt"><strong>Find the retained earnings line.</strong> It connects net income from the IS to owner's equity on the BS.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Session 1 · Kraft</p>
+      <h3 class="kr-title">Basics of accounting and financial reports.</h3>
+      <p class="kr-prose">The balance sheet equation is the one rule that makes accounting coherent. Everything else — recognition, measurement, valuation — is a refinement of how we assign numbers to the left and right sides so they describe the business honestly.</p>
+      
+      <p class="kr-kicker">Everything in financial accounting is a re-statement of A = L + E.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./">← back to FA</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m02.html">m.02 Accruals vs. Cash →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

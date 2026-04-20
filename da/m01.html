@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Range You Can Defend · Data Analytics</title>
+<meta name="description" content="Central Limit Theorem · Confidence Intervals · Standard Error.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">DA</a>
+      <a href="./m01.html" class="active">m.01</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">DA</a><span class="sep">/</span>
+    m.01
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.01 · I · Quantifying Uncertainty · Sampling &amp; Confidence Intervals</p>
+    <h1>The Range You Can Defend</h1>
+    <p class="sub">Central Limit Theorem · Confidence Intervals · Standard Error.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Every data-based decision rests on a sample. Every sample has noise. The central question of data analysis is not "what is the answer?" but "how wide is the range of plausible answers?" Confidence intervals give you that range in a defensible form — the standard error shrinks with sample size, and the interval widens with the confidence you demand.
+        <span class="attr">— after the Central Limit Theorem</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Asking 30 people what they'll spend.</p>
+        <div class="eli5-body">
+          <p>The answer from 30 people is better than from 3, but it is not the truth. It is a sample.</p>
+          <p>A confidence interval says: "based on these 30 answers, the true average is probably between £45 and £55." Wider interval = more honesty about what you do not know.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The sampling distribution.</h2>
+      <p class="prose muted">As n grows, the distribution of sample means tightens around the true population mean. That tightening is the standard error.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Inverted-U curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <defs>
+        <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
+          <feDisplacementMap in="SourceGraphic" scale="1"/>
+        </filter>
+      </defs>
+      <line x1="70" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="70" y1="380" x2="70" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 100 380 Q 300 80 500 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" filter="url(#ink)"/>
+      <circle cx="300" cy="155" r="8" fill="var(--accent, #b05a3a)"/>
+      <text x="300" y="140" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--accent, #b05a3a)">true mean</text>
+      <text x="320" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">sample mean</text>
+      <text x="30" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 30, 220)">probability</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The tools on the bench</p>
+      <h2 class="display">Ideas that pay rent.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Central Limit Theorem <em class="muted">· Statistical foundation</em></div>
+        <div class="fw-comps mono muted">sample means → normal as n grows · SE = SD / √n</div>
+        <div class="fw-rule serif">With n ≥ 30, the sampling distribution is normal regardless of source shape.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Confidence Intervals <em class="muted">· Inferential statistics</em></div>
+        <div class="fw-comps mono muted">point estimate ± margin of error · MoE = 2 × SE for 95%</div>
+        <div class="fw-rule serif">A 95% CI means 95% of such intervals (over many samples) would contain the true parameter — not that there is a 95% probability this one does.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Standard Error <em class="muted">· Sampling theory</em></div>
+        <div class="fw-comps mono muted">SD of the sample mean · shrinks with √n</div>
+        <div class="fw-rule serif">To halve the CI width, quadruple the sample.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Reporting an uncertain number.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Compute the point estimate and SE.</strong> Mean, SD, n. Divide.</span></li>
+        <li><span class="txt"><strong>Report the range, not the number.</strong> "27,412 ± 1,750 bikes" tells the reader what you actually know.</span></li>
+        <li><span class="txt"><strong>If the range is too wide, collect more data.</strong> There is no other lever.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · OpenIntro Statistics · Chapter 4</p>
+      <h3 class="kr-title">Foundations for inference.</h3>
+      <p class="kr-prose">The standard error is the most important number in practical statistics — more important than the mean. It is what lets you move from "here is a number" to "here is a range we can defend."</p>
+      
+      <p class="kr-kicker">Report the range. Always.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./">← back to DA</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m02.html">m.02 A/B Testing &amp; Hypothesis Logic →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

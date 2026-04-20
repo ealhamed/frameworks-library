@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Something Moves · Marketplace Environment</title>
+<meta name="description" content="Every intervention has a deadweight loss — know who bears it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">ME</a>
+      <a href="./m03.html" class="active">m.03</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">ME</a><span class="sep">/</span>
+    m.03
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.03 · I · The Market Mechanism · Shocks &amp; Elasticity</p>
+    <h1>When Something Moves</h1>
+    <p class="sub">Every intervention has a deadweight loss — know who bears it.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Markets move when supply or demand shifts. The magnitude of the price and quantity response depends on elasticity — how sensitive each side is. Inelastic markets pass shocks into price; elastic markets pass them into quantity. Government interventions (tax, subsidy, tariff) create deadweight loss, and the incidence of that loss splits based on the same elasticity.
+        <span class="attr">— after Myatt &amp; Galeotti</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Bad weather destroys the wheat.</p>
+        <div class="eli5-body">
+          <p>Supply falls. Bread prices rise. Because people cannot easily stop eating bread (inelastic demand), most of the shock shows up as price — not as quantity. Bread is expensive for everyone.</p>
+          <p>If instead it was restaurant meals, people would just cook at home (elastic demand). Prices barely rise; volume collapses.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The shock transmission.</h2>
+      <p class="prose muted">A supply or demand shift moves the equilibrium. How much of the move is price vs quantity depends on the slopes.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="S-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="70" y1="220" x2="570" y2="220" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="320" y1="60" x2="320" y2="400" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 100 380 C 220 360 280 310 320 220 C 360 130 450 90 540 80" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <text x="100" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
+      <text x="540" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">quantity</text>
+      <text x="330" y="76" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">price</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Mechanisms worth naming</p>
+      <h2 class="display">The levers in the machine.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Shock Propagation <em class="muted">· Galeotti</em></div>
+        <div class="fw-comps mono muted">Supply shocks (cost, tech, regulation) · Demand shocks (income, preferences)</div>
+        <div class="fw-rule serif">Supply ↑ → price ↓, quantity ↑. Demand ↑ → both rise.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Price Elasticity <em class="muted">· Mankiw-Taylor</em></div>
+        <div class="fw-comps mono muted">E = %ΔQ / %ΔP · elastic |E| &gt; 1 · inelastic |E| &lt; 1</div>
+        <div class="fw-rule serif">Markup rule: (P − MC) / P = 1 / |E|.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Government Interventions <em class="muted">· Myatt</em></div>
+        <div class="fw-comps mono muted">taxes · subsidies · price controls · tariffs</div>
+        <div class="fw-rule serif">Any price away from equilibrium creates deadweight loss. Incidence splits by elasticity.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Substitutes &amp; Complements <em class="muted">· Galeotti</em></div>
+        <div class="fw-comps mono muted">cross-price elasticity</div>
+        <div class="fw-rule serif">Shocks ripple into related markets. Substitutes gain; complements lose.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">When a shock hits your industry.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Supply or demand shock?</strong> Which curve moved?</span></li>
+        <li><span class="txt"><strong>How elastic is each side?</strong> Inelastic demand + inelastic supply = big price move, small quantity move.</span></li>
+        <li><span class="txt"><strong>Who bears the incidence?</strong> The more inelastic side absorbs more of the burden.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Supply and Demand Shocks · Galeotti</p>
+      <h3 class="kr-title">Elasticity determines transmission.</h3>
+      <p class="kr-prose">Elastic markets adjust quantities; inelastic markets adjust prices. A manager's job during a shock is to know which side of the market is more elastic — because that is who is about to carry the cost.</p>
+      
+      <p class="kr-kicker">Who moves first in the face of a shock? Whoever can.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m02.html">← m.02 Supply, Demand &amp; the Cost Taxonomy</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m04.html">m.04 The 1/2 Rule &amp; Cournot →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

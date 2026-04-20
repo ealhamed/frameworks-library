@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DuPont, ROIC &amp; the EVA Question · Financial Accounting</title>
+<meta name="description" content="Ratio analysis: the final exam of every financial-accounting course, for good reason.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">FA</a>
+      <a href="./m10.html" class="active">m.10</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">FA</a><span class="sep">/</span>
+    m.10
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.10 · II · Using the Numbers · Performance Measurement</p>
+    <h1>DuPont, ROIC &amp; the EVA Question</h1>
+    <p class="sub">Ratio analysis: the final exam of every financial-accounting course, for good reason.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Financial statements give you thousands of numbers. Ratio analysis reduces them to a handful that tell a story. DuPont decomposes ROE into margin, turnover and leverage. EVA asks whether the return exceeded the cost of capital. Together they are the bridge from accounting to investing.
+        <span class="attr">— after Stern &amp; Stewart</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · A report card for a company.</p>
+        <div class="eli5-body">
+          <p>Liquidity ratios tell you whether the company can pay its bills this month. Solvency ratios tell you whether it can pay them in ten years. Profitability tells you whether it is making money. Efficiency tells you how hard its assets are working. Valuation tells you whether the stock is worth buying.</p>
+          <p>DuPont pulls it together: a high ROE from high margin is Apple. A high ROE from high turnover is Walmart. A high ROE from high leverage is a bank.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The five ratio families.</h2>
+      <p class="prose muted">Every question about a business lands in one of these five.</p>
+      <div class="hero-diagram">
+        <svg viewBox="-140 -20 920 580" role="img" aria-label="Pentagon diagram" xmlns="http://www.w3.org/2000/svg" class="pentagon">
+      <defs>
+        <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.2"/>
+        </filter>
+      </defs>
+      <g stroke="var(--text, #1a1714)" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.85" filter="url(#ink)">
+        <line x1="400" y1="80" x2="562" y2="197"/>
+        <line x1="400" y1="80" x2="500" y2="388"/>
+        <line x1="400" y1="80" x2="300" y2="388"/>
+        <line x1="400" y1="80" x2="238" y2="197"/>
+        <line x1="562" y1="197" x2="500" y2="388"/>
+        <line x1="562" y1="197" x2="300" y2="388"/>
+        <line x1="562" y1="197" x2="238" y2="197"/>
+        <line x1="500" y1="388" x2="300" y2="388"/>
+        <line x1="500" y1="388" x2="238" y2="197"/>
+        <line x1="300" y1="388" x2="238" y2="197"/>
+      </g>
+      <g fill="var(--accent, #b05a3a)">
+        <circle cx="400" cy="80" r="7"/>
+        <circle cx="562" cy="197" r="7"/>
+        <circle cx="500" cy="388" r="7"/>
+        <circle cx="300" cy="388" r="7"/>
+        <circle cx="238" cy="197" r="7"/>
+      </g>
+      <g font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">
+        <text x="400" y="52" text-anchor="middle">Liquidity</text>
+        <text x="579.6796077701761" y="193.46711095625895" text-anchor="start">Solvency</text>
+        <text x="517.9234928897204" y="395.5328890437411" text-anchor="start">Profit</text>
+        <text x="282.0765071102796" y="395.5328890437411" text-anchor="end">Efficiency</text>
+        <text x="220.3203922298239" y="193.4671109562589" text-anchor="end">Valuation</text>
+      </g>
+      <g font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">
+        <text x="400" y="34" text-anchor="middle">can we pay next month</text>
+        <text x="579.6796077701761" y="211.46711095625895" text-anchor="start">can we pay next decade</text>
+        <text x="517.9234928897204" y="413.5328890437411" text-anchor="start">do we make money</text>
+        <text x="282.0765071102796" y="413.5328890437411" text-anchor="end">do we use assets well</text>
+        <text x="220.3203922298239" y="211.4671109562589" text-anchor="end">is it worth it</text>
+      </g>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">The rules on the page</p>
+      <h2 class="display">The rules of the game.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">DuPont Decomposition <em class="muted">· DuPont</em></div>
+        <div class="fw-comps mono muted">ROE = Net margin × Asset turnover × Leverage</div>
+        <div class="fw-rule serif">Three levers for ROE. Most firms overuse one and underuse two.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Liquidity Ratios <em class="muted">· Working capital</em></div>
+        <div class="fw-comps mono muted">Current · Quick · Cash</div>
+        <div class="fw-rule serif">Can the firm survive the next 90 days?</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Solvency Ratios <em class="muted">· Leverage</em></div>
+        <div class="fw-comps mono muted">Debt/Equity · Debt/Assets · Interest coverage</div>
+        <div class="fw-rule serif">Can the firm survive a downturn?</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Efficiency Ratios <em class="muted">· Asset utilisation</em></div>
+        <div class="fw-comps mono muted">Asset turnover · Receivables days · Inventory turnover</div>
+        <div class="fw-rule serif">How much revenue per pound of asset?</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">ROIC vs WACC <em class="muted">· Value creation</em></div>
+        <div class="fw-comps mono muted">ROIC = NOPAT / invested capital · EVA = (ROIC − WACC) × IC</div>
+        <div class="fw-rule serif">Value is created only when ROIC exceeds WACC.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">One-page analysis of any company.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Run DuPont.</strong> Decompose ROE into margin, turnover, leverage.</span></li>
+        <li><span class="txt"><strong>Compare to peers.</strong> Ratios are meaningless in isolation. Benchmark.</span></li>
+        <li><span class="txt"><strong>Ask: does ROIC exceed WACC?</strong> If yes, value is being created. If no, capital is being destroyed.</span></li>
+        <li><span class="txt"><strong>Trend the last five years.</strong> Direction matters more than the single-year reading.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Session 10 · Kraft</p>
+      <h3 class="kr-title">Performance measurement and financial analysis.</h3>
+      <p class="kr-prose">Knowing the ratios is easy. Knowing which ratio matters for which industry, and what the peer benchmark actually is, is the difference between a course answer and a useful analysis.</p>
+      
+      <p class="kr-kicker">The number only means something next to another number.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m09.html">← m.09 Divisions, Metrics and the Price Between Them</a></span>
+    <span class="dots">···</span>
+    <span><a href="../">home</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>
