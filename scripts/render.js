@@ -418,21 +418,12 @@ ${FONTS_LINK}
     <p class="section-tag" style="margin-top: 40px;">A note, before you click around</p>
     <div class="prose">
       <p class="lede" style="max-width: 62ch;">
-        The EMBA teaches us things that genuinely change how we think. That isn&rsquo;t the problem.
+        It&rsquo;s not what you know. It&rsquo;s what you use.
       </p>
       <p style="max-width: 62ch;">
-        The problem is recall. You&rsquo;re in a meeting, or writing a deck, and you know there&rsquo;s
-        a framework from some session that would help here &mdash; you just can&rsquo;t fetch it.
-        And going back through the slides to find it is, honestly, punishment.
-      </p>
-      <p style="max-width: 62ch;">
-        So I put this together. One page per module, in a shape I can actually scan fast. The core
-        idea, the diagram, the frameworks with their names, and a short note on how to use them
-        when the moment actually comes.
-      </p>
-      <p style="max-width: 62ch;">
-        These are my notes, not the course. If any of it is useful, take it. If any of it is wrong,
-        tell me.
+        Below is everything we&rsquo;ve covered at LBS, one page per module, in a shape
+        I can actually scan when I need it. I hope you find it useful &mdash; let me
+        know where it&rsquo;s lacking.
       </p>
       <p class="muted" style="max-width: 62ch;">
         &mdash; Ebrahim Alhamed
