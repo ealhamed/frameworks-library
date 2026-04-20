@@ -305,6 +305,46 @@ module.exports = {
         prose: 'The regulator\'s question is rarely "is this a monopoly?" — it is "should we let this remain a monopoly?" The static-vs-dynamic efficiency trade-off is the core of every modern competition case, from pharma to platforms.',
         kicker: 'Consumer price vs innovation incentive — the regulator\'s trade.'
       }
+    },
+
+    m99: {
+      id: 'm99', number: '99', topic: 'CI verification',
+      title: 'Smoke test — ignore',
+      hint: 'TODO — one-line intro shown on the course index.',
+      kicker: 'TODO — italic sub-title under the H1.',
+      coreIdea: {
+        text: 'TODO — the paragraph that opens the page. Name the single question this session answers, without jargon. 40–70 words.',
+        attr: 'after TODO'
+      },
+      diagram: {
+        type: 'custom',
+        title: 'TODO — diagram title.',
+        intro: 'TODO — short caption under the diagram heading.',
+        svg: '<!-- pick a diagram type: pentagon / 2x2 / hexagon / curve-invertedU / curve-s / scatter / network / linear / equation -->'
+      },
+      frameworks: [
+        { name: 'TODO framework', author: 'TODO', components: ['TODO component 1', 'TODO component 2'], rule: 'TODO — the one-sentence why this matters.' }
+      ],
+      apply: {
+        title: 'TODO — how to actually use this.',
+        steps: [
+          { strong: 'TODO first step.', rest: 'TODO — make it concrete.' },
+          { strong: 'TODO second step.', rest: 'TODO.' },
+          { strong: 'TODO third step.', rest: 'TODO.' }
+        ]
+      },
+      eli5: {
+        title: 'TODO — plain-English title.',
+        body: [
+          'TODO — one paragraph explaining this to someone who has never taken an MBA.'
+        ]
+      },
+      keyReading: {
+        cite: 'Key reading · TODO source',
+        title: 'TODO — title of the closing thought.',
+        prose: 'TODO — the prose of the footer block.',
+        kicker: 'TODO — italic closing line.'
+      }
     }
   }
 };
