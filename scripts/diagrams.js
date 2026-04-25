@@ -59,6 +59,8 @@ function pentagon({ vertices }) {
   }).join('');
 
   return `<svg viewBox="-140 -20 920 580" role="img" aria-label="Pentagon diagram" xmlns="http://www.w3.org/2000/svg" class="pentagon">
+      <title>Pentagon diagram</title>
+      <desc>Five-vertex pentagon showing ${esc(vertices[0]?.label || '')}, ${esc(vertices[1]?.label || '')}, ${esc(vertices[2]?.label || '')}, ${esc(vertices[3]?.label || '')}, and ${esc(vertices[4]?.label || '')} as interconnected dimensions.</desc>
       <defs>
         <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
@@ -100,6 +102,8 @@ function matrix2x2({ xAxis, yAxis, quadrants }) {
   }).join('');
 
   return `<svg viewBox="20 40 600 400" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
+      <title>2×2 matrix</title>
+      <desc>Two-by-two matrix with ${esc(xAxis.label || 'x')} on the horizontal axis and ${esc(yAxis.label || 'y')} on the vertical axis, showing four quadrant positions.</desc>
       <g>
         ${cells}
       </g>
@@ -146,6 +150,8 @@ function hexagon({ vertices, centerLabel }) {
   }).join('\n        ');
 
   return `<svg viewBox="-100 -20 960 580" role="img" aria-label="Hexagon diagram" xmlns="http://www.w3.org/2000/svg" class="hexagon">
+      <title>Hexagon diagram</title>
+      <desc>Six-vertex hexagon${centerLabel?.title ? ' centred on ' + esc(centerLabel.title) : ''} with vertices: ${vertices.map(v => esc(v.label)).join(', ')}.</desc>
       <defs>
         <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5"/>
@@ -169,6 +175,8 @@ function hexagon({ vertices, centerLabel }) {
 function curveInvertedU({ xAxis, yAxis, peakLabel }) {
   const path = 'M 100 380 Q 300 80 500 380';
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Inverted-U curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Inverted-U curve</title>
+      <desc>Inverted-U relationship between ${esc(xAxis)} and ${esc(yAxis)}, peaking at ${esc(peakLabel || 'peak')} — performance rises then falls as the input increases.</desc>
       <defs>
         <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
           <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
@@ -198,6 +206,8 @@ function curveS({ xLabels = { left: 'Losses', right: 'Gains' }, yLabel = 'Value'
       <text x="100" y="440" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">pain</text>
       <text x="540" y="440" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">pleasure</text>` : '';
   return `<svg viewBox="0 0 640 460" role="img" aria-label="Asymmetric S-curve (loss aversion)" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Asymmetric S-curve</title>
+      <desc>S-shaped value function showing ${esc(xLabels.left)} on the left and ${esc(xLabels.right)} on the right; losses loom larger than equivalent gains (loss aversion).</desc>
       <line x1="70" y1="220" x2="570" y2="220" stroke="${INK}" stroke-width="1"/>
       <line x1="320" y1="60" x2="320" y2="400" stroke="${INK}" stroke-width="1"/>
       <path d="${path}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
@@ -214,6 +224,8 @@ function curveU({ xAxis, yAxis, bottomLabel = 'sweet spot', leftCurveLabel, righ
   const training = 'M 100 120 C 200 180 320 280 540 370';
   const validation = 'M 100 110 C 200 240 320 340 420 320 C 480 310 520 330 540 120';
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Training vs validation error U-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>U-curve</title>
+      <desc>Training vs validation error against ${esc(xAxis)}: training error falls continuously while validation error forms a U-shape, with ${esc(bottomLabel)} marking the optimal point.</desc>
       <line x1="70" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
       <line x1="70" y1="380" x2="70" y2="60" stroke="${INK}" stroke-width="1"/>
       <path d="${training}" fill="none" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
@@ -246,6 +258,8 @@ function bellFamily({ xAxis = 'sample mean', yAxis = 'density', centerLabel = 't
     return `<text x="${lx}" y="${ly}" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic" opacity="${b.opacity}">${esc(b.label)}</text>`;
   }).join('\n      ');
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Distributions tightening with sample size" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Bell-curve family</title>
+      <desc>Three overlapping bell curves sharing the same center (${esc(centerLabel)}) but progressively narrower, illustrating how sampling distributions tighten as sample size grows.</desc>
       <line x1="70" y1="360" x2="570" y2="360" stroke="${INK}" stroke-width="1"/>
       <line x1="${cx}" y1="360" x2="${cx}" y2="70" stroke="${MUTED}" stroke-width="1" stroke-dasharray="3 4"/>
       ${paths}
@@ -287,6 +301,8 @@ function supplyDemand({
     shiftedEq = { x: 265, y: 170 };
   }
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Supply and demand" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Supply and demand</title>
+      <desc>Supply and demand curves crossing at ${esc(equilibriumLabel)}${shift ? ', with a shifted curve showing a new equilibrium' : ''} — ${esc(yAxis)} on the vertical axis and ${esc(xAxis)} on the horizontal axis.</desc>
       <line x1="90" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
       <line x1="90" y1="380" x2="90" y2="60" stroke="${INK}" stroke-width="1"/>
       <path d="${demand}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>
@@ -319,6 +335,8 @@ function monopoly({ xAxis = 'quantity', yAxis = 'price' } = {}) {
   //   Vertices: monopoly point on D (240,160), perfect-comp point (390,260), and monopoly point on MC (240,260).
   // Consumer surplus (monopoly): triangle (90,60), (90,160), (240,160)
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Monopoly vs competitive pricing" xmlns="http://www.w3.org/2000/svg" class="curve monopoly">
+      <title>Monopoly pricing</title>
+      <desc>Demand, marginal revenue (MR), and marginal cost (MC) curves showing monopoly profit, consumer surplus, and deadweight loss compared to competitive equilibrium.</desc>
       <line x1="90" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
       <line x1="90" y1="380" x2="90" y2="60" stroke="${INK}" stroke-width="1"/>
       <!-- CS (monopoly) -->
@@ -403,6 +421,8 @@ function scatter({ xLabel = 'x', yLabel = 'y', note = '' }) {
   const ly1 = lineY(lx1), ly2 = lineY(lx2);
 
   return `<svg viewBox="0 0 640 440" role="img" aria-label="Scatter with fit line" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Scatter plot with fit line</title>
+      <desc>Scatter plot of ${esc(yLabel)} against ${esc(xLabel)} with an OLS regression line and sample residuals highlighted, showing a positive trend.</desc>
       <!-- axes -->
       <line x1="${x0}" y1="${y0}" x2="${xN + 10}" y2="${y0}" stroke="${INK}" stroke-width="1"/>
       <line x1="${x0}" y1="${y0}" x2="${x0}" y2="${yN - 10}" stroke="${INK}" stroke-width="1"/>
@@ -461,6 +481,8 @@ function network({ center, satellites }) {
   }).join('\n        ');
 
   return `<svg viewBox="-60 0 760 480" role="img" aria-label="Network diagram" xmlns="http://www.w3.org/2000/svg" class="network">
+      <title>Network diagram</title>
+      <desc>Hub-and-spoke network with ${esc(center)} at the centre connected to: ${spokes.map(s => esc(s.label)).join(', ')}.</desc>
       <g>
         ${lines}
       </g>
@@ -484,6 +506,8 @@ function linear({ steps }) {
         ${i < n - 1 ? `<text x="${x + gap/2}" y="76" text-anchor="middle" font-family="${FONT_SUB}" font-size="22" fill="${ACCENT}">→</text>` : ''}`;
   }).join('');
   const horizontal = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Linear flow" xmlns="http://www.w3.org/2000/svg" class="linear-h">
+      <title>Linear flow</title>
+      <desc>Left-to-right sequential flow: ${steps.map(s => esc(s)).join(' → ')}.</desc>
       <g>
         ${boxes}
       </g>
@@ -533,6 +557,8 @@ function twoAxis({ xAxis = {}, yAxis = {} }) {
   const aria = ariaParts.length ? 'Two-axis chart: ' + ariaParts.join('; ') : 'Two-axis chart';
 
   const svg = `<svg viewBox="0 0 640 420" role="img" aria-label="${esc(aria)}" xmlns="http://www.w3.org/2000/svg" class="two-axis">
+      <title>Two-axis chart</title>
+      <desc>${esc(aria)} — use axes to position ideas or options by their relative standing on each dimension.</desc>
       <defs>
         <marker id="ta-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
           <path d="M0,0 L10,5 L0,10 z" fill="${INK}"/>
@@ -594,7 +620,7 @@ function decisionTree({ nodes = [] }) {
     }).join('');
     return `
         <div class="dt-node">
-          <div class="dt-question">${esc(node.question || '')}</div>
+          <h4 class="dt-question">${esc(node.question || '')}</h4>
           ${branches ? `<ul class="dt-branches">${branches}
           </ul>` : ''}
         </div>`;
@@ -659,6 +685,8 @@ function fiveForces({ center = {}, forces = [] }) {
     : '';
 
   const svg = `<svg viewBox="0 0 720 560" role="img" aria-label="Porter's Five Forces diagram" xmlns="http://www.w3.org/2000/svg" class="five-forces">
+      <title>Porter's Five Forces</title>
+      <desc>Five Forces competitive analysis with ${esc(center.label || 'Industry Rivalry')} at the centre and ${forces.map(f => esc(f.label)).join(', ')} as the surrounding forces.</desc>
       <defs>
         <filter id="ff-ink" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
@@ -721,6 +749,8 @@ function platform({ platform: plat = {}, sideA = {}, sideB = {}, effects = [] })
   if (sideB.desc) legendItems.push(`<div class="plat-legend-row"><span class="plat-legend-tag">${esc(sideB.label || 'Consumers')}</span><span class="plat-legend-desc">${esc(sideB.desc)}</span></div>`);
 
   const svg = `<svg viewBox="0 0 720 400" role="img" aria-label="Two-sided platform diagram" xmlns="http://www.w3.org/2000/svg" class="platform">
+      <title>Two-sided platform</title>
+      <desc>${esc(plat.label || 'Platform')} sits between ${esc(sideA.label || 'Producers')} and ${esc(sideB.label || 'Consumers')}, mediating cross-side network effects.</desc>
       <defs>
         <filter id="plat-ink" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11"/>
@@ -833,6 +863,8 @@ function loop({ stages = [] }) {
   ).filter(Boolean).join('\n      ');
 
   const svg = `<svg viewBox="0 0 720 500" role="img" aria-label="Circular loop diagram" xmlns="http://www.w3.org/2000/svg" class="loop-diagram">
+      <title>Circular loop diagram</title>
+      <desc>${n}-stage continuous loop: ${stages.map((s, i) => `${i + 1}. ${esc(s.label)}`).join(', ')}.</desc>
       <defs>
         <filter id="loop-ink" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="13"/>

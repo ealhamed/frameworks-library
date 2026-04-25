@@ -19,6 +19,7 @@
     <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <nav aria-label="Primary">
       <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
       <a href="./">ME</a>
       <a href="./m01.html" class="active" aria-current="page">m.01</a>
     </nav>
@@ -27,11 +28,13 @@
 
 <main class="wrap" id="main" tabindex="-1">
 
-  <p class="crumb">
-    <a href="../">Courses</a><span class="sep">/</span>
-    <a href="./">ME</a><span class="sep">/</span>
-    m.01
-  </p>
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">ME</a></li>
+      <li>m.01</li>
+    </ol>
+  </nav>
 
   <header class="module-hero">
     <p class="kicker">m.01 · I · The Market Mechanism · Orientation · Gains from Trade</p>
@@ -71,6 +74,8 @@
       <p class="prose muted">Buyers and sellers with private information. The broker matches them.</p>
       <div class="hero-diagram">
         <svg viewBox="-60 0 760 480" role="img" aria-label="Network diagram" xmlns="http://www.w3.org/2000/svg" class="network">
+      <title>Network diagram</title>
+      <desc>Hub-and-spoke network with broker at the centre connected to: Buyer A, Seller A, Buyer B, Seller B.</desc>
       <g>
         <line x1="320" y1="240" x2="320" y2="80" stroke="var(--text, #1a1714)" stroke-width="1.2" opacity="0.8"/>
         <line x1="320" y1="240" x2="480" y2="240" stroke="var(--text, #1a1714)" stroke-width="1.2" opacity="0.8"/>

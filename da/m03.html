@@ -19,6 +19,7 @@
     <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <nav aria-label="Primary">
       <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
       <a href="./">DA</a>
       <a href="./m03.html" class="active" aria-current="page">m.03</a>
     </nav>
@@ -27,11 +28,13 @@
 
 <main class="wrap" id="main" tabindex="-1">
 
-  <p class="crumb">
-    <a href="../">Courses</a><span class="sep">/</span>
-    <a href="./">DA</a><span class="sep">/</span>
-    m.03
-  </p>
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">DA</a></li>
+      <li>m.03</li>
+    </ol>
+  </nav>
 
   <header class="module-hero">
     <p class="kicker">m.03 · II · Inference &amp; Prediction · Predictive Analytics I</p>
@@ -72,6 +75,8 @@
       <p class="prose muted">The line is what you fit. The residuals are what you missed.</p>
       <div class="hero-diagram">
         <svg viewBox="0 0 640 440" role="img" aria-label="Scatter with fit line" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Scatter plot with fit line</title>
+      <desc>Scatter plot of y (salary) against x (years of experience) with an OLS regression line and sample residuals highlighted, showing a positive trend.</desc>
       <!-- axes -->
       <line x1="90" y1="360" x2="570" y2="360" stroke="var(--text, #1a1714)" stroke-width="1"/>
       <line x1="90" y1="360" x2="90" y2="50" stroke="var(--text, #1a1714)" stroke-width="1"/>

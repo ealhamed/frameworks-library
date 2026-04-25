@@ -46,12 +46,18 @@ function buildHome(courses) {
   writeFile(path.join(ROOT, 'index.html'), render.renderHomePage(courses));
 }
 
+function buildAllFrameworks(courses) {
+  console.log('\n▸ Building all-frameworks index');
+  writeFile(path.join(ROOT, 'all', 'index.html'), render.renderAllFrameworksPage(courses));
+}
+
 function main() {
   const codes = ['lpo', 'fa', 'da', 'me', 'el', 'sm', 'ms'];
   const courses = codes.map(readCourse);
   for (const c of codes) buildCourse(c);
 
   buildHome(courses);
+  buildAllFrameworks(courses);
 
   console.log('\n✓ Build complete.\n');
 }

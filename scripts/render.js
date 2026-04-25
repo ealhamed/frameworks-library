@@ -204,6 +204,133 @@ function renderFrameworkList(frameworks, course, module) {
     </section>`;
 }
 
+// ── All-frameworks index page ────────────────────────────
+
+function renderAllFrameworksPage(courses) {
+  const ORDER = ['lpo', 'fa', 'da', 'me', 'el', 'sm', 'ms'];
+  // Sort courses by the canonical order; unknown codes go last
+  const sorted = [...courses].sort((a, b) => {
+    const ai = ORDER.indexOf(a.code); const bi = ORDER.indexOf(b.code);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  });
+
+  // Tally totals
+  let totalFw = 0; let totalMods = 0; let totalCourses = 0;
+  sorted.forEach(course => {
+    let courseHasFw = false;
+    Object.values(course.modules || {}).forEach(m => {
+      if (!m.stub && m.frameworks && m.frameworks.length) {
+        totalFw += m.frameworks.length;
+        totalMods++;
+        courseHasFw = true;
+      }
+    });
+    if (courseHasFw) totalCourses++;
+  });
+
+  // Build course sections
+  const sections = sorted.map(course => {
+    // Gather modules in arc order that have frameworks
+    const moduleIds = (course.arc && course.arc.blocks)
+      ? course.arc.blocks.flatMap(b => b.modules)
+      : Object.keys(course.modules || {});
+
+    const rows = moduleIds.map(mid => {
+      const m = (course.modules || {})[mid];
+      if (!m || m.stub || !m.frameworks || !m.frameworks.length) return '';
+      return m.frameworks.map(f => {
+        const comps = (f.components || []).map(c => esc(c)).join(' · ');
+        return `
+      <article class="all-fw-row">
+        <p class="all-fw-meta">
+          <a class="all-fw-mod" href="../${esc(course.code)}/m${esc(m.number)}.html">m.${esc(m.number)} · ${esc(m.title)}</a>
+        </p>
+        <p class="all-fw-name">${esc(f.name)}${f.author ? ` <em class="muted">· ${esc(f.author)}</em>` : ''}</p>
+        ${comps ? `<p class="all-fw-comps mono muted">${comps}</p>` : ''}
+        ${f.rule ? `<p class="all-fw-rule serif">${esc(f.rule)}</p>` : ''}
+      </article>`;
+      }).join('');
+    }).join('');
+
+    if (!rows.trim()) return '';
+
+    return `
+  <section class="all-fw-course" style="--course: var(${esc(course.courseAccent)});">
+    <h2 class="display">${esc(course.courseShort)} · ${esc(course.courseName)}</h2>
+    ${rows}
+  </section>`;
+  }).join('');
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All frameworks · Ebrahim Alhamed</title>
+<meta name="description" content="Every framework in the library, on one page.">
+${FONTS_LINK}
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <h1>Every <em class="serif">framework</em>, one page.</h1>
+    <p class="tagline">Every framework in the library, on one page.</p>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="./" class="active" aria-current="page">All frameworks</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <p class="section-tag" style="margin-top: 40px;">${totalFw} frameworks across ${totalMods} modules · ${totalCourses} courses</p>
+
+  <div class="all-fw-search">
+    <label for="fw-q" class="visually-hidden">Search frameworks</label>
+    <input id="fw-q" type="search" placeholder="Search by name, author, or rule..." autocomplete="off">
+  </div>
+
+  ${sections}
+
+  <div class="colophon">
+    <span>All frameworks · ${totalFw} total</span>
+    <span class="dots">···</span>
+    <span><a href="../">← back to the shelf</a></span>
+  </div>
+
+</main>
+
+<script>
+  (function () {
+    var input = document.getElementById('fw-q');
+    if (!input) return;
+    input.addEventListener('input', function () {
+      var q = input.value.toLowerCase();
+      var sections = document.querySelectorAll('.all-fw-course');
+      sections.forEach(function (sec) {
+        var rows = sec.querySelectorAll('.all-fw-row');
+        var visible = 0;
+        rows.forEach(function (row) {
+          var match = !q || row.textContent.toLowerCase().indexOf(q) !== -1;
+          row.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+        sec.style.display = visible === 0 ? 'none' : '';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>`;
+}
+
 // ── Full module page ─────────────────────────────────────
 
 function renderModulePage({ course, module, prevNext }) {
@@ -229,6 +356,7 @@ ${FONTS_LINK}
     <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <nav aria-label="Primary">
       <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
       <a href="./">${esc(course.courseShort || course.courseName)}</a>
       <a href="./m${module.number}.html" class="active" aria-current="page">m.${module.number}</a>
     </nav>
@@ -237,11 +365,13 @@ ${FONTS_LINK}
 
 <main class="wrap" id="main" tabindex="-1">
 
-  <p class="crumb">
-    <a href="../">Courses</a><span class="sep">/</span>
-    <a href="./">${esc(course.courseShort || course.courseName)}</a><span class="sep">/</span>
-    m.${module.number}
-  </p>
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">${esc(course.courseShort || course.courseName)}</a></li>
+      <li>m.${module.number}</li>
+    </ol>
+  </nav>
 
   <header class="module-hero">
     <p class="kicker">m.${module.number} · ${esc(blockLabel)} · ${esc(module.topic)}</p>
@@ -334,6 +464,7 @@ ${FONTS_LINK}
     <p class="tagline">${esc(course.courseCode)} · ${esc(course.school)}${course.professor ? ` · ${esc(course.professor)}` : ''} · ${esc(course.cohort)}</p>
     <nav aria-label="Primary">
       <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
       <a href="./" class="active" aria-current="page">${esc(course.courseShort || course.courseCode)}</a>
     </nav>
   </div>
@@ -341,9 +472,12 @@ ${FONTS_LINK}
 
 <main class="wrap" id="main" tabindex="-1">
 
-  <p class="crumb">
-    <a href="../">Courses</a><span class="sep">/</span>${esc(course.courseName)}
-  </p>
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li>${esc(course.courseName)}</li>
+    </ol>
+  </nav>
 
   ${course.arc.pullquote ? `
   <section>
@@ -416,6 +550,7 @@ ${FONTS_LINK}
     <nav aria-label="Primary">
       <a href="#note">Note</a>
       <a href="./" class="active" aria-current="page">Courses</a>
+      <a href="./all/">All frameworks</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -499,5 +634,6 @@ module.exports = {
   renderModulePage,
   renderCoursePage,
   renderHomePage,
+  renderAllFrameworksPage,
   getPrevNext,
 };

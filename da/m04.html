@@ -19,6 +19,7 @@
     <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <nav aria-label="Primary">
       <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
       <a href="./">DA</a>
       <a href="./m04.html" class="active" aria-current="page">m.04</a>
     </nav>
@@ -27,11 +28,13 @@
 
 <main class="wrap" id="main" tabindex="-1">
 
-  <p class="crumb">
-    <a href="../">Courses</a><span class="sep">/</span>
-    <a href="./">DA</a><span class="sep">/</span>
-    m.04
-  </p>
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">DA</a></li>
+      <li>m.04</li>
+    </ol>
+  </nav>
 
   <header class="module-hero">
     <p class="kicker">m.04 · II · Inference &amp; Prediction · Predictive Analytics II</p>
@@ -72,6 +75,8 @@
       <p class="prose muted">Training error (dashed) always falls. Validation error (solid) falls, then rises. Stop at the bottom of the U.</p>
       <div class="hero-diagram">
         <svg viewBox="0 0 640 440" role="img" aria-label="Training vs validation error U-curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>U-curve</title>
+      <desc>Training vs validation error against model complexity: training error falls continuously while validation error forms a U-shape, with sweet spot marking the optimal point.</desc>
       <line x1="70" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
       <line x1="70" y1="380" x2="70" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
       <path d="M 100 120 C 200 180 320 280 540 370" fill="none" stroke="var(--muted, #4a4640)" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
