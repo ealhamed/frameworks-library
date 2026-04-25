@@ -65,6 +65,28 @@ module.exports = {
           { label: 'Customer equity', desc: 'Sum of CLV across the current base plus discounted CLV of future acquisitions. A bottom-up valuation of the firm itself.' }
         ]
       }
+    },
+    m03: {
+      id: 'm03', number: '03', topic: 'Customer Decision Journey',
+      title: 'From Funnel to Loop',
+      hint: 'Buying is no longer a one-way funnel - customers loop between consideration, evaluation, purchase and advocacy.',
+      kicker: 'Court & Edelman (McKinsey) - awareness, evaluation, purchase, experience, loyalty loop - the circular replacement for AIDA.',
+      coreIdea: {
+        text: 'The classic purchase funnel (AIDA) treats buying as a one-way narrowing from awareness to action. The customer decision journey replaces that line with a loop: customers move between an initial consideration set, an active evaluation where the set can grow as well as shrink, the moment of purchase, and a post-purchase experience that feeds either advocacy and a loyalty short-cut back to repurchase, or churn back to consideration. The job of marketing is to win the moments in that loop, not just push prospects down a funnel.',
+        attr: 'after the consumer decision journey literature (Court, Edelman, McKinsey)'
+      },
+      diagram: {
+        type: 'flow',
+        title: 'The Customer Decision Journey',
+        intro: 'Four stages connected by a loyalty loop - the customer can re-enter, expand the consideration set, or skip stages on repurchase.',
+        steps: [
+          { label: 'Initial consideration', desc: 'A trigger creates a need; the customer starts with a small set of brands already in mind from prior exposure, reputation and recent advertising. Being on this short list is the first battle.' },
+          { label: 'Active evaluation', desc: 'The set is researched and revised - and unlike the funnel, it can grow as new options surface through search, peer reviews, ratings and social proof. Owned, paid and earned content all compete here.' },
+          { label: 'Moment of purchase', desc: 'Final choice is made at the point of sale, often shaped by in-store cues, recommendations and last-minute promotions. Conversion depends on removing friction, not just persuasion.' },
+          { label: 'Post-purchase experience', desc: 'Use, service and support either confirm or break the promise. This is where expectations meet reality and where the next purchase is implicitly underwritten.' },
+          { label: 'Loyalty loop', desc: 'Satisfied customers shortcut straight from experience back to repurchase, bypassing consideration and evaluation. Disappointed ones re-open the set or churn - so retention work is journey work, not just a CRM program.' }
+        ]
+      }
     }
   }
 };
