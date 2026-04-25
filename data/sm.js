@@ -82,6 +82,29 @@ module.exports = {
           { label: 'Differentiation', desc: 'Win by offering something buyers value enough to pay a premium for. Requires distinctive content, brand, service or design — and the willingness to refuse cheap shortcuts that erode it.' }
         ]
       }
+    },
+    m04: {
+      id: 'm04', number: '04', topic: 'Competitive Dynamics',
+      title: 'Commitment & Capacity Games',
+      hint: 'A move is strategic when it is hard to reverse and changes what your rival will rationally do next.',
+      kicker: 'Ghemawat · commitment · capacity pre-emption · move and counter-move.',
+      coreIdea: {
+        text: 'Competition between a few large rivals is a sequence of moves. The moves that matter are commitments — investments in capacity, technology or position that are costly to undo and visible to rivals. A credible commitment shifts the game by changing your rival\'s best response: it can deter entry, pre-empt capacity, or force accommodation. Read every major move by asking what it locks in, what it signals, and how the rival will rationally counter.',
+        attr: 'after Ghemawat (commitment) and Brandenburger & Nalebuff (game-theoretic strategy)'
+      },
+      diagram: {
+        type: 'decision-tree',
+        title: 'Reading a Rival Move',
+        intro: 'Walk any major competitive move — yours or theirs — through these gates before you commit capital.',
+        nodes: [
+          { id: 'reversible', question: 'Is the move reversible?', branches: [{ label: 'Yes — easy to undo', leadsTo: 'tactical' }, { label: 'No — sunk and visible', leadsTo: 'credible' }] },
+          { id: 'tactical', question: 'Tactical move only — price tweak, promotion, talk. It signals intent but does not change the game. Watch, do not react with capital.', branches: [] },
+          { id: 'credible', question: 'Does it change the rival\'s best response?', branches: [{ label: 'Yes — alters their payoff', leadsTo: 'intent' }, { label: 'No — symbolic', leadsTo: 'tactical' }] },
+          { id: 'intent', question: 'What is the commitment doing?', branches: [{ label: 'Pre-empting capacity or position', leadsTo: 'deter' }, { label: 'Raising rival\'s cost to compete', leadsTo: 'deter' }, { label: 'Signalling toughness or softness', leadsTo: 'signal' }] },
+          { id: 'deter', question: 'Will the rival accommodate or fight? Accommodate if your commitment makes their entry or expansion unprofitable; fight if they have deeper pockets, sunk assets of their own, or strategic stakes that make retreat costlier than war.', branches: [] },
+          { id: 'signal', question: 'Is the signal credible? A signal is only credible when backed by something irreversible — capacity built, contracts signed, reputation staked. Cheap talk is ignored by rational rivals.', branches: [] }
+        ]
+      }
     }
   }
 };
