@@ -24,10 +24,10 @@ module.exports = {
       id: 'm01', number: '01', topic: 'Market Analysis',
       title: 'The 5Cs',
       hint: 'Read the market through five lenses before you decide what to sell, to whom, or for how much.',
-      kicker: 'Tavassoli (after Kotler) - Company, Customers, Competitors, Collaborators, Context - the situational scan that opens every marketing plan.',
+      kicker: 'Kotler · Company, Customers, Competitors, Collaborators, Context — the situational scan that opens every marketing plan.',
       coreIdea: {
         text: 'Marketing is the management of cash flow from customers, and it starts with a clear-eyed read of the situation. Before strategy or the 4Ps, you map five forces: what your Company can do, what Customers actually need, who the Competitors are, which Collaborators sit in the value chain, and what Context (political, economic, social, technological, legal, environmental) shapes the field. Skip this scan and the rest of the plan is built on assumptions.',
-        attr: 'after the marketing process tradition (Kotler, Tavassoli)'
+        attr: 'after Kotler and the marketing-process tradition'
       },
       diagram: {
         type: 'flow',
@@ -70,10 +70,10 @@ module.exports = {
       id: 'm03', number: '03', topic: 'Customer Decision Journey',
       title: 'From Funnel to Loop',
       hint: 'Buying is no longer a one-way funnel - customers loop between consideration, evaluation, purchase and advocacy.',
-      kicker: 'Court & Edelman (McKinsey) - awareness, evaluation, purchase, experience, loyalty loop - the circular replacement for AIDA.',
+      kicker: 'Court, Elzinga, Mulder & Vetvik (McKinsey, 2009); extended by Edelman (2010) — awareness, evaluation, purchase, experience, loyalty loop — the circular replacement for AIDA.',
       coreIdea: {
         text: 'The classic purchase funnel (AIDA) treats buying as a one-way narrowing from awareness to action. The customer decision journey replaces that line with a loop: customers move between an initial consideration set, an active evaluation where the set can grow as well as shrink, the moment of purchase, and a post-purchase experience that feeds either advocacy and a loyalty short-cut back to repurchase, or churn back to consideration. The job of marketing is to win the moments in that loop, not just push prospects down a funnel.',
-        attr: 'after the consumer decision journey literature (Court, Edelman, McKinsey)'
+        attr: 'after Court, Elzinga, Mulder & Vetvik (2009); extended by Edelman (2010)'
       },
       diagram: {
         type: 'flow',

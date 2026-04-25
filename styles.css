@@ -192,7 +192,7 @@ hr.accent {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text);
   margin: 0 0 8px;
 }
 
@@ -1252,3 +1252,68 @@ ol.apply li .txt {
 
 /* ── safety: keep new diagrams from sliding into the colophon ── */
 .flow, .decision-tree, .two-axis-wrap, .trajectory { margin-bottom: 24px; }
+
+/* ── Accessibility floor ──────────────────────────────────────────── */
+
+/* Skip-to-content link: visually hidden until focused. */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--text);
+  color: var(--bg, #f5f2ec);
+  padding: 8px 14px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  transition: top 0.15s;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Visible focus outline for keyboard users (was: zero global rule). */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+@media (prefers-color-scheme: dark) {
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline-color: var(--accent);
+  }
+}
+
+/* Body links: underlined by default (was color-only signaling).
+   Excludes nav/crumb/colophon/sub-nav/module-list/course-card/skip-link
+   which are already affordance-clear from layout. */
+.lede a, .prose a, .module-hero a,
+section[id] p a, section[id] li a,
+.attr a, .ta-legend a, .flow-step-desc a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.lede a:hover, .prose a:hover, .module-hero a:hover,
+section[id] p a:hover, section[id] li a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Decision-tree branch label: was 4.4:1 accent on cream (fails AA at 12px).
+   Now muted on cream (~7.6:1) — passes AA comfortably. */
+.decision-tree .dt-edge-label {
+  color: var(--text);
+}
+
+/* Missing token used by .flow / .decision-tree borders.
+   Was falling back to a hard-coded cream that vanished in dark mode. */
+:root { --ink-faint: var(--hair); }

@@ -52,11 +52,11 @@ module.exports = {
         title: 'Five Forces - the structural cut on industry profit',
         intro: 'Walk the five in order. For each, name what makes it strong here, then ask which force is binding. The strongest one sets your ceiling; everything else is noise.',
         steps: [
-          { label: '1. Threat of New Entrants', desc: 'New capacity arriving puts a cap on prices and profits. The threat is high when barriers are low - small scale economies, weak network effects, low switching costs, modest capital, open distribution, no incumbent retaliation expected. High barriers (scale, brand, patents, regulation, locked channels) protect the pool.' },
-          { label: '2. Bargaining Power of Suppliers', desc: 'Suppliers extract value by raising input prices or rationing quality. They are powerful when concentrated, when buyers face switching costs, when their input is differentiated or has no substitute, when they can credibly integrate forward, or when the industry is not a critical share of their volume.' },
-          { label: '3. Bargaining Power of Buyers', desc: 'Buyers extract value by pushing prices down or demanding more for the same money. They are powerful when concentrated or buying in volume, when the product is standard, when switching costs are low, or when they can credibly make the product themselves. Add price sensitivity when the purchase is a large share of their cost.' },
-          { label: '4. Threat of Substitutes', desc: 'A substitute performs the same function from a different industry - and often hides in plain sight. The threat is high when the substitute offers an attractive price-performance trade-off and switching costs are low. Substitutes cap the price ceiling and limit upside even in boom years.' },
-          { label: '5. Rivalry Among Existing Competitors', desc: 'Rivalry shows up as price discounting, ad wars, new launches, and service escalation. It runs hot when competitors are numerous or balanced, growth is slow, fixed costs are high, products are undifferentiated, exit barriers trap capacity, or rivals have divergent goals. Price-based rivalry is the most destructive form.' }
+          { label: 'Threat of New Entrants', desc: 'New capacity arriving puts a cap on prices and profits. The threat is high when barriers are low - small scale economies, weak network effects, low switching costs, modest capital, open distribution, no incumbent retaliation expected. High barriers (scale, brand, patents, regulation, locked channels) protect the pool.' },
+          { label: 'Bargaining Power of Suppliers', desc: 'Suppliers extract value by raising input prices or rationing quality. They are powerful when concentrated, when buyers face switching costs, when their input is differentiated or has no substitute, when they can credibly integrate forward, or when the industry is not a critical share of their volume.' },
+          { label: 'Bargaining Power of Buyers', desc: 'Buyers extract value by pushing prices down or demanding more for the same money. They are powerful when concentrated or buying in volume, when the product is standard, when switching costs are low, or when they can credibly make the product themselves. Add price sensitivity when the purchase is a large share of their cost.' },
+          { label: 'Threat of Substitutes', desc: 'A substitute performs the same function from a different industry - and often hides in plain sight. The threat is high when the substitute offers an attractive price-performance trade-off and switching costs are low. Substitutes cap the price ceiling and limit upside even in boom years.' },
+          { label: 'Rivalry Among Existing Competitors', desc: 'Rivalry shows up as price discounting, ad wars, new launches, and service escalation. It runs hot when competitors are numerous or balanced, growth is slow, fixed costs are high, products are undifferentiated, exit barriers trap capacity, or rivals have divergent goals. Price-based rivalry is the most destructive form.' }
         ]
       }
     },
@@ -90,7 +90,7 @@ module.exports = {
       kicker: 'Ghemawat · commitment · capacity pre-emption · move and counter-move.',
       coreIdea: {
         text: 'Competition between a few large rivals is a sequence of moves. The moves that matter are commitments — investments in capacity, technology or position that are costly to undo and visible to rivals. A credible commitment shifts the game by changing your rival\'s best response: it can deter entry, pre-empt capacity, or force accommodation. Read every major move by asking what it locks in, what it signals, and how the rival will rationally counter.',
-        attr: 'after Ghemawat (commitment) and Brandenburger & Nalebuff (game-theoretic strategy)'
+        attr: 'after Ghemawat'
       },
       diagram: {
         type: 'decision-tree',
@@ -129,7 +129,7 @@ module.exports = {
       kicker: 'Rochet & Tirole / Eisenmann / Parker & Van Alstyne · two-sided markets, cross-side network effects, chicken-and-egg.',
       coreIdea: {
         text: 'A platform creates value by enabling two distinct user groups to transact, and each side becomes more attractive as the other grows. Because the demand on one side depends on participation on the other, the strategic problem is not setting one price but choosing a price structure: subsidise the side that draws the other and charge the side that values it most. Get both sides on board, or neither shows up. Network effects, not features, are the moat.',
-        attr: 'after Rochet & Tirole and Eisenmann'
+        attr: 'after Rochet & Tirole, Eisenmann, and Parker & Van Alstyne'
       },
       diagram: {
         type: 'flow',
@@ -172,7 +172,7 @@ module.exports = {
       kicker: 'Coase and Williamson · transaction costs, asset specificity, and the hold-up problem.',
       coreIdea: {
         text: 'Markets coordinate by price; firms coordinate by authority. Each has a cost. You should make rather than buy when transacting in the open market would be more expensive than running the activity yourself — typically because the activity demands relationship-specific investments, repeats often under uncertainty, and would expose you to hold-up by a thin set of counterparties. When those conditions are absent, the market is faster, cheaper and more disciplined than your own org chart.',
-        attr: 'after Coase (1937) and Williamson'
+        attr: 'after Coase (1937) and Williamson (1985)'
       },
       diagram: {
         type: 'decision-tree',

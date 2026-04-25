@@ -219,19 +219,20 @@ ${FONTS_LINK}
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap">
-    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
-    <nav>
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
       <a href="../">Courses</a>
       <a href="./">${esc(course.courseShort || course.courseName)}</a>
-      <a href="./m${module.number}.html" class="active">m.${module.number}</a>
+      <a href="./m${module.number}.html" class="active" aria-current="page">m.${module.number}</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <p class="crumb">
     <a href="../">Courses</a><span class="sep">/</span>
@@ -321,20 +322,21 @@ ${FONTS_LINK}
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap">
-    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <h1>${esc(course.courseDisplayName || course.courseName)}</h1>
     <p class="tagline">${esc(course.courseCode)} · ${esc(course.school)}${course.professor ? ` · ${esc(course.professor)}` : ''} · ${esc(course.cohort)}</p>
-    <nav>
+    <nav aria-label="Primary">
       <a href="../">Courses</a>
-      <a href="./" class="active">${esc(course.courseShort || course.courseCode)}</a>
+      <a href="./" class="active" aria-current="page">${esc(course.courseShort || course.courseCode)}</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <p class="crumb">
     <a href="../">Courses</a><span class="sep">/</span>${esc(course.courseName)}
@@ -401,21 +403,22 @@ ${FONTS_LINK}
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap">
-    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <h1>A personal library of <em class="serif">frameworks</em>.</h1>
     <p class="tagline">Notes from the LBS EMBA — kept here so I can find them in three years.</p>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#note">Note</a>
-      <a href="./" class="active">Courses</a>
+      <a href="./" class="active" aria-current="page">Courses</a>
       <a href="#about">About</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <section id="note">
     <p class="section-tag" style="margin-top: 40px;">A note, before you click around</p>

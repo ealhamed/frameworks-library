@@ -12,21 +12,22 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="masthead">
   <div class="wrap">
-    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
     <h1>A personal library of <em class="serif">frameworks</em>.</h1>
     <p class="tagline">Notes from the LBS EMBA — kept here so I can find them in three years.</p>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#note">Note</a>
-      <a href="./" class="active">Courses</a>
+      <a href="./" class="active" aria-current="page">Courses</a>
       <a href="#about">About</a>
     </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <section id="note">
     <p class="section-tag" style="margin-top: 40px;">A note, before you click around</p>
