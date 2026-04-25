@@ -466,6 +466,7 @@ article.module > section:last-of-type {
 section[id] { scroll-margin-top: 64px; }
 
 /* Linear flow: horizontal on desktop, vertical on mobile */
+.linear { display: block; width: 100%; max-width: 100%; }
 .linear .linear-h { display: block; width: 100%; }
 .linear .linear-v { display: none; }
 .linear .linear-v .lin-step {

@@ -186,8 +186,8 @@ function curveInvertedU({ xAxis, yAxis, peakLabel }) {
       <line x1="70" y1="380" x2="570" y2="380" stroke="${INK}" stroke-width="1"/>
       <line x1="70" y1="380" x2="70" y2="60" stroke="${INK}" stroke-width="1"/>
       <path d="${path}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round" filter="url(#ink)"/>
-      <circle cx="300" cy="155" r="8" fill="${ACCENT}"/>
-      <text x="300" y="140" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${ACCENT}">${esc(peakLabel || 'peak')}</text>
+      <circle cx="300" cy="230" r="8" fill="${ACCENT}"/>
+      <text x="300" y="215" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${ACCENT}">${esc(peakLabel || 'peak')}</text>
       <text x="320" y="422" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">${esc(xAxis)}</text>
       <text x="30" y="220" text-anchor="middle" font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic" transform="rotate(-90, 30, 220)">${esc(yAxis)}</text>
     </svg>`;
@@ -480,7 +480,7 @@ function network({ center, satellites }) {
     return `<text x="${lx.toFixed(0)}" y="${ly.toFixed(0)}" text-anchor="${anchor}" font-family="${FONT_LABEL}" font-size="19" fill="${INK}">${esc(s.label)}</text>`;
   }).join('\n        ');
 
-  return `<svg viewBox="-60 0 760 480" role="img" aria-label="Network diagram" xmlns="http://www.w3.org/2000/svg" class="network">
+  return `<svg viewBox="-60 -30 760 510" role="img" aria-label="Network diagram" xmlns="http://www.w3.org/2000/svg" class="network">
       <title>Network diagram</title>
       <desc>Hub-and-spoke network with ${esc(center)} at the centre connected to: ${spokes.map(s => esc(s.label)).join(', ')}.</desc>
       <g>
@@ -497,8 +497,10 @@ function network({ center, satellites }) {
 // { steps: ['A','B','C','D'] }
 function linear({ steps }) {
   const n = steps.length;
-  const width = 640, height = 140;
-  const gap = width / n;
+  // Use 160px per step so long labels (e.g. "Prescriptive") have breathing room
+  const cellW = 160, height = 140;
+  const width = cellW * n;
+  const gap = cellW;
   const boxes = steps.map((s, i) => {
     const x = gap * i + gap / 2;
     return `
