@@ -105,6 +105,25 @@ module.exports = {
           { id: 'signal', question: 'Is the signal credible? A signal is only credible when backed by something irreversible — capacity built, contracts signed, reputation staked. Cheap talk is ignored by rational rivals.', branches: [] }
         ]
       }
+    },
+    m05: {
+      id: 'm05', number: '05', topic: 'Strategic Innovation',
+      title: 'Disruption from Below',
+      hint: 'New technologies enter underperforming and cheap; incumbents ignore them until the curve crosses what mainstream customers will accept.',
+      kicker: 'Christensen · sustaining vs disruptive · the trajectory that catches incumbents flat-footed.',
+      coreIdea: {
+        text: 'Innovation is not one curve but two. Incumbents ride the sustaining trajectory — each generation makes an established product better along the dimensions current customers already value, and they overshoot what most buyers actually need. A disruptive trajectory starts elsewhere: a simpler, cheaper, lower-performing offer that serves a fringe or non-consumer the incumbent rationally ignores. The disruptor improves on its own slope, and when its trajectory crosses the threshold of customer-acceptable performance the mainstream switches — quickly, and on a different basis of competition. The incumbent\'s strength on the old curve is precisely what makes the new one invisible until it is too late.',
+        attr: 'after Christensen, with Foster\'s S-curve of technological substitution'
+      },
+      diagram: {
+        type: 'bell-family',
+        title: 'Two trajectories, one threshold',
+        intro: 'Plot performance against time. Both curves rise, but they answer different questions about value. Disruption happens at the crossing point — when the cheaper, formerly inferior trajectory becomes good enough for the mainstream.',
+        xAxis: 'Time',
+        yAxis: 'Performance',
+        centerLabel: 'Customer-acceptable performance',
+        curveLabels: ['Sustaining trajectory — incumbent improving the established product on the dimensions current customers value, eventually overshooting demand', 'Disruptive trajectory — new entrant starting below acceptable performance, improving on its own slope, crossing the threshold from below']
+      }
     }
   }
 };
