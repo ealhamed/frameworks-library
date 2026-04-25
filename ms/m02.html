@@ -44,9 +44,9 @@
     <a href="#diagram">Diagram</a>
     
     
-    
-    
-    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
   </nav>
 
   <article class="module">
@@ -57,6 +57,14 @@
         Customer Lifetime Value reframes a customer as a financial asset rather than a transaction. It is the net present value of all future profits a customer will generate before they churn, minus what it cost to acquire them. With constant margin and retention, the infinite-horizon series collapses to a clean formula: CLV equals margin times the retention multiple r/(1+i-r), minus acquisition cost. Three levers move it: acquire, retain, expand.
         <span class="attr">— synthesised from Gupta, Lemmens, Reichheld and the customer-equity literature</span>
       </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Buying a fruit tree vs. a piece of fruit.</p>
+        <div class="eli5-body">
+          <p>When you buy a single orange you pay the shelf price. When you buy a fruit tree you pay today for every orange it will ever produce — discounted because future oranges are worth less than today's. <strong>CLV is the tree price.</strong></p>
+          <p>The margin multiple tells you how many seasons' worth of fruit you are paying for. At 80% retention and 10% cost of capital, you are buying 2.67 seasons. If the tree dies in season one, you overpaid.</p>
+          <p>The trap companies fall into — MoviePass, Blue Apron — is paying tree-price for trees that turn out to die in season one. The formula shows the bet before you make it.</p>
+        </div>
+      </aside>
     </section>
     
     <section id="diagram">
@@ -120,8 +128,48 @@
     
     
     
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">CLV Formula <em class="muted">· after Gupta &amp; Lemmens</em></div>
+        <div class="fw-comps mono muted">m = annual margin · r = retention rate · i = discount rate · AC = acquisition cost · CLV = m × r/(1+i−r) − AC</div>
+        <div class="fw-rule serif">Three levers: lower AC, raise r, grow m. Retention is usually the highest-return lever.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Customer Equity <em class="muted">· after Gupta &amp; Lehmann</em></div>
+        <div class="fw-comps mono muted">CLV × current base · + discounted CLV of future acquisitions · = bottom-up firm valuation</div>
+        <div class="fw-rule serif">Aggregate CLV is a sanity-check on market cap — if the maths don't square, growth assumptions are doing all the work.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">CRM Three Strategies <em class="muted">· marketing-process tradition</em></div>
+        <div class="fw-comps mono muted">Acquisition — win new customers · Retention — keep existing ones · Expansion — grow margin per customer</div>
+        <div class="fw-rule serif">Not all customers are equally valuable; allocate CRM spend where CLV improvement is largest, not where volume is highest.</div>
+      </div>
+      </div>
+    </section>
     
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Diagnose one customer segment with the formula.</h2>
+      <p class="prose muted" style="max-width: 60ch;">Pick a real segment. Plug in numbers — even rough estimates reveal which lever is broken.</p>
+      <ol class="apply">
+        <li><span class="txt"><strong>Estimate annual margin per customer (m).</strong> Revenue minus variable cost to serve. If you only have revenue, apply a margin rate.</span></li>
+        <li><span class="txt"><strong>Find the retention rate (r).</strong> What share of customers were still active one year later? Even churn data from billing will do.</span></li>
+        <li><span class="txt"><strong>Apply the margin multiple.</strong> r / (1 + i − r). At r=80%, i=10%, the multiple is 2.67 — that is how many years of margin you are buying.</span></li>
+        <li><span class="txt"><strong>Subtract acquisition cost (AC).</strong> Total marketing spend ÷ new customers acquired. Compare CLV/AC to the 3× benchmark.</span></li>
+        <li><span class="txt"><strong>Decide which lever to pull.</strong> Low multiple → fix retention. High AC → fix acquisition efficiency. Low m → fix pricing or cost-to-serve.</span></li>
+      </ol>
+    </section>
     
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · HBR · Gupta &amp; Lehmann · 2003</p>
+      <h3 class="kr-title">Customers as assets.</h3>
+      <p class="kr-prose">Gupta and Lehmann show that customer equity — the sum of CLV across the base — can explain and predict stock market valuations better than traditional accounting metrics. The Blue Apron and Netflix cases in the course illustrate both sides: one where CLV analysis would have flagged the problem before the IPO, one where growth assumptions require billions of future subscribers to justify current price.</p>
+      
+      <p class="kr-kicker">A company is worth its customers, discounted. Build the number before you pitch the story.</p>
+    </section>
   </article>
 
   <script>

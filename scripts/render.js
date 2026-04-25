@@ -82,6 +82,9 @@ function renderDiagram(diagram) {
   else if (t === 'flow')         svg = diagrams.flow(diagram);
   else if (t === 'two-axis')     svg = diagrams.twoAxis(diagram);
   else if (t === 'decision-tree') svg = diagrams.decisionTree(diagram);
+  else if (t === 'five-forces')  svg = diagrams.fiveForces(diagram);
+  else if (t === 'platform')     svg = diagrams.platform(diagram);
+  else if (t === 'loop')         svg = diagrams.loop(diagram);
   else svg = `<p class="muted">[diagram: ${t}]</p>`;
 
   return `

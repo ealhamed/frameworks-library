@@ -44,9 +44,9 @@
     <a href="#diagram">Diagram</a>
     
     
-    
-    
-    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
   </nav>
 
   <article class="module">
@@ -57,57 +57,120 @@
         Profitability is not luck or management nerve - it is the residue left after five forces have taken their cut. Customers and suppliers bargain value away; entrants and substitutes cap how much can be charged; rivals compete the rest down. The strongest force - not the average - sets the ceiling. Read structure, not headlines: weather and the cycle move quarterly results, but the five forces decide returns over the long run.
         <span class="attr">— after Porter</span>
       </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · The tollbooth on the road to profit.</p>
+        <div class="eli5-body">
+          <p>Picture the road to profit as a highway with five tollbooths. Suppliers take a cut at the entrance. Buyers take a cut at the exit. New entrants threaten to build a parallel road. Substitutes offer a shortcut that bypasses your road entirely. Rivals compete to sell the same toll stickers cheaper.</p>
+          <p>The amount you keep is what is left after all five booths have taken their share. If the booths are powerful, almost nothing arrives at the end — no matter how well you drive.</p>
+          <p>The Cola Wars illustrate it cleanly. Coke and Pepsi earned roughly 30% operating margins as concentrate producers; their bottlers earned about 9%. Same industry, same product — but different structural positions at different tollbooths.</p>
+        </div>
+      </aside>
     </section>
     
     <section id="diagram">
       <p class="section-tag">The hero diagram</p>
-      <h2 class="display">Five Forces - the structural cut on industry profit</h2>
+      <h2 class="display">The Five Forces shaping industry profit</h2>
       <p class="prose muted">Walk the five in order. For each, name what makes it strong here, then ask which force is binding. The strongest one sets your ceiling; everything else is noise.</p>
       <div class="hero-diagram">
-        <ol class="flow">
-        <li class="flow-step">
-          <div class="flow-step-num">1</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Threat of New Entrants</div>
-            <div class="flow-step-desc">New capacity arriving puts a cap on prices and profits. The threat is high when barriers are low - small scale economies, weak network effects, low switching costs, modest capital, open distribution, no incumbent retaliation expected. High barriers (scale, brand, patents, regulation, locked channels) protect the pool.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">2</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Bargaining Power of Suppliers</div>
-            <div class="flow-step-desc">Suppliers extract value by raising input prices or rationing quality. They are powerful when concentrated, when buyers face switching costs, when their input is differentiated or has no substitute, when they can credibly integrate forward, or when the industry is not a critical share of their volume.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">3</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Bargaining Power of Buyers</div>
-            <div class="flow-step-desc">Buyers extract value by pushing prices down or demanding more for the same money. They are powerful when concentrated or buying in volume, when the product is standard, when switching costs are low, or when they can credibly make the product themselves. Add price sensitivity when the purchase is a large share of their cost.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">4</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Threat of Substitutes</div>
-            <div class="flow-step-desc">A substitute performs the same function from a different industry - and often hides in plain sight. The threat is high when the substitute offers an attractive price-performance trade-off and switching costs are low. Substitutes cap the price ceiling and limit upside even in boom years.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">5</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Rivalry Among Existing Competitors</div>
-            <div class="flow-step-desc">Rivalry shows up as price discounting, ad wars, new launches, and service escalation. It runs hot when competitors are numerous or balanced, growth is slow, fixed costs are high, products are undifferentiated, exit barriers trap capacity, or rivals have divergent goals. Price-based rivalry is the most destructive form.</div>
-          </div>
-        </li>
-      </ol>
+        <div class="five-forces-wrap">
+      <svg viewBox="0 0 720 560" role="img" aria-label="Porter's Five Forces diagram" xmlns="http://www.w3.org/2000/svg" class="five-forces">
+      <defs>
+        <filter id="ff-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.2"/>
+        </filter>
+        <marker id="ff-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--text, #1a1714)" opacity="0.75"/>
+        </marker>
+      </defs>
+      <!-- arrows (drawn first, under boxes) -->
+      <g>
+        <line x1="360" y1="120" x2="360" y2="218" marker-end="url(#ff-arrow)" stroke="var(--text, #1a1714)" stroke-width="1.6" opacity="0.75"/>
+        <line x1="510" y1="260" x2="452" y2="260" marker-end="url(#ff-arrow)" stroke="var(--text, #1a1714)" stroke-width="1.6" opacity="0.75"/>
+        <line x1="360" y1="400" x2="360" y2="302" marker-end="url(#ff-arrow)" stroke="var(--text, #1a1714)" stroke-width="1.6" opacity="0.75"/>
+        <line x1="210" y1="260" x2="268" y2="260" marker-end="url(#ff-arrow)" stroke="var(--text, #1a1714)" stroke-width="1.6" opacity="0.75"/>
+      </g>
+      <!-- outer force boxes -->
+      <g>
+        <rect x="270" y="40" width="180" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.07" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#ff-ink)"/>
+        <text x="360" y="84" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Threat of New Entrants</text>
+        <rect x="510" y="220" width="180" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.07" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#ff-ink)"/>
+        <text x="600" y="264" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Bargaining Power of Buyers</text>
+        <rect x="270" y="400" width="180" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.07" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#ff-ink)"/>
+        <text x="360" y="444" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Threat of Substitutes</text>
+        <rect x="30" y="220" width="180" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.07" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#ff-ink)"/>
+        <text x="120" y="264" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Bargaining Power of Suppliers</text>
+      </g>
+      <!-- center rivalry box -->
+      <rect x="270" y="220" width="180" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.18" stroke="var(--accent, #b05a3a)" stroke-width="2" filter="url(#ff-ink)"/>
+      <text x="360" y="254" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--text, #1a1714)">Industry Rivalry</text>
+      <text x="360" y="274" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--muted, #4a4640)" font-style="italic">rivalry</text>
+    </svg>
+      <div class="ff-legend">
+        <div class="ff-legend-row ff-legend-center">
+        <span class="ff-legend-tag">Industry Rivalry</span>
+        <span class="ff-legend-desc">Price discounting, ad wars, and capacity races. Most destructive when firms are balanced, growth is slow, and products are undifferentiated.</span>
+      </div>
+        <div class="ff-legend-row">
+        <span class="ff-legend-tag">Threat of New Entrants</span>
+        <span class="ff-legend-desc">New capacity arriving caps prices and profits. High when barriers are low: small scale economies, weak network effects, low switching costs, modest capital, open distribution, no expected retaliation.</span>
+      </div>
+      <div class="ff-legend-row">
+        <span class="ff-legend-tag">Bargaining Power of Buyers</span>
+        <span class="ff-legend-desc">Buyers push prices down or demand more for the same money. Powerful when concentrated, buying in volume, facing low switching costs, or able to credibly make the product themselves.</span>
+      </div>
+      <div class="ff-legend-row">
+        <span class="ff-legend-tag">Threat of Substitutes</span>
+        <span class="ff-legend-desc">A substitute performs the same function from a different industry. The threat is high when it offers an attractive price-performance trade-off and switching costs are low, capping the price ceiling.</span>
+      </div>
+      <div class="ff-legend-row">
+        <span class="ff-legend-tag">Bargaining Power of Suppliers</span>
+        <span class="ff-legend-desc">Suppliers extract value by raising input prices or rationing quality. Powerful when concentrated, when buyers face switching costs, when their input is differentiated, or when they can credibly integrate forward.</span>
+      </div>
+      </div>
+    </div>
       </div>
     </section>
     
     
     
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Porter's Five Forces <em class="muted">· Porter · HBR 1979, updated 2008</em></div>
+        <div class="fw-comps mono muted">Threat of new entrants · Bargaining power of buyers · Bargaining power of suppliers · Threat of substitutes · Rivalry among competitors</div>
+        <div class="fw-rule serif">The strongest force sets the ceiling. Analyse all five; act on the binding one.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Industry vs Firm Effects <em class="muted">· after Porter</em></div>
+        <div class="fw-comps mono muted">Industry structure → average profitability · Firm position → deviation from average</div>
+        <div class="fw-rule serif">First choose an attractive industry; then choose a defensible position within it.</div>
+      </div>
+      </div>
+    </section>
     
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Before any major strategic decision.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Define the industry boundary carefully.</strong> Too broad and the analysis is meaningless; too narrow and you miss substitutes.</span></li>
+        <li><span class="txt"><strong>Score each force as high, moderate, or low.</strong> Name one concrete fact that drives your rating for each.</span></li>
+        <li><span class="txt"><strong>Identify the binding force.</strong> Which single force most constrains what any firm in this industry can earn?</span></li>
+        <li><span class="txt"><strong>Separate structure from the cycle.</strong> Is this a five-forces issue (structural) or a macro issue (cyclical)? The response is different.</span></li>
+        <li><span class="txt"><strong>Look for an underappreciated substitute.</strong> Substitutes hide in adjacent industries. Name the one most likely to become binding in five years.</span></li>
+      </ol>
+    </section>
     
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Porter · HBR 1979 (updated 2008)</p>
+      <h3 class="kr-title">The Five Competitive Forces That Shape Strategy.</h3>
+      <p class="kr-prose">Porter's original 1979 paper — updated in 2008 to address internet-era distortions — argues that industry structure, not management skill or economic luck, determines the long-run profitability of any business. The Cola Wars case illustrates the framework in practice: concentrate producers earn four times the operating margin of bottlers because their structural position is four times stronger.</p>
+      
+      <p class="kr-kicker">Industry structure is not destiny — but it is the starting point for every strategic choice.</p>
+    </section>
   </article>
 
   <script>

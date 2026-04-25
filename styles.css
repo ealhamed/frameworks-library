@@ -1317,3 +1317,119 @@ section[id] p a:hover, section[id] li a:hover {
 /* Missing token used by .flow / .decision-tree borders.
    Was falling back to a hard-coded cream that vanished in dark mode. */
 :root { --ink-faint: var(--hair); }
+
+/* ── five-forces ─────────────────────────────────────────── */
+.five-forces-wrap { display: block; margin: 0 auto; max-width: 760px; }
+.five-forces { width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto; }
+.ff-legend {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+.ff-legend-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--hair);
+}
+.ff-legend-center .ff-legend-tag { color: var(--accent); }
+.ff-legend-tag {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--text);
+}
+.ff-legend-desc {
+  font-family: Inter, sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .ff-legend-row { grid-template-columns: 1fr; gap: 4px; }
+}
+/* reduce-motion: keep static */
+@media (prefers-reduced-motion: reduce) {
+  .five-forces line, .five-forces path, .five-forces rect { transition: none !important; animation: none !important; }
+}
+
+/* ── platform ─────────────────────────────────────────────── */
+.platform-wrap { display: block; margin: 0 auto; max-width: 760px; }
+.platform { width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto; }
+.plat-legend {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+.plat-legend-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--hair);
+}
+.plat-legend-tag {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--text);
+}
+.plat-legend-desc {
+  font-family: Inter, sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .plat-legend-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* ── loop ─────────────────────────────────────────────────── */
+.loop-wrap { display: block; margin: 0 auto; max-width: 760px; }
+.loop-diagram { width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto; }
+.loop-legend {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+}
+.loop-legend-row {
+  display: grid;
+  grid-template-columns: 28px 160px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-top: 1px solid var(--hair);
+}
+.loop-legend-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--accent);
+}
+.loop-legend-label {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--text);
+}
+.loop-legend-desc {
+  font-family: Inter, sans-serif;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .loop-legend-row { grid-template-columns: 28px 1fr; }
+  .loop-legend-desc { grid-column: 1 / -1; margin-top: 2px; }
+}
+
+/* safety: keep new wrappers from sliding into colophon */
+.five-forces-wrap, .platform-wrap, .loop-wrap { margin-bottom: 24px; }

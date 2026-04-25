@@ -44,9 +44,9 @@
     <a href="#diagram">Diagram</a>
     
     
-    
-    
-    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
   </nav>
 
   <article class="module">
@@ -57,57 +57,137 @@
         The classic purchase funnel (AIDA) treats buying as a one-way narrowing from awareness to action. The customer decision journey replaces that line with a loop: customers move between an initial consideration set, an active evaluation where the set can grow as well as shrink, the moment of purchase, and a post-purchase experience that feeds either advocacy and a loyalty short-cut back to repurchase, or churn back to consideration. The job of marketing is to win the moments in that loop, not just push prospects down a funnel.
         <span class="attr">— after Court, Elzinga, Mulder &amp; Vetvik (2009); extended by Edelman (2010)</span>
       </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · A hotel you return to vs. one you research every time.</p>
+        <div class="eli5-body">
+          <p>Imagine booking a hotel for a work trip. The first time, you search for 20 minutes, read reviews on TripAdvisor, compare three options, and eventually click. That is the full loop — Consider, Evaluate, Buy, Experience.</p>
+          <p>If the stay is great, the next trip is different. You open your phone and book the same hotel in two taps. You skipped the 20-minute evaluation entirely. <strong>That skip is the loyalty loop</strong> — and it is worth more to the hotel than any advertising.</p>
+          <p>The funnel model assumes every purchase starts from scratch. The loop model says: <em class="serif">the last experience is the first step of the next journey</em>. That is why retention is marketing work, not just CRM work.</p>
+        </div>
+      </aside>
     </section>
     
     <section id="diagram">
       <p class="section-tag">The hero diagram</p>
-      <h2 class="display">The Customer Decision Journey</h2>
-      <p class="prose muted">Four stages connected by a loyalty loop - the customer can re-enter, expand the consideration set, or skip stages on repurchase.</p>
+      <h2 class="display">The customer decision journey, as a loop</h2>
+      <p class="prose muted">Five stages on a closed circle. The loyalty bond at stage five shortcuts back to stage one, bypassing the open market — that is the prize the funnel model could not see.</p>
       <div class="hero-diagram">
-        <ol class="flow">
-        <li class="flow-step">
-          <div class="flow-step-num">1</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Initial consideration</div>
-            <div class="flow-step-desc">A trigger creates a need; the customer starts with a small set of brands already in mind from prior exposure, reputation and recent advertising. Being on this short list is the first battle.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">2</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Active evaluation</div>
-            <div class="flow-step-desc">The set is researched and revised - and unlike the funnel, it can grow as new options surface through search, peer reviews, ratings and social proof. Owned, paid and earned content all compete here.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">3</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Moment of purchase</div>
-            <div class="flow-step-desc">Final choice is made at the point of sale, often shaped by in-store cues, recommendations and last-minute promotions. Conversion depends on removing friction, not just persuasion.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">4</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Post-purchase experience</div>
-            <div class="flow-step-desc">Use, service and support either confirm or break the promise. This is where expectations meet reality and where the next purchase is implicitly underwritten.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">5</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Loyalty loop</div>
-            <div class="flow-step-desc">Satisfied customers shortcut straight from experience back to repurchase, bypassing consideration and evaluation. Disappointed ones re-open the set or churn - so retention work is journey work, not just a CRM program.</div>
-          </div>
-        </li>
-      </ol>
+        <div class="loop-wrap">
+      <svg viewBox="0 0 720 500" role="img" aria-label="Circular loop diagram" xmlns="http://www.w3.org/2000/svg" class="loop-diagram">
+      <defs>
+        <filter id="loop-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="13"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.1"/>
+        </filter>
+        <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--text, #1a1714)" opacity="0.7"/>
+        </marker>
+      </defs>
+      <!-- guide circle (faint) -->
+      <circle cx="360" cy="250" r="150" fill="none" stroke="var(--text, #1a1714)" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.18"/>
+      <!-- arrows between stages -->
+      <g>
+        <path d="M 381.0 115.3 Q 447.8 129.2 481.6 188.4" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>
+        <path d="M 494.6 228.4 Q 502.0 296.2 456.2 346.6" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>
+        <path d="M 422.2 371.4 Q 360.0 399.4 297.8 371.4" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>
+        <path d="M 263.8 346.6 Q 218.0 296.2 225.4 228.4" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>
+        <path d="M 238.4 188.4 Q 272.2 129.2 339.0 115.3" fill="none" stroke="var(--text, #1a1714)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>
+      </g>
+      <!-- stage dots + numbers -->
+      <g>
+        <circle cx="360.0" cy="100.0" r="24" fill="var(--accent, #b05a3a)" stroke="var(--accent, #b05a3a)" stroke-width="2"/>
+        <text x="360.0" y="105.0" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="11" fill="var(--bg-elevated, #fffdf8)">1</text>
+        <circle cx="502.7" cy="203.6" r="24" fill="var(--bg-elevated, #fffdf8)" stroke="var(--text, #1a1714)" stroke-width="1.4"/>
+        <text x="502.7" y="208.6" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="11" fill="var(--text, #1a1714)">2</text>
+        <circle cx="448.2" cy="371.4" r="24" fill="var(--bg-elevated, #fffdf8)" stroke="var(--text, #1a1714)" stroke-width="1.4"/>
+        <text x="448.2" y="376.4" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="11" fill="var(--text, #1a1714)">3</text>
+        <circle cx="271.8" cy="371.4" r="24" fill="var(--bg-elevated, #fffdf8)" stroke="var(--text, #1a1714)" stroke-width="1.4"/>
+        <text x="271.8" y="376.4" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="11" fill="var(--text, #1a1714)">4</text>
+        <circle cx="217.3" cy="203.6" r="24" fill="var(--bg-elevated, #fffdf8)" stroke="var(--text, #1a1714)" stroke-width="1.4"/>
+        <text x="217.3" y="208.6" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="11" fill="var(--text, #1a1714)">5</text>
+      </g>
+      <!-- stage labels -->
+      <g>
+        <text x="360.0" y="61.0" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Consider</text>
+        <text x="544.5" y="195.1" text-anchor="start" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Evaluate</text>
+        <text x="474.0" y="411.9" text-anchor="start" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Buy</text>
+        <text x="246.0" y="411.9" text-anchor="end" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Experience</text>
+        <text x="175.5" y="195.1" text-anchor="end" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="17" fill="var(--text, #1a1714)">Bond</text>
+      </g>
+    </svg>
+      <div class="loop-legend"><div class="loop-legend-row">
+          <span class="loop-legend-num">1</span>
+          <span class="loop-legend-label">Consider</span>
+          <span class="loop-legend-desc">A trigger creates a need; the customer starts with a small set of brands already in mind from prior exposure, reputation and recent advertising. Being on this short list is the first battle.</span>
+        </div>
+      <div class="loop-legend-row">
+          <span class="loop-legend-num">2</span>
+          <span class="loop-legend-label">Evaluate</span>
+          <span class="loop-legend-desc">The consideration set is researched and revised — and unlike the funnel, it can grow as new options surface through search, peer reviews, ratings and social proof.</span>
+        </div>
+      <div class="loop-legend-row">
+          <span class="loop-legend-num">3</span>
+          <span class="loop-legend-label">Buy</span>
+          <span class="loop-legend-desc">Final choice is made at the point of sale, shaped by in-store cues, recommendations and last-minute promotions. Conversion depends on removing friction, not just persuasion.</span>
+        </div>
+      <div class="loop-legend-row">
+          <span class="loop-legend-num">4</span>
+          <span class="loop-legend-label">Experience</span>
+          <span class="loop-legend-desc">Use, service and support either confirm or break the promise. This is where expectations meet reality and where the next purchase is implicitly underwritten.</span>
+        </div>
+      <div class="loop-legend-row">
+          <span class="loop-legend-num">5</span>
+          <span class="loop-legend-label">Bond</span>
+          <span class="loop-legend-desc">Satisfied customers shortcut straight from experience back to repurchase, bypassing consideration and evaluation entirely. Advocacy at this stage triggers the Consider stage for others.</span>
+        </div></div>
+    </div>
       </div>
     </section>
     
     
     
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Customer Decision Journey <em class="muted">· Court, Elzinga, Mulder &amp; Vetvik · McKinsey 2009</em></div>
+        <div class="fw-comps mono muted">Consider · Evaluate · Buy · Experience · Bond / Loyalty loop</div>
+        <div class="fw-rule serif">Map where your customers are losing faith in the loop — that is where to invest, not at top-of-funnel.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">AIDA Funnel (the model being replaced) <em class="muted">· Lewis · 1898</em></div>
+        <div class="fw-comps mono muted">Awareness · Interest · Desire · Action</div>
+        <div class="fw-rule serif">AIDA is useful for new-to-category launches; the loop model is more useful once a customer base exists and loyalty is the growth lever.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Loyalty Loop <em class="muted">· Edelman · HBR 2010</em></div>
+        <div class="fw-comps mono muted">Post-purchase bond · Advocacy as trigger for others' Consider stage · Repurchase shortcut bypasses open evaluation</div>
+        <div class="fw-rule serif">A strong loyalty loop compresses customer equity — same CLV at lower re-acquisition cost.</div>
+      </div>
+      </div>
+    </section>
     
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Audit one customer journey you own.</h2>
+      <p class="prose muted" style="max-width: 60ch;">Pick a product or segment. Walk the five stages as the customer walks them.</p>
+      <ol class="apply">
+        <li><span class="txt"><strong>Identify the trigger that opens the Consider stage.</strong> What event or need puts the customer into the market? Are you in the initial consideration set?</span></li>
+        <li><span class="txt"><strong>Map the Evaluate stage for your category.</strong> Where do customers search? What content shapes the set? Does your brand appear — or grow or shrink?</span></li>
+        <li><span class="txt"><strong>Audit friction at the Buy stage.</strong> How many steps from intent to purchase? Where do customers drop? Ease of purchase often matters more than persuasion.</span></li>
+        <li><span class="txt"><strong>Measure the Experience gap.</strong> What did you promise in Evaluate? What did customers actually get? The gap here is churn.</span></li>
+        <li><span class="txt"><strong>Design the Bond moment deliberately.</strong> What makes a customer skip re-evaluation on next purchase? Onboarding, loyalty mechanic, or just a product that delivers.</span></li>
+      </ol>
+    </section>
     
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Court, Elzinga, Mulder &amp; Vetvik · McKinsey Quarterly 2009</p>
+      <h3 class="kr-title">The consumer decision journey.</h3>
+      <p class="kr-prose">Based on research across three continents and five industries, Court et al. showed that the classic funnel misrepresents how people actually buy: consideration sets grow during evaluation rather than narrowing, and post-purchase experience shapes future consideration more powerfully than advertising. The loop model redirected marketing investment from reach and awareness toward loyalty and experience.</p>
+      
+      <p class="kr-kicker">Win the loop, not the funnel.</p>
+    </section>
   </article>
 
   <script>

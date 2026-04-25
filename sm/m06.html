@@ -44,9 +44,9 @@
     <a href="#diagram">Diagram</a>
     
     
-    
-    
-    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
   </nav>
 
   <article class="module">
@@ -57,50 +57,102 @@
         A platform creates value by enabling two distinct user groups to transact, and each side becomes more attractive as the other grows. Because the demand on one side depends on participation on the other, the strategic problem is not setting one price but choosing a price structure: subsidise the side that draws the other and charge the side that values it most. Get both sides on board, or neither shows up. Network effects, not features, are the moat.
         <span class="attr">— after Rochet &amp; Tirole, Eisenmann, and Parker &amp; Van Alstyne</span>
       </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · The market square.</p>
+        <div class="eli5-body">
+          <p>Before supermarkets, a town had a market square. Farmers brought produce; buyers came to shop. The more farmers, the more buyers came. The more buyers, the more farmers bothered to set up stalls. The square did not sell anything — it provided the place where the loop could run.</p>
+          <p>A platform is a digital market square. The owner sets the rules (who can sell, how disputes are resolved, what the stall fee is) and takes a cut of each transaction. The value is not in the owner's goods — it is in having enough farmers <em class="serif">and</em> buyers that both sides choose your square over the one across town.</p>
+          <p>The hard part is always getting the first ten farmers before any buyers arrive. That is the chicken-and-egg problem. The solution is usually: give the square away to farmers until buyers show up, then charge buyers — or vice versa.</p>
+        </div>
+      </aside>
     </section>
     
     <section id="diagram">
       <p class="section-tag">The hero diagram</p>
-      <h2 class="display">Cross-side dynamics on a two-sided platform</h2>
+      <h2 class="display">How a two-sided platform creates value</h2>
       <p class="prose muted">The platform sits between two interdependent user groups. Each side joins because the other is there — and the loop, once ignited, runs on its own.</p>
       <div class="hero-diagram">
-        <ol class="flow">
-        <li class="flow-step">
-          <div class="flow-step-num">1</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Producer side</div>
-            <div class="flow-step-desc">Sellers, developers, hosts, or content makers. Join when buyer demand is large enough to justify the effort. Pricing lever: take rate, listing fees, or subsidy in early stages.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">2</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Platform</div>
-            <div class="flow-step-desc">Sets rules for search and matching, prices and payment, and trust. Solves the chicken-and-egg by subsidising one side, seeding supply, or piggybacking on an existing user base. Captures value via the less price-sensitive side.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">3</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Consumer side</div>
-            <div class="flow-step-desc">Buyers, players, riders, readers. Join when producer variety and quality cross a threshold. Their participation is what producers came for — closing the loop.</div>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-step-num">4</div>
-          <div class="flow-step-body">
-            <div class="flow-step-label">Cross-side feedback</div>
-            <div class="flow-step-desc">More producers raise consumer value, which attracts more consumers, which attracts more producers. Strong feedback plus single-homing tilts the market toward winner-take-all; weak feedback or easy multi-homing supports several platforms.</div>
-          </div>
-        </li>
-      </ol>
+        <div class="platform-wrap">
+      <svg viewBox="0 0 720 400" role="img" aria-label="Two-sided platform diagram" xmlns="http://www.w3.org/2000/svg" class="platform">
+      <defs>
+        <filter id="plat-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.2"/>
+        </filter>
+        <marker id="plat-arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--accent, #b05a3a)" opacity="0.85"/>
+        </marker>
+        <marker id="plat-arrow-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="var(--accent, #b05a3a)" opacity="0.85"/>
+        </marker>
+      </defs>
+      <!-- curved arrows -->
+      <path d="M 220 190 C 230 90, 490 90, 500 190" fill="none" stroke="var(--accent, #b05a3a)" stroke-width="1.6" stroke-linecap="round" opacity="0.8" marker-end="url(#plat-arrow-r)" filter="url(#plat-ink)"/>
+      <path d="M 500 210 C 490 310, 230 310, 220 210" fill="none" stroke="var(--accent, #b05a3a)" stroke-width="1.6" stroke-linecap="round" opacity="0.8" marker-end="url(#plat-arrow-l)" filter="url(#plat-ink)"/>
+      <!-- arrow labels -->
+      <text x="360" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">more producers → more variety, lower prices</text>
+      <text x="360" y="334" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">more consumers → bigger market for sellers</text>
+      <!-- sideA box -->
+      <rect x="60" y="160" width="160" height="80" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#plat-ink)"/>
+      <text x="140" y="204" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--text, #1a1714)">Producers</text>
+      <!-- platform box (accent-tinted) -->
+      <rect x="280" y="160" width="160" height="80" fill="var(--accent, #b05a3a)" fill-opacity="0.15" stroke="var(--accent, #b05a3a)" stroke-width="2" filter="url(#plat-ink)"/>
+      <text x="360" y="204" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--text, #1a1714)">Platform</text>
+      <!-- sideB box -->
+      <rect x="500" y="160" width="160" height="80" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="1.4" filter="url(#plat-ink)"/>
+      <text x="580" y="204" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--text, #1a1714)">Consumers</text>
+    </svg>
+      <div class="plat-legend"><div class="plat-legend-row"><span class="plat-legend-tag">Platform</span><span class="plat-legend-desc">Rules, search, matching, payment, and trust. Sets the price structure: subsidise the side that draws the other, charge the side that values access most.</span></div>
+        <div class="plat-legend-row"><span class="plat-legend-tag">Producers</span><span class="plat-legend-desc">Sellers, developers, hosts, or content makers. Join when buyer demand is large enough to justify the effort. Priced via take rate, listing fees, or early subsidy.</span></div>
+        <div class="plat-legend-row"><span class="plat-legend-tag">Consumers</span><span class="plat-legend-desc">Buyers, players, riders, readers. Join when producer variety and quality cross a threshold. Their participation is what producers came for, closing the loop.</span></div></div>
+    </div>
       </div>
     </section>
     
     
     
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Two-Sided Market Theory <em class="muted">· Rochet &amp; Tirole · 2003 / Eisenmann · 2006</em></div>
+        <div class="fw-comps mono muted">Two distinct user groups · Cross-side network effects · Price structure (not a single price) · Subsidise one side, charge the other</div>
+        <div class="fw-rule serif">The strategic question is not what to charge but which side to charge — and that depends on which side draws the other.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Chicken-and-Egg Bootstrap <em class="muted">· after Parker, Van Alstyne &amp; Choudary</em></div>
+        <div class="fw-comps mono muted">Seed supply before demand · Subsidise the harder side first · Piggyback on existing user base · Single-side standalone value</div>
+        <div class="fw-rule serif">Solve the chicken-and-egg or neither side shows up. The first side you onboard must have standalone value until the second arrives.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Winner-Take-All vs Multi-Platform <em class="muted">· after Farronato, Toffel &amp; Zhu · HBS 621-016</em></div>
+        <div class="fw-comps mono muted">Single-homing (users pick one platform) · Multi-homing (users join several) · Network effect strength and reach</div>
+        <div class="fw-rule serif">Strong cross-side effects plus single-homing tilts toward winner-take-all; weak effects or easy multi-homing supports coexistence.</div>
+      </div>
+      </div>
+    </section>
     
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">When designing or stress-testing a platform.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Name the two sides and the cross-side dependency.</strong> What does side A need from side B, and vice versa? If the dependency is not mutual, it may not be a platform.</span></li>
+        <li><span class="txt"><strong>Decide which side to subsidise first.</strong> Which side draws the other? That side is typically subsidised, sometimes to zero or below.</span></li>
+        <li><span class="txt"><strong>Solve the chicken-and-egg explicitly.</strong> Name the tactic: seed supply, piggyback, or standalone value. Vague plans do not bootstrap.</span></li>
+        <li><span class="txt"><strong>Test for single vs multi-homing.</strong> Will users pick one platform or many? Single-homing on both sides means winner-take-all dynamics.</span></li>
+        <li><span class="txt"><strong>Identify the envelopment threat.</strong> Which larger platform could absorb your use case as a feature? That is often the most dangerous substitute.</span></li>
+      </ol>
+    </section>
     
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Farronato, Toffel &amp; Zhu · HBS Note 621-016</p>
+      <h3 class="kr-title">Digital Platforms: An Introduction.</h3>
+      <p class="kr-prose">Farronato, Toffel and Zhu define the platform construct precisely: two or more interdependent user groups, cross-side network effects, and the three design problems — search and matching, price-setting, and trust. The note distinguishes platforms from supply-chain intermediaries and maps how fee structures (subscription vs commission) interact with disintermediation risk.</p>
+      
+      <p class="kr-kicker">A platform without network effects is just a middleman. Network effects are the moat.</p>
+    </section>
   </article>
 
   <script>

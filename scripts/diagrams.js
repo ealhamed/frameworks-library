@@ -603,4 +603,265 @@ function decisionTree({ nodes = [] }) {
       </div>`;
 }
 
-module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveU, curveS, bellFamily, supplyDemand, monopoly, scatter, network, linear, equation, custom, flow, twoAxis, decisionTree };
+// ── five-forces (Porter's Five Forces — pentagonal layout) ──
+// center: {label, desc}, forces: [{position:'top'|'right'|'bottom'|'left', label, desc}]
+function fiveForces({ center = {}, forces = [] }) {
+  // Canvas: viewBox "0 0 720 560"
+  // Central box at (360, 260), w=180 h=80
+  // Outer boxes: top(360,80), right(600,260), bottom(360,440), left(120,260)
+  const cx = 360, cy = 260;
+  const cW = 180, cH = 80;
+
+  const posMap = {
+    top:    { x: cx,       y: 80,  bx: cx - 90,  by: 40,   aw: 0, ah: -20, arrowToY: cy - cH/2 - 2 },
+    right:  { x: 600,      y: cy,  bx: 510,       by: cy - 40, aw: -20, ah: 0, arrowToX: cx + cW/2 + 2 },
+    bottom: { x: cx,       y: 440, bx: cx - 90,  by: 400,  aw: 0, ah: 20,  arrowToY: cy + cH/2 + 2 },
+    left:   { x: 120,      y: cy,  bx: 30,        by: cy - 40, aw: 20, ah: 0,  arrowToX: cx - cW/2 - 2 },
+  };
+
+  // Arrow geometry: from outer box edge toward center box edge
+  const arrowDefs = forces.map((f, _i) => {
+    const pm = posMap[f.position];
+    if (!pm) return '';
+    let x1, y1, x2, y2;
+    if (f.position === 'top') {
+      x1 = cx; y1 = pm.by + 80; x2 = cx; y2 = pm.arrowToY;
+    } else if (f.position === 'bottom') {
+      x1 = cx; y1 = pm.by; x2 = cx; y2 = pm.arrowToY;
+    } else if (f.position === 'right') {
+      x1 = pm.bx; y1 = cy; x2 = pm.arrowToX; y2 = cy;
+    } else { // left
+      x1 = pm.bx + 180; y1 = cy; x2 = pm.arrowToX; y2 = cy;
+    }
+    return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#ff-arrow)" stroke="${INK}" stroke-width="1.6" opacity="0.75"/>`;
+  }).join('\n        ');
+
+  const outerBoxes = forces.map((f) => {
+    const pm = posMap[f.position];
+    if (!pm) return '';
+    return `<rect x="${pm.bx}" y="${pm.by}" width="180" height="80" fill="${ACCENT}" fill-opacity="0.07" stroke="${INK}" stroke-width="1.4" filter="url(#ff-ink)"/>
+        <text x="${pm.x}" y="${pm.by + 44}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="17" fill="${INK}">${esc(f.label)}</text>`;
+  }).join('\n        ');
+
+  // Legend rows below SVG
+  const legendItems = forces.map((f, i) =>
+    `<div class="ff-legend-row">
+        <span class="ff-legend-tag">${esc(f.label)}</span>
+        <span class="ff-legend-desc">${esc(f.desc || '')}</span>
+      </div>`
+  ).join('\n      ');
+
+  const centerLegend = center.desc
+    ? `<div class="ff-legend-row ff-legend-center">
+        <span class="ff-legend-tag">${esc(center.label || 'Industry Rivalry')}</span>
+        <span class="ff-legend-desc">${esc(center.desc)}</span>
+      </div>`
+    : '';
+
+  const svg = `<svg viewBox="0 0 720 560" role="img" aria-label="Porter's Five Forces diagram" xmlns="http://www.w3.org/2000/svg" class="five-forces">
+      <defs>
+        <filter id="ff-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.2"/>
+        </filter>
+        <marker id="ff-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="${INK}" opacity="0.75"/>
+        </marker>
+      </defs>
+      <!-- arrows (drawn first, under boxes) -->
+      <g>
+        ${arrowDefs}
+      </g>
+      <!-- outer force boxes -->
+      <g>
+        ${outerBoxes}
+      </g>
+      <!-- center rivalry box -->
+      <rect x="${cx - cW/2}" y="${cy - cH/2}" width="${cW}" height="${cH}" fill="${ACCENT}" fill-opacity="0.18" stroke="${ACCENT}" stroke-width="2" filter="url(#ff-ink)"/>
+      <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(center.label || 'Industry Rivalry')}</text>
+      <text x="${cx}" y="${cy + 14}" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">rivalry</text>
+    </svg>`;
+
+  return `<div class="five-forces-wrap">
+      ${svg}
+      <div class="ff-legend">
+        ${centerLegend}
+        ${legendItems}
+      </div>
+    </div>`;
+}
+
+// ── platform (two-sided platform — platform in the middle) ──
+// platform: {label, desc}, sideA: {label, desc}, sideB: {label, desc}
+// effects: [{direction:'AtoB'|'BtoA', label}]
+function platform({ platform: plat = {}, sideA = {}, sideB = {}, effects = [] }) {
+  // Canvas 720 × 400
+  // sideA box: left (60, 160) → 160×80
+  // platform box: center (280, 160) → 160×80
+  // sideB box: right (500, 160) → 160×80
+  const aX = 60, aY = 160, bX = 500, bY = 160, pX = 280, pY = 160;
+  const bW = 160, bH = 80;
+  const aCX = aX + bW / 2, bCX = bX + bW / 2, pCX = pX + bW / 2;
+  const boxMidY = pY + bH / 2;
+
+  // Curved arrows
+  // AtoB: arc from sideA right-edge, curving above, to sideB left-edge
+  // BtoA: arc from sideB left-edge, curving below, to sideA right-edge
+  const atoBEffect = effects.find(e => e.direction === 'AtoB') || {};
+  const btoAEffect = effects.find(e => e.direction === 'BtoA') || {};
+
+  // Above arc: starts at (aX+bW, boxMidY-10), control at (360, boxMidY-110), ends at (bX, boxMidY-10)
+  const aboveArc = `M ${aX + bW} ${boxMidY - 10} C 230 ${boxMidY - 110}, 490 ${boxMidY - 110}, ${bX} ${boxMidY - 10}`;
+  // Below arc: starts at (bX, boxMidY+10), control at (360, boxMidY+110), ends at (aX+bW, boxMidY+10)
+  const belowArc = `M ${bX} ${boxMidY + 10} C 490 ${boxMidY + 110}, 230 ${boxMidY + 110}, ${aX + bW} ${boxMidY + 10}`;
+
+  const legendItems = [];
+  if (plat.desc) legendItems.push(`<div class="plat-legend-row"><span class="plat-legend-tag">${esc(plat.label || 'Platform')}</span><span class="plat-legend-desc">${esc(plat.desc)}</span></div>`);
+  if (sideA.desc) legendItems.push(`<div class="plat-legend-row"><span class="plat-legend-tag">${esc(sideA.label || 'Producers')}</span><span class="plat-legend-desc">${esc(sideA.desc)}</span></div>`);
+  if (sideB.desc) legendItems.push(`<div class="plat-legend-row"><span class="plat-legend-tag">${esc(sideB.label || 'Consumers')}</span><span class="plat-legend-desc">${esc(sideB.desc)}</span></div>`);
+
+  const svg = `<svg viewBox="0 0 720 400" role="img" aria-label="Two-sided platform diagram" xmlns="http://www.w3.org/2000/svg" class="platform">
+      <defs>
+        <filter id="plat-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.2"/>
+        </filter>
+        <marker id="plat-arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="${ACCENT}" opacity="0.85"/>
+        </marker>
+        <marker id="plat-arrow-l" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+          <path d="M0,1 L9,5 L0,9 z" fill="${ACCENT}" opacity="0.85"/>
+        </marker>
+      </defs>
+      <!-- curved arrows -->
+      <path d="${aboveArc}" fill="none" stroke="${ACCENT}" stroke-width="1.6" stroke-linecap="round" opacity="0.8" marker-end="url(#plat-arrow-r)" filter="url(#plat-ink)"/>
+      <path d="${belowArc}" fill="none" stroke="${ACCENT}" stroke-width="1.6" stroke-linecap="round" opacity="0.8" marker-end="url(#plat-arrow-l)" filter="url(#plat-ink)"/>
+      <!-- arrow labels -->
+      ${atoBEffect.label ? `<text x="360" y="${boxMidY - 120}" text-anchor="middle" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">${esc(atoBEffect.label)}</text>` : ''}
+      ${btoAEffect.label ? `<text x="360" y="${boxMidY + 134}" text-anchor="middle" font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">${esc(btoAEffect.label)}</text>` : ''}
+      <!-- sideA box -->
+      <rect x="${aX}" y="${aY}" width="${bW}" height="${bH}" fill="${INK}" fill-opacity="0.06" stroke="${INK}" stroke-width="1.4" filter="url(#plat-ink)"/>
+      <text x="${aCX}" y="${aY + 44}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(sideA.label || 'Producers')}</text>
+      <!-- platform box (accent-tinted) -->
+      <rect x="${pX}" y="${pY}" width="${bW}" height="${bH}" fill="${ACCENT}" fill-opacity="0.15" stroke="${ACCENT}" stroke-width="2" filter="url(#plat-ink)"/>
+      <text x="${pCX}" y="${pY + 44}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(plat.label || 'Platform')}</text>
+      <!-- sideB box -->
+      <rect x="${bX}" y="${bY}" width="${bW}" height="${bH}" fill="${INK}" fill-opacity="0.06" stroke="${INK}" stroke-width="1.4" filter="url(#plat-ink)"/>
+      <text x="${bCX}" y="${bY + 44}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(sideB.label || 'Consumers')}</text>
+    </svg>`;
+
+  return `<div class="platform-wrap">
+      ${svg}
+      ${legendItems.length ? `<div class="plat-legend">${legendItems.join('\n        ')}</div>` : ''}
+    </div>`;
+}
+
+// ── loop (circular stage loop — "from funnel to loop") ───────
+// stages: [{label, desc}, ...] — design target 4–7 stages, renders correctly for 3–8
+function loop({ stages = [] }) {
+  if (!stages.length) return '<p class="muted">[empty loop diagram]</p>';
+
+  const n = stages.length;
+  const cx = 360, cy = 250, r = 150;
+  const nodeR = 24; // radius of stage dot
+
+  // Positions on the circle: start from top (-90°), go clockwise
+  const pts = stages.map((_, i) => {
+    const angle = -90 + (360 / n) * i;
+    const rad = angle * Math.PI / 180;
+    return {
+      x: cx + r * Math.cos(rad),
+      y: cy + r * Math.sin(rad),
+      angle,
+    };
+  });
+
+  // Arcs between consecutive stages (including last→first to close the loop)
+  // Use path arcs to curve around the circle rather than straight lines
+  const arcRadius = r + 6; // slightly larger than node positions for a cleaner look
+
+  const arrows = pts.map((p, i) => {
+    const next = pts[(i + 1) % n];
+
+    // Compute tangent offsets so arrows start/end at the dot edge
+    const dx = next.x - p.x, dy = next.y - p.y;
+    const len = Math.sqrt(dx * dx + dy * dy);
+    const nx = dx / len, ny = dy / len;
+
+    const x1 = p.x + nx * (nodeR + 2);
+    const y1 = p.y + ny * (nodeR + 2);
+    const x2 = next.x - nx * (nodeR + 2);
+    const y2 = next.y - ny * (nodeR + 2);
+
+    // Quadratic bezier control point pulled slightly outward from circle center
+    const midX = (x1 + x2) / 2;
+    const midY = (y1 + y2) / 2;
+    const outX = midX - cx, outY = midY - cy;
+    const outLen = Math.sqrt(outX * outX + outY * outY) || 1;
+    const cpx = midX + (outX / outLen) * 28;
+    const cpy = midY + (outY / outLen) * 28;
+
+    return `<path d="M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cpx.toFixed(1)} ${cpy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="${INK}" stroke-width="1.5" stroke-linecap="round" opacity="0.7" marker-end="url(#loop-arrow)" filter="url(#loop-ink)"/>`;
+  }).join('\n        ');
+
+  const dots = pts.map((p, i) =>
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${nodeR}" fill="${i === 0 ? ACCENT : 'var(--bg-elevated, #fffdf8)'}" stroke="${i === 0 ? ACCENT : INK}" stroke-width="${i === 0 ? 2 : 1.4}"/>
+        <text x="${p.x.toFixed(1)}" y="${(p.y + 5).toFixed(1)}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="11" fill="${i === 0 ? 'var(--bg-elevated, #fffdf8)' : INK}">${i + 1}</text>`
+  ).join('\n        ');
+
+  // Label positions: push outward from the circle center
+  const labelOffset = 44;
+  const labels = pts.map((p, i) => {
+    const dx = p.x - cx, dy = p.y - cy;
+    const len = Math.sqrt(dx * dx + dy * dy);
+    const nx = dx / len, ny = dy / len;
+    const lx = p.x + nx * labelOffset;
+    const ly = p.y + ny * labelOffset;
+    const anchor = Math.abs(nx) < 0.3 ? 'middle' : (nx > 0 ? 'start' : 'end');
+    return `<text x="${lx.toFixed(1)}" y="${(ly + 5).toFixed(1)}" text-anchor="${anchor}" font-family="${FONT_LABEL}" font-size="17" fill="${INK}">${esc(stages[i].label)}</text>`;
+  }).join('\n        ');
+
+  // Legend rows below SVG
+  const legendRows = stages.map((s, i) =>
+    s.desc
+      ? `<div class="loop-legend-row">
+          <span class="loop-legend-num">${i + 1}</span>
+          <span class="loop-legend-label">${esc(s.label)}</span>
+          <span class="loop-legend-desc">${esc(s.desc)}</span>
+        </div>`
+      : ''
+  ).filter(Boolean).join('\n      ');
+
+  const svg = `<svg viewBox="0 0 720 500" role="img" aria-label="Circular loop diagram" xmlns="http://www.w3.org/2000/svg" class="loop-diagram">
+      <defs>
+        <filter id="loop-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="13"/>
+          <feDisplacementMap in="SourceGraphic" scale="1.1"/>
+        </filter>
+        <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+          <path d="M0,1 L9,5 L0,9 z" fill="${INK}" opacity="0.7"/>
+        </marker>
+      </defs>
+      <!-- guide circle (faint) -->
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${INK}" stroke-width="0.8" stroke-dasharray="4 5" opacity="0.18"/>
+      <!-- arrows between stages -->
+      <g>
+        ${arrows}
+      </g>
+      <!-- stage dots + numbers -->
+      <g>
+        ${dots}
+      </g>
+      <!-- stage labels -->
+      <g>
+        ${labels}
+      </g>
+    </svg>`;
+
+  return `<div class="loop-wrap">
+      ${svg}
+      ${legendRows ? `<div class="loop-legend">${legendRows}</div>` : ''}
+    </div>`;
+}
+
+module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveU, curveS, bellFamily, supplyDemand, monopoly, scatter, network, linear, equation, custom, flow, twoAxis, decisionTree, fiveForces, platform, loop };
