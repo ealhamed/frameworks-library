@@ -145,6 +145,28 @@ module.exports = {
           { label: 'Cross-side feedback', desc: 'More producers raise consumer value, which attracts more consumers, which attracts more producers. Strong feedback plus single-homing tilts the market toward winner-take-all; weak feedback or easy multi-homing supports several platforms.' }
         ]
       }
+    },
+    m07: {
+      id: 'm07', number: '07', topic: 'Ecosystems',
+      title: 'Ecosystem as Structure',
+      hint: 'An ecosystem is the alignment of multilateral partners whose joint activity is required for a focal value proposition to materialize.',
+      kicker: 'Adner · alignment structure · value proposition.',
+      coreIdea: {
+        text: 'An ecosystem is not a community of affiliated firms; it is the alignment structure of the multilateral partners whose interaction a focal value proposition requires. Strategy starts from the promised value, then maps the activities, actors, positions, and links needed to deliver it. Where partner alignment is intact, traditional strategy suffices. Where alignment must shift, the central question becomes who leads the realignment and how willing followers are secured.',
+        attr: 'after Adner (2017)'
+      },
+      diagram: {
+        type: 'flow',
+        title: 'From value proposition to aligned ecosystem',
+        intro: 'Five steps move a focal firm from a promised value to a working ecosystem. Each step exposes a different alignment risk: missing activities, unwilling actors, contested positions, broken links, or absent leadership.',
+        steps: [
+          { label: 'Define the value proposition', detail: 'State the benefit the end customer is promised. The proposition, not the product, sets the boundary of the relevant ecosystem.' },
+          { label: 'Map the activities', detail: 'List the discrete actions required for the proposition to materialise. Co-innovation risk lives here: which activities are not yet ready?' },
+          { label: 'Assign actors and positions', detail: 'Name who performs each activity and where they sit in the flow. Adoption-chain risk lives here: which actors must change behaviour for the chain to hold?' },
+          { label: 'Specify the links', detail: 'Trace the transfers of material, information, money, and influence across positions, including those that bypass the focal firm.' },
+          { label: 'Secure leadership and followership', detail: 'Identify who guides the realignment and who accepts the follower role. Without willing followership, structure collapses back to the legacy configuration.' }
+        ]
+      }
     }
   }
 };
