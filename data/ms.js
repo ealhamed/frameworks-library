@@ -41,6 +41,30 @@ module.exports = {
           { label: 'Context', desc: 'What macro forces (Political, Economic, Sociocultural, Technological, Legal, Environmental) are reshaping the market and the assumptions behind the plan?' }
         ]
       }
+    },
+    m02: {
+      id: 'm02', number: '02', topic: 'Customer Lifetime Value',
+      title: 'The CLV Formula',
+      hint: 'A customer is worth their margin, multiplied by how long they stay, discounted to today, minus what it cost to win them.',
+      kicker: 'after Gupta, Lemmens & Reichheld · forward-looking · margin x retention multiple - acquisition cost.',
+      coreIdea: {
+        text: 'Customer Lifetime Value reframes a customer as a financial asset rather than a transaction. It is the net present value of all future profits a customer will generate before they churn, minus what it cost to acquire them. With constant margin and retention, the infinite-horizon series collapses to a clean formula: CLV equals margin times the retention multiple r/(1+i-r), minus acquisition cost. Three levers move it: acquire, retain, expand.',
+        attr: 'synthesised from Gupta, Lemmens, Reichheld and the customer-equity literature'
+      },
+      diagram: {
+        type: 'flow',
+        title: 'From a single customer to firm value',
+        intro: 'Each step takes one input from the customer relationship and turns it into the next. The chain ends in a number you can compare against acquisition cost — and aggregate into customer equity.',
+        steps: [
+          { label: 'Margin (m)', desc: 'Annual profit per customer — revenue minus variable cost to serve. Held constant in the simple form.' },
+          { label: 'Retention (r)', desc: 'Probability the customer is still there next year. Survival compounds: r, r-squared, r-cubed across years.' },
+          { label: 'Discount (i)', desc: 'Cost of capital. Future profits are pulled back to today by dividing by (1+i) raised to the year.' },
+          { label: 'Margin multiple', desc: 'Retention and discount collapse into one number: r / (1 + i - r). At r=80%, i=10% that is 2.67 years of margin.' },
+          { label: 'Acquisition cost (AC)', desc: 'What was spent to win the customer in year zero. Subtracted once. Already-acquired customers carry AC = 0.' },
+          { label: 'CLV = m x [r / (1+i-r)] - AC', desc: 'The customer\'s value to the firm today. A healthy CLV/AC ratio is around 3 — below that, growth is bought, not earned.' },
+          { label: 'Customer equity', desc: 'Sum of CLV across the current base plus discounted CLV of future acquisitions. A bottom-up valuation of the firm itself.' }
+        ]
+      }
     }
   }
 };
