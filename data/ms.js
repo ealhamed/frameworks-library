@@ -12,11 +12,11 @@ module.exports = {
   school: 'London Business School',
   cohort: 'EMBA Dubai 2027',
   arc: {
-    tagline: 'One block. Five modules.',
+    tagline: 'One block. Four modules.',
     pullquote: 'Start from the customer; segment, target, and position from there.',
     attr: 'the course, told in one line',
     blocks: [
-      { label: 'I · Customer-first strategy', modules: ['m01', 'm02', 'm03', 'm04', 'm05'] }
+      { label: 'I · Customer-first strategy', modules: ['m01', 'm02', 'm03', 'm04'] }
     ]
   },
   modules: {

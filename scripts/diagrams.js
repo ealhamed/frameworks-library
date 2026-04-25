@@ -523,29 +523,52 @@ function flow({ steps = [] }) {
 
 // ── two-axis (X/Y with labelled extremes + axes) ──────────
 // xAxis: {label, lowDesc, highDesc}, yAxis: {label, lowDesc, highDesc}
+// SVG holds short labels only (low/high arrows). Long descriptions render as
+// an HTML legend below the chart — SVG <text> doesn't wrap, so multi-clause
+// descriptions would otherwise overflow into an unreadable smear.
 function twoAxis({ xAxis = {}, yAxis = {} }) {
-  return `<svg viewBox="0 0 640 460" role="img" aria-label="Two-axis diagram" xmlns="http://www.w3.org/2000/svg" class="two-axis">
+  const ariaParts = [];
+  if (yAxis.label) ariaParts.push('vertical axis is ' + yAxis.label);
+  if (xAxis.label) ariaParts.push('horizontal axis is ' + xAxis.label);
+  const aria = ariaParts.length ? 'Two-axis chart: ' + ariaParts.join('; ') : 'Two-axis chart';
+
+  const svg = `<svg viewBox="0 0 640 420" role="img" aria-label="${esc(aria)}" xmlns="http://www.w3.org/2000/svg" class="two-axis">
       <defs>
         <marker id="ta-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
           <path d="M0,0 L10,5 L0,10 z" fill="${INK}"/>
         </marker>
       </defs>
-      <!-- axes -->
-      <line x1="120" y1="380" x2="600" y2="380" stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
-      <line x1="120" y1="380" x2="120" y2="40"  stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
-      <!-- axis labels -->
+      <line x1="120" y1="350" x2="600" y2="350" stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
+      <line x1="120" y1="350" x2="120" y2="30"  stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
       <g font-family="${FONT_LABEL}" font-size="20" fill="${INK}">
-        <text x="360" y="430" text-anchor="middle">${esc(xAxis.label || '')}</text>
-        <text x="50" y="210" text-anchor="middle" transform="rotate(-90, 50, 210)">${esc(yAxis.label || '')}</text>
+        <text x="360" y="395" text-anchor="middle">${esc(xAxis.label || '')}</text>
+        <text x="50" y="190" text-anchor="middle" transform="rotate(-90, 50, 190)">${esc(yAxis.label || '')}</text>
       </g>
-      <!-- low/high descriptors -->
-      <g font-family="${FONT_SUB}" font-size="13" fill="${MUTED}">
-        <text x="120" y="408" text-anchor="start">${esc(xAxis.lowDesc || 'low')}</text>
-        <text x="600" y="408" text-anchor="end">${esc(xAxis.highDesc || 'high')}</text>
-        <text x="100" y="380" text-anchor="end">${esc(yAxis.lowDesc || 'low')}</text>
-        <text x="100" y="50"  text-anchor="end">${esc(yAxis.highDesc || 'high')}</text>
+      <g font-family="${FONT_SUB}" font-size="13" fill="${MUTED}" font-style="italic">
+        <text x="125" y="370" text-anchor="start">low →</text>
+        <text x="595" y="370" text-anchor="end">high</text>
+        <text x="105" y="350" text-anchor="end">low</text>
+        <text x="105" y="40"  text-anchor="end">↑ high</text>
       </g>
     </svg>`;
+
+  const legendRow = (axis, fallbackLabel) => {
+    if (!axis || (!axis.lowDesc && !axis.highDesc)) return '';
+    return `
+      <div class="ta-legend-row">
+        <div class="ta-legend-label">${esc(axis.label || fallbackLabel)}</div>
+        ${axis.lowDesc ? `<div class="ta-legend-end"><span class="ta-legend-tag">low</span><span>${esc(axis.lowDesc)}</span></div>` : ''}
+        ${axis.highDesc ? `<div class="ta-legend-end"><span class="ta-legend-tag">high</span><span>${esc(axis.highDesc)}</span></div>` : ''}
+      </div>`;
+  };
+
+  return `<div class="two-axis-wrap">
+      ${svg}
+      <div class="ta-legend">
+        ${legendRow(yAxis, 'Y axis')}
+        ${legendRow(xAxis, 'X axis')}
+      </div>
+    </div>`;
 }
 
 // ── decision-tree (nested HTML — questions + labelled branches) ────

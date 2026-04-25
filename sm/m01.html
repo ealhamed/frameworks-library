@@ -63,28 +63,41 @@
       <h2 class="display">Willingness to Pay vs. Cost - the wedge that defines advantage</h2>
       <p class="prose muted">Plot any competitor on two stacked bars. The gap between the top of WTP and the bottom of cost is total value created. The firm whose gap is widest - and whose activities make that gap hard to copy - has the advantage.</p>
       <div class="hero-diagram">
-        <svg viewBox="0 0 640 460" role="img" aria-label="Two-axis diagram" xmlns="http://www.w3.org/2000/svg" class="two-axis">
+        <div class="two-axis-wrap">
+      <svg viewBox="0 0 640 420" role="img" aria-label="Two-axis chart: vertical axis is Customer willingness to pay; horizontal axis is Supplier opportunity cost" xmlns="http://www.w3.org/2000/svg" class="two-axis">
       <defs>
         <marker id="ta-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--text, #1a1714)"/>
         </marker>
       </defs>
-      <!-- axes -->
-      <line x1="120" y1="380" x2="600" y2="380" stroke="var(--text, #1a1714)" stroke-width="2" marker-end="url(#ta-arrow)"/>
-      <line x1="120" y1="380" x2="120" y2="40"  stroke="var(--text, #1a1714)" stroke-width="2" marker-end="url(#ta-arrow)"/>
-      <!-- axis labels -->
+      <line x1="120" y1="350" x2="600" y2="350" stroke="var(--text, #1a1714)" stroke-width="2" marker-end="url(#ta-arrow)"/>
+      <line x1="120" y1="350" x2="120" y2="30"  stroke="var(--text, #1a1714)" stroke-width="2" marker-end="url(#ta-arrow)"/>
       <g font-family="DM Serif Display, Cormorant Garamond, serif" font-size="20" fill="var(--text, #1a1714)">
-        <text x="360" y="430" text-anchor="middle">Supplier opportunity cost</text>
-        <text x="50" y="210" text-anchor="middle" transform="rotate(-90, 50, 210)">Customer willingness to pay</text>
+        <text x="360" y="395" text-anchor="middle">Supplier opportunity cost</text>
+        <text x="50" y="190" text-anchor="middle" transform="rotate(-90, 50, 190)">Customer willingness to pay</text>
       </g>
-      <!-- low/high descriptors -->
-      <g font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)">
-        <text x="120" y="408" text-anchor="start">Low cost - efficient activities, scale, cheap inputs, lean configuration. Sets the floor of the wedge.</text>
-        <text x="600" y="408" text-anchor="end">High cost - costly inputs, complex operations, premium inputs. The wedge narrows from below.</text>
-        <text x="100" y="380" text-anchor="end">Low WTP - undifferentiated, easily substituted, no premium possible. The wedge narrows from above.</text>
-        <text x="100" y="50"  text-anchor="end">High WTP - distinctive benefits, brand, switching costs, scarcity. Lifts the ceiling of the wedge.</text>
+      <g font-family="Inter, sans-serif" font-size="13" fill="var(--muted, #4a4640)" font-style="italic">
+        <text x="125" y="370" text-anchor="start">low →</text>
+        <text x="595" y="370" text-anchor="end">high</text>
+        <text x="105" y="350" text-anchor="end">low</text>
+        <text x="105" y="40"  text-anchor="end">↑ high</text>
       </g>
     </svg>
+      <div class="ta-legend">
+        
+      <div class="ta-legend-row">
+        <div class="ta-legend-label">Customer willingness to pay</div>
+        <div class="ta-legend-end"><span class="ta-legend-tag">low</span><span>Low WTP - undifferentiated, easily substituted, no premium possible. The wedge narrows from above.</span></div>
+        <div class="ta-legend-end"><span class="ta-legend-tag">high</span><span>High WTP - distinctive benefits, brand, switching costs, scarcity. Lifts the ceiling of the wedge.</span></div>
+      </div>
+        
+      <div class="ta-legend-row">
+        <div class="ta-legend-label">Supplier opportunity cost</div>
+        <div class="ta-legend-end"><span class="ta-legend-tag">low</span><span>Low cost - efficient activities, scale, cheap inputs, lean configuration. Sets the floor of the wedge.</span></div>
+        <div class="ta-legend-end"><span class="ta-legend-tag">high</span><span>High cost - costly inputs, complex operations, premium inputs. The wedge narrows from below.</span></div>
+      </div>
+      </div>
+    </div>
       </div>
     </section>
     

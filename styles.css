@@ -1206,3 +1206,49 @@ ol.apply li .txt {
 
 /* ── two-axis SVG sizing ────────────────────────────────── */
 .two-axis { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+
+/* ── two-axis legend (HTML rows below SVG) ────────────── */
+.two-axis-wrap { display: block; margin: 0 auto; max-width: 720px; }
+.ta-legend {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--text, #1a1714);
+}
+.ta-legend-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid var(--hair, #d8d2c4);
+}
+.ta-legend-label {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  color: var(--text, #1a1714);
+}
+.ta-legend-end {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: start;
+  color: var(--muted, #4a4640);
+  line-height: 1.5;
+}
+.ta-legend-tag {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text, #1a1714);
+  font-weight: 600;
+  padding-top: 2px;
+}
+
+/* ── trajectory (custom Christensen-style two-curve chart) ─ */
+.trajectory { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+
+/* ── safety: keep new diagrams from sliding into the colophon ── */
+.flow, .decision-tree, .two-axis-wrap, .trajectory { margin-bottom: 24px; }
