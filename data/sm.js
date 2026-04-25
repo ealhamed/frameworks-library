@@ -124,6 +124,27 @@ module.exports = {
         centerLabel: 'Customer-acceptable performance',
         curveLabels: ['Sustaining trajectory — incumbent improving the established product on the dimensions current customers value, eventually overshooting demand', 'Disruptive trajectory — new entrant starting below acceptable performance, improving on its own slope, crossing the threshold from below']
       }
+    },
+    m06: {
+      id: 'm06', number: '06', topic: 'Platform Strategy',
+      title: 'The Two-Sided Platform',
+      hint: 'A platform is a market between two user groups linked by cross-side network effects, not a product sold to one.',
+      kicker: 'Rochet & Tirole / Eisenmann / Parker & Van Alstyne · two-sided markets, cross-side network effects, chicken-and-egg.',
+      coreIdea: {
+        text: 'A platform creates value by enabling two distinct user groups to transact, and each side becomes more attractive as the other grows. Because the demand on one side depends on participation on the other, the strategic problem is not setting one price but choosing a price structure: subsidise the side that draws the other and charge the side that values it most. Get both sides on board, or neither shows up. Network effects, not features, are the moat.',
+        attr: 'after Rochet & Tirole and Eisenmann'
+      },
+      diagram: {
+        type: 'flow',
+        title: 'Cross-side dynamics on a two-sided platform',
+        intro: 'The platform sits between two interdependent user groups. Each side joins because the other is there — and the loop, once ignited, runs on its own.',
+        steps: [
+          { label: 'Producer side', desc: 'Sellers, developers, hosts, or content makers. Join when buyer demand is large enough to justify the effort. Pricing lever: take rate, listing fees, or subsidy in early stages.' },
+          { label: 'Platform', desc: 'Sets rules for search and matching, prices and payment, and trust. Solves the chicken-and-egg by subsidising one side, seeding supply, or piggybacking on an existing user base. Captures value via the less price-sensitive side.' },
+          { label: 'Consumer side', desc: 'Buyers, players, riders, readers. Join when producer variety and quality cross a threshold. Their participation is what producers came for — closing the loop.' },
+          { label: 'Cross-side feedback', desc: 'More producers raise consumer value, which attracts more consumers, which attracts more producers. Strong feedback plus single-homing tilts the market toward winner-take-all; weak feedback or easy multi-homing supports several platforms.' }
+        ]
+      }
     }
   }
 };
