@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecosystem as Structure · Advanced Strategic Management</title>
+<meta name="description" content="Adner · alignment structure · value proposition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">SM</a>
+      <a href="./m07.html" class="active">m.07</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">SM</a><span class="sep">/</span>
+    m.07
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.07 · II · Choose strategic moves · Ecosystems</p>
+    <h1>Ecosystem as Structure</h1>
+    <p class="sub">Adner · alignment structure · value proposition.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        An ecosystem is not a community of affiliated firms; it is the alignment structure of the multilateral partners whose interaction a focal value proposition requires. Strategy starts from the promised value, then maps the activities, actors, positions, and links needed to deliver it. Where partner alignment is intact, traditional strategy suffices. Where alignment must shift, the central question becomes who leads the realignment and how willing followers are secured.
+        <span class="attr">— after Adner (2017)</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">From value proposition to aligned ecosystem</h2>
+      <p class="prose muted">Five steps move a focal firm from a promised value to a working ecosystem. Each step exposes a different alignment risk: missing activities, unwilling actors, contested positions, broken links, or absent leadership.</p>
+      <div class="hero-diagram">
+        <p class="muted">[diagram: flow]</p>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m06.html">← m.06 The Two-Sided Platform</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m08.html">m.08 The Boundary of the Firm →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

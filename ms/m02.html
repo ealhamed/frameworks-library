@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CLV Formula · Customer-centric Market Strategies</title>
+<meta name="description" content="after Gupta, Lemmens &amp; Reichheld · forward-looking · margin x retention multiple - acquisition cost.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">MS</a>
+      <a href="./m02.html" class="active">m.02</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">MS</a><span class="sep">/</span>
+    m.02
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.02 · I · Customer-first strategy · Customer Lifetime Value</p>
+    <h1>The CLV Formula</h1>
+    <p class="sub">after Gupta, Lemmens & Reichheld · forward-looking · margin x retention multiple - acquisition cost.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Customer Lifetime Value reframes a customer as a financial asset rather than a transaction. It is the net present value of all future profits a customer will generate before they churn, minus what it cost to acquire them. With constant margin and retention, the infinite-horizon series collapses to a clean formula: CLV equals margin times the retention multiple r/(1+i-r), minus acquisition cost. Three levers move it: acquire, retain, expand.
+        <span class="attr">— synthesised from Gupta, Lemmens, Reichheld and the customer-equity literature</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">From a single customer to firm value</h2>
+      <p class="prose muted">Each step takes one input from the customer relationship and turns it into the next. The chain ends in a number you can compare against acquisition cost — and aggregate into customer equity.</p>
+      <div class="hero-diagram">
+        <p class="muted">[diagram: flow]</p>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m01.html">← m.01 The 5Cs</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m03.html">m.03 From Funnel to Loop →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

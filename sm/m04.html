@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commitment &amp; Capacity Games · Advanced Strategic Management</title>
+<meta name="description" content="Ghemawat · commitment · capacity pre-emption · move and counter-move.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">SM</a>
+      <a href="./m04.html" class="active">m.04</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">SM</a><span class="sep">/</span>
+    m.04
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.04 · I · Position the firm · Competitive Dynamics</p>
+    <h1>Commitment &amp; Capacity Games</h1>
+    <p class="sub">Ghemawat · commitment · capacity pre-emption · move and counter-move.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Competition between a few large rivals is a sequence of moves. The moves that matter are commitments — investments in capacity, technology or position that are costly to undo and visible to rivals. A credible commitment shifts the game by changing your rival's best response: it can deter entry, pre-empt capacity, or force accommodation. Read every major move by asking what it locks in, what it signals, and how the rival will rationally counter.
+        <span class="attr">— after Ghemawat (commitment) and Brandenburger &amp; Nalebuff (game-theoretic strategy)</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Reading a Rival Move</h2>
+      <p class="prose muted">Walk any major competitive move — yours or theirs — through these gates before you commit capital.</p>
+      <div class="hero-diagram">
+        <p class="muted">[diagram: decision-tree]</p>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m03.html">← m.03 Generic Strategies</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m05.html">m.05 Disruption from Below →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

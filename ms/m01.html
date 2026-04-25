@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 5Cs · Customer-centric Market Strategies</title>
+<meta name="description" content="Tavassoli (after Kotler) - Company, Customers, Competitors, Collaborators, Context - the situational scan that opens every marketing plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">MS</a>
+      <a href="./m01.html" class="active">m.01</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">MS</a><span class="sep">/</span>
+    m.01
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.01 · I · Customer-first strategy · Market Analysis</p>
+    <h1>The 5Cs</h1>
+    <p class="sub">Tavassoli (after Kotler) - Company, Customers, Competitors, Collaborators, Context - the situational scan that opens every marketing plan.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Marketing is the management of cash flow from customers, and it starts with a clear-eyed read of the situation. Before strategy or the 4Ps, you map five forces: what your Company can do, what Customers actually need, who the Competitors are, which Collaborators sit in the value chain, and what Context (political, economic, social, technological, legal, environmental) shapes the field. Skip this scan and the rest of the plan is built on assumptions.
+        <span class="attr">— after the marketing process tradition (Kotler, Tavassoli)</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The 5Cs of Market Analysis</h2>
+      <p class="prose muted">Five questions that together describe the market a strategy has to win in.</p>
+      <div class="hero-diagram">
+        <p class="muted">[diagram: flow]</p>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./">← back to MS</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m02.html">m.02 The CLV Formula →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

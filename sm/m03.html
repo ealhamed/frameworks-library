@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generic Strategies · Advanced Strategic Management</title>
+<meta name="description" content="Porter · target scope x source of advantage = a defensible position.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">SM</a>
+      <a href="./m03.html" class="active">m.03</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">SM</a><span class="sep">/</span>
+    m.03
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.03 · I · Position the firm · External Environment &amp; Positioning</p>
+    <h1>Generic Strategies</h1>
+    <p class="sub">Porter · target scope x source of advantage = a defensible position.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        A position is defensible only when the firm chooses both what advantage it offers and to whom. Two choices define the field: compete on lowest delivered cost or on a differentiation buyers will pay a premium for, and aim that advantage at the broad market or a narrow segment. Trying to be cheap and special for everyone leaves a firm stuck in the middle, beaten on price by the cost leader and on value by the differentiator. The discipline is to align every activity — pricing, product, channel, organisation — to the chosen position and refuse the work that does not fit.
+        <span class="attr">— after Michael Porter</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Target scope x source of advantage</h2>
+      <p class="prose muted">Two questions decide the position. Where do you compete (broad market or a narrow segment) and how do you win (lower cost or buyer-perceived value). The four cells are the only stable answers; the centre is the trap.</p>
+      <div class="hero-diagram">
+        <p class="muted">[diagram: matrix]</p>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m02.html">← m.02 The Five Forces</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m04.html">m.04 Commitment &amp; Capacity Games →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

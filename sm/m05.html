@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disruption from Below · Advanced Strategic Management</title>
+<meta name="description" content="Christensen · sustaining vs disruptive · the trajectory that catches incumbents flat-footed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot"></span>Frameworks Library</div>
+    <nav>
+      <a href="../">Courses</a>
+      <a href="./">SM</a>
+      <a href="./m05.html" class="active">m.05</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="crumb">
+    <a href="../">Courses</a><span class="sep">/</span>
+    <a href="./">SM</a><span class="sep">/</span>
+    m.05
+  </p>
+
+  <header class="module-hero">
+    <p class="kicker">m.05 · II · Choose strategic moves · Strategic Innovation</p>
+    <h1>Disruption from Below</h1>
+    <p class="sub">Christensen · sustaining vs disruptive · the trajectory that catches incumbents flat-footed.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    
+    
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Innovation is not one curve but two. Incumbents ride the sustaining trajectory — each generation makes an established product better along the dimensions current customers already value, and they overshoot what most buyers actually need. A disruptive trajectory starts elsewhere: a simpler, cheaper, lower-performing offer that serves a fringe or non-consumer the incumbent rationally ignores. The disruptor improves on its own slope, and when its trajectory crosses the threshold of customer-acceptable performance the mainstream switches — quickly, and on a different basis of competition. The incumbent's strength on the old curve is precisely what makes the new one invisible until it is too late.
+        <span class="attr">— after Christensen, with Foster's S-curve of technological substitution</span>
+      </p>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Two trajectories, one threshold</h2>
+      <p class="prose muted">Plot performance against time. Both curves rise, but they answer different questions about value. Disruption happens at the crossing point — when the cheaper, formerly inferior trajectory becomes good enough for the mainstream.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Distributions tightening with sample size" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <line x1="70" y1="360" x2="570" y2="360" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="320" y1="360" x2="320" y2="70" stroke="var(--muted, #4a4640)" stroke-width="1" stroke-dasharray="3 4"/>
+      <path d="M 120 360 Q 320 180 520 360" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+      <path d="M 190 360 Q 320 140 450 360" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      <path d="M 250 360 Q 320 90 390 360" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" opacity="1"/>
+      <text x="528" y="356" font-family="Inter, sans-serif" font-size="11" fill="var(--muted, #4a4640)" font-style="italic" opacity="0.35">Sustaining trajectory — incumbent improving the established product on the dimensions current customers value, eventually overshooting demand</text>
+      <text x="458" y="352" font-family="Inter, sans-serif" font-size="11" fill="var(--muted, #4a4640)" font-style="italic" opacity="0.6">Disruptive trajectory — new entrant starting below acceptable performance, improving on its own slope, crossing the threshold from below</text>
+      <text x="398" y="348" font-family="Inter, sans-serif" font-size="11" fill="var(--muted, #4a4640)" font-style="italic" opacity="1"></text>
+      <text x="320" y="60" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="16" fill="var(--accent, #b05a3a)">Customer-acceptable performance</text>
+      <text x="320" y="410" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">Time</text>
+      <text x="40" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 40, 220)">Performance</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m04.html">← m.04 Commitment &amp; Capacity Games</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m06.html">m.06 The Two-Sided Platform →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>
