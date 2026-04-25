@@ -506,4 +506,78 @@ function custom({ svg }) {
   return svg;
 }
 
-module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveU, curveS, bellFamily, supplyDemand, monopoly, scatter, network, linear, equation, custom };
+// ── flow (numbered stations with label + description) ─────
+// steps: [{label, desc}, ...]
+function flow({ steps = [] }) {
+  const cards = steps.map((s, i) => `
+        <li class="flow-step">
+          <div class="flow-step-num">${i + 1}</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">${esc(s.label || '')}</div>
+            ${s.desc ? `<div class="flow-step-desc">${esc(s.desc)}</div>` : ''}
+          </div>
+        </li>`).join('');
+  return `<ol class="flow">${cards}
+      </ol>`;
+}
+
+// ── two-axis (X/Y with labelled extremes + axes) ──────────
+// xAxis: {label, lowDesc, highDesc}, yAxis: {label, lowDesc, highDesc}
+function twoAxis({ xAxis = {}, yAxis = {} }) {
+  return `<svg viewBox="0 0 640 460" role="img" aria-label="Two-axis diagram" xmlns="http://www.w3.org/2000/svg" class="two-axis">
+      <defs>
+        <marker id="ta-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="${INK}"/>
+        </marker>
+      </defs>
+      <!-- axes -->
+      <line x1="120" y1="380" x2="600" y2="380" stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
+      <line x1="120" y1="380" x2="120" y2="40"  stroke="${INK}" stroke-width="2" marker-end="url(#ta-arrow)"/>
+      <!-- axis labels -->
+      <g font-family="${FONT_LABEL}" font-size="20" fill="${INK}">
+        <text x="360" y="430" text-anchor="middle">${esc(xAxis.label || '')}</text>
+        <text x="50" y="210" text-anchor="middle" transform="rotate(-90, 50, 210)">${esc(yAxis.label || '')}</text>
+      </g>
+      <!-- low/high descriptors -->
+      <g font-family="${FONT_SUB}" font-size="13" fill="${MUTED}">
+        <text x="120" y="408" text-anchor="start">${esc(xAxis.lowDesc || 'low')}</text>
+        <text x="600" y="408" text-anchor="end">${esc(xAxis.highDesc || 'high')}</text>
+        <text x="100" y="380" text-anchor="end">${esc(yAxis.lowDesc || 'low')}</text>
+        <text x="100" y="50"  text-anchor="end">${esc(yAxis.highDesc || 'high')}</text>
+      </g>
+    </svg>`;
+}
+
+// ── decision-tree (nested HTML — questions + labelled branches) ────
+// nodes: [{id, question, branches: [{label, leadsTo}]}]
+// `leadsTo` is either another node id (looked up by id) or a free-text outcome.
+function decisionTree({ nodes = [] }) {
+  if (!nodes.length) return '<p class="muted">[empty decision tree]</p>';
+  const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+  const seen = new Set();
+  function walk(node, depth = 0) {
+    if (!node || seen.has(node.id)) return '';
+    seen.add(node.id);
+    const branches = (node.branches || []).map(b => {
+      const leadsToNode = byId[b.leadsTo];
+      const child = leadsToNode
+        ? walk(leadsToNode, depth + 1)
+        : `<div class="dt-leaf">${esc(b.leadsTo || '')}</div>`;
+      return `
+            <li class="dt-branch">
+              <div class="dt-edge-label">${esc(b.label || '')}</div>
+              ${child}
+            </li>`;
+    }).join('');
+    return `
+        <div class="dt-node">
+          <div class="dt-question">${esc(node.question || '')}</div>
+          ${branches ? `<ul class="dt-branches">${branches}
+          </ul>` : ''}
+        </div>`;
+  }
+  return `<div class="decision-tree">${walk(nodes[0])}
+      </div>`;
+}
+
+module.exports = { pentagon, matrix2x2, hexagon, curveInvertedU, curveU, curveS, bellFamily, supplyDemand, monopoly, scatter, network, linear, equation, custom, flow, twoAxis, decisionTree };

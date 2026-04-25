@@ -70,16 +70,16 @@ module.exports = {
         attr: 'after Michael Porter'
       },
       diagram: {
-        type: 'matrix',
+        type: '2x2',
         title: 'Target scope x source of advantage',
         intro: 'Two questions decide the position. Where do you compete (broad market or a narrow segment) and how do you win (lower cost or buyer-perceived value). The four cells are the only stable answers; the centre is the trap.',
-        rows: [
-          { label: 'Broad target', desc: 'Serve the whole market with one offer. Scale and learning curves dominate; a single value proposition has to travel across segments.' },
-          { label: 'Narrow target', desc: 'Serve a chosen segment exceptionally well. Tailored activities beat generalists inside the niche but cannot be stretched outside it.' }
-        ],
-        cols: [
-          { label: 'Cost', desc: 'Win by being the lowest-cost producer at acceptable quality. Requires relentless cost discipline, scale, standardisation and efficient operations.' },
-          { label: 'Differentiation', desc: 'Win by offering something buyers value enough to pay a premium for. Requires distinctive content, brand, service or design — and the willingness to refuse cheap shortcuts that erode it.' }
+        xAxis: { label: 'Source of advantage', lo: 'Cost', hi: 'Differentiation' },
+        yAxis: { label: 'Target scope', lo: 'Narrow', hi: 'Broad' },
+        quadrants: [
+          { pos: 'tl', label: 'Cost Leadership' },
+          { pos: 'tr', label: 'Differentiation' },
+          { pos: 'bl', label: 'Focus (Cost)' },
+          { pos: 'br', label: 'Focus (Differentiation)' }
         ]
       }
     },

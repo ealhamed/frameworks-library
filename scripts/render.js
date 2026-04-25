@@ -79,6 +79,9 @@ function renderDiagram(diagram) {
   else if (t === 'linear')       svg = diagrams.linear(diagram);
   else if (t === 'equation')     svg = diagrams.equation(diagram);
   else if (t === 'custom')       svg = diagrams.custom(diagram);
+  else if (t === 'flow')         svg = diagrams.flow(diagram);
+  else if (t === 'two-axis')     svg = diagrams.twoAxis(diagram);
+  else if (t === 'decision-tree') svg = diagrams.decisionTree(diagram);
   else svg = `<p class="muted">[diagram: ${t}]</p>`;
 
   return `

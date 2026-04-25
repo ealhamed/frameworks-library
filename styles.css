@@ -1112,3 +1112,97 @@ ol.apply li .txt {
   .pentagon line { stroke-dashoffset: 0; }
   .pentagon circle { opacity: 1; }
 }
+
+/* ── flow (numbered stations) ───────────────────────────── */
+.flow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+.flow .flow-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 16px;
+  border: 1px solid var(--ink-faint, #d8d2c4);
+  border-radius: 6px;
+  background: var(--bg-elevated, #fffdf8);
+}
+.flow .flow-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent, #b05a3a);
+  color: var(--bg-elevated, #fffdf8);
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flow .flow-step-label {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px;
+  color: var(--text, #1a1714);
+  margin-bottom: 4px;
+}
+.flow .flow-step-desc {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--muted, #4a4640);
+  line-height: 1.55;
+}
+
+/* ── decision-tree (nested questions + branches) ────────── */
+.decision-tree {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  color: var(--text, #1a1714);
+}
+.decision-tree .dt-node {
+  margin: 8px 0;
+}
+.decision-tree .dt-question {
+  display: inline-block;
+  padding: 10px 14px;
+  background: var(--bg-elevated, #fffdf8);
+  border: 1px solid var(--ink-faint, #d8d2c4);
+  border-radius: 4px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  max-width: 60ch;
+}
+.decision-tree .dt-branches {
+  list-style: none;
+  padding-left: 28px;
+  margin: 8px 0 0 14px;
+  border-left: 2px solid var(--ink-faint, #d8d2c4);
+}
+.decision-tree .dt-branch {
+  margin: 12px 0;
+  position: relative;
+}
+.decision-tree .dt-edge-label {
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--accent, #b05a3a);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.decision-tree .dt-leaf {
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--accent, #b05a3a);
+  color: var(--bg-elevated, #fffdf8);
+  border-radius: 4px;
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+/* ── two-axis SVG sizing ────────────────────────────────── */
+.two-axis { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }

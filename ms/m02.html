@@ -63,7 +63,57 @@
       <h2 class="display">From a single customer to firm value</h2>
       <p class="prose muted">Each step takes one input from the customer relationship and turns it into the next. The chain ends in a number you can compare against acquisition cost — and aggregate into customer equity.</p>
       <div class="hero-diagram">
-        <p class="muted">[diagram: flow]</p>
+        <ol class="flow">
+        <li class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Margin (m)</div>
+            <div class="flow-step-desc">Annual profit per customer — revenue minus variable cost to serve. Held constant in the simple form.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Retention (r)</div>
+            <div class="flow-step-desc">Probability the customer is still there next year. Survival compounds: r, r-squared, r-cubed across years.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Discount (i)</div>
+            <div class="flow-step-desc">Cost of capital. Future profits are pulled back to today by dividing by (1+i) raised to the year.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Margin multiple</div>
+            <div class="flow-step-desc">Retention and discount collapse into one number: r / (1 + i - r). At r=80%, i=10% that is 2.67 years of margin.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">5</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Acquisition cost (AC)</div>
+            <div class="flow-step-desc">What was spent to win the customer in year zero. Subtracted once. Already-acquired customers carry AC = 0.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">6</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">CLV = m x [r / (1+i-r)] - AC</div>
+            <div class="flow-step-desc">The customer's value to the firm today. A healthy CLV/AC ratio is around 3 — below that, growth is bought, not earned.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">7</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">Customer equity</div>
+            <div class="flow-step-desc">Sum of CLV across the current base plus discounted CLV of future acquisitions. A bottom-up valuation of the firm itself.</div>
+          </div>
+        </li>
+      </ol>
       </div>
     </section>
     
