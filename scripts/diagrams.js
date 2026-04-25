@@ -706,8 +706,7 @@ function fiveForces({ center = {}, forces = [] }) {
       </g>
       <!-- center rivalry box -->
       <rect x="${cx - cW/2}" y="${cy - cH/2}" width="${cW}" height="${cH}" fill="${ACCENT}" fill-opacity="0.18" stroke="${ACCENT}" stroke-width="2" filter="url(#ff-ink)"/>
-      <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(center.label || 'Industry Rivalry')}</text>
-      <text x="${cx}" y="${cy + 14}" text-anchor="middle" font-family="${FONT_SUB}" font-size="11" fill="${MUTED}" font-style="italic">rivalry</text>
+      <text x="${cx}" y="${cy + 5}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="18" fill="${INK}">${esc(center.label || 'Industry Rivalry')}</text>
     </svg>`;
 
   return `<div class="five-forces-wrap">
