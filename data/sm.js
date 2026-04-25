@@ -188,6 +188,29 @@ module.exports = {
           { id: 'n4', question: 'Can you absorb the activity without losing the market’s scale, focus and incentive intensity?', branches: [{ label: 'No — internalising would dull incentives or sub-scale the activity', leadsTo: 'Ally. Joint venture, equity stake, or deep partnership — share the specific assets, share the risk.' }, { label: 'Yes — you can run it at scale and keep it sharp', leadsTo: 'Make. Bring it inside; coordinate by authority rather than by price.' }] }
         ]
       }
+    },
+    m09: {
+      id: 'm09', number: '09', topic: 'Alliances',
+      title: 'Ally, Acquire, or Build',
+      hint: 'Before signing a deal, ask which mode of growth the resources, the market, and your own competence actually call for.',
+      kicker: 'Dyer, Kale & Singh · resources, market, competence · choose the mode before the partner.',
+      coreIdea: {
+        text: 'Acquisitions, alliances, and internal development are alternatives, not parallel paths. The right choice falls out of three questions: what kind of resources and synergies are needed, how uncertain and contested is the market, and which mode the firm is competent to execute. Hard, redundant resources and reciprocal synergies argue for acquisition; soft resources, sequential synergies, and high uncertainty argue for an equity alliance; modular synergies with clear interfaces argue for a contractual alliance. Defaulting to whichever mode the organisation knows how to do is the most common failure.',
+        attr: 'after Dyer, Kale & Singh'
+      },
+      diagram: {
+        type: 'decision-tree',
+        title: 'Choosing between acquisition, equity alliance, and non-equity alliance',
+        intro: 'Walk the tree top-down. Each branch reflects one of the three factor sets: resources and synergies, market conditions, and your own collaboration competence. The label at the leaf is the mode the framework points to; treat it as a starting hypothesis, not a verdict.',
+        nodes: [
+          { question: 'What synergy must the combination create?', branches: [{ label: 'Reciprocal: deep, iterative joint work across the value chain', leadsTo: 'Are the resources mostly hard assets, with high redundancy?' }, { label: 'Sequential: one partner hands off to the other in a defined order', leadsTo: 'Are the synergy-generating resources mostly soft (people, know-how)?' }, { label: 'Modular: each side runs its own assets and pools the results', leadsTo: 'Is market and technical uncertainty manageable, with clean interfaces?' }] },
+          { question: 'Are the resources mostly hard assets, with high redundancy?', branches: [{ label: 'Yes — plant, distribution, overlapping cost base', leadsTo: 'Acquisition: full control lets you cut redundancy and lock in scale.' }, { label: 'No — value sits in people and tacit know-how', leadsTo: 'Equity alliance: control without triggering the post-deal exodus of talent.' }] },
+          { question: 'Are the synergy-generating resources mostly soft (people, know-how)?', branches: [{ label: 'Yes — talent, relationships, intellectual capital', leadsTo: 'Equity alliance: align incentives, monitor performance, avoid acquirer\'s curse.' }, { label: 'No — handoff runs on hard assets and documented process', leadsTo: 'Is competition for the partner intense?' }] },
+          { question: 'Is market and technical uncertainty manageable, with clean interfaces?', branches: [{ label: 'Yes — defined scope, contractible deliverables', leadsTo: 'Non-equity alliance: a contract is enough; equity adds cost without value.' }, { label: 'No — outcomes and customer adoption are unclear', leadsTo: 'Equity alliance as stepping stone: small stake now, option to acquire later.' }] },
+          { question: 'Is competition for the partner intense?', branches: [{ label: 'Yes — rivals are circling and the asset is scarce', leadsTo: 'Acquisition: pre-empt to secure access, accept the integration cost.' }, { label: 'No — time is on your side', leadsTo: 'Non-equity alliance: stay flexible, escalate stake only as evidence accumulates.' }] },
+          { question: 'Can our organisation execute the chosen mode?', branches: [{ label: 'Yes — we have institutionalised the playbook for this mode', leadsTo: 'Proceed; design the governance and exit terms before signing.' }, { label: 'No — we default to what we know rather than what fits', leadsTo: 'Build the missing capability or revisit the mode; do not let the hammer pick the nail.' }] }
+        ]
+      }
     }
   }
 };
