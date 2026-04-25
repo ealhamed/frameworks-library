@@ -59,6 +59,29 @@ module.exports = {
           { label: '5. Rivalry Among Existing Competitors', desc: 'Rivalry shows up as price discounting, ad wars, new launches, and service escalation. It runs hot when competitors are numerous or balanced, growth is slow, fixed costs are high, products are undifferentiated, exit barriers trap capacity, or rivals have divergent goals. Price-based rivalry is the most destructive form.' }
         ]
       }
+    },
+    m03: {
+      id: 'm03', number: '03', topic: 'External Environment & Positioning',
+      title: 'Generic Strategies',
+      hint: 'Pick a side: compete on cost or on differentiation, across a broad market or a narrow focus — straddling either is the trap.',
+      kicker: 'Porter · target scope x source of advantage = a defensible position.',
+      coreIdea: {
+        text: 'A position is defensible only when the firm chooses both what advantage it offers and to whom. Two choices define the field: compete on lowest delivered cost or on a differentiation buyers will pay a premium for, and aim that advantage at the broad market or a narrow segment. Trying to be cheap and special for everyone leaves a firm stuck in the middle, beaten on price by the cost leader and on value by the differentiator. The discipline is to align every activity — pricing, product, channel, organisation — to the chosen position and refuse the work that does not fit.',
+        attr: 'after Michael Porter'
+      },
+      diagram: {
+        type: 'matrix',
+        title: 'Target scope x source of advantage',
+        intro: 'Two questions decide the position. Where do you compete (broad market or a narrow segment) and how do you win (lower cost or buyer-perceived value). The four cells are the only stable answers; the centre is the trap.',
+        rows: [
+          { label: 'Broad target', desc: 'Serve the whole market with one offer. Scale and learning curves dominate; a single value proposition has to travel across segments.' },
+          { label: 'Narrow target', desc: 'Serve a chosen segment exceptionally well. Tailored activities beat generalists inside the niche but cannot be stretched outside it.' }
+        ],
+        cols: [
+          { label: 'Cost', desc: 'Win by being the lowest-cost producer at acceptable quality. Requires relentless cost discipline, scale, standardisation and efficient operations.' },
+          { label: 'Differentiation', desc: 'Win by offering something buyers value enough to pay a premium for. Requires distinctive content, brand, service or design — and the willingness to refuse cheap shortcuts that erode it.' }
+        ]
+      }
     }
   }
 };
