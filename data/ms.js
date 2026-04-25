@@ -87,6 +87,26 @@ module.exports = {
           { label: 'Loyalty loop', desc: 'Satisfied customers shortcut straight from experience back to repurchase, bypassing consideration and evaluation. Disappointed ones re-open the set or churn - so retention work is journey work, not just a CRM program.' }
         ]
       }
+    },
+    m04: {
+      id: 'm04', number: '04', topic: 'Segmenting & Positioning',
+      title: 'STP',
+      hint: 'Markets are not monoliths. Slice them by need, choose where to play, then claim a place in the customer\'s mind.',
+      kicker: 'after Smith & Kotler · segment, target, position — the three-step cascade behind every marketing strategy.',
+      coreIdea: {
+        text: 'Customers are heterogeneous, so averages mislead. STP is the disciplined response: segment the market into groups with common needs, target the segments where size, fit, and competitive room create the most profit, then position by defining a value proposition that lives clearly in the mind of those customers relative to alternatives. It answers the two strategy questions — where will we play, and how will we win — and sets the brief that the 4Ps must execute.',
+        attr: 'after Smith and Kotler'
+      },
+      diagram: {
+        type: 'flow',
+        title: 'Segment, Target, Position',
+        intro: 'A three-stage cascade. Each stage narrows the market and sharpens the choice; the output of one is the input to the next.',
+        steps: [
+          { label: 'Segment', desc: 'Discover and profile groups of customers with common needs. Use bases (the why — needs, motivations, behaviour) and descriptors (the who — demographics, geography) so segments are differentiable, measurable, accessible, actionable, and substantial.' },
+          { label: 'Target', desc: 'Evaluate each segment on the 3Cs — customer value (size, growth, reachability), company fit (objectives, capabilities, resources), and competitive intensity (underserved needs, rivals\' strengths). Targeting is the discipline of saying no to the segments you will not serve.' },
+          { label: 'Position', desc: 'Define a value proposition that places the offer in the customer\'s mind versus alternatives — for whom, what benefit, and how it differs. The positioning statement becomes the brief that drives Product, Price, Place, and Promotion.' }
+        ]
+      }
     }
   }
 };
