@@ -394,7 +394,9 @@ article.module > section:last-of-type {
   display: grid;
   place-items: center;
   padding: 20px 0 24px;
-  max-height: 460px;
+  /* max-height removed: new diagram types (five-forces, platform, loop) include
+     a legend below the SVG — clamping the container clips the legend into the
+     next section. Individual SVGs are still capped via .hero-diagram svg below. */
 }
 
 .hero-diagram svg {
@@ -405,7 +407,7 @@ article.module > section:last-of-type {
 }
 
 @media (max-width: 640px) {
-  .hero-diagram { max-height: 360px; padding: 12px 0 16px; }
+  .hero-diagram { padding: 12px 0 16px; }
   .hero-diagram svg { max-height: 340px; }
 }
 
@@ -1431,8 +1433,14 @@ section[id] p a:hover, section[id] li a:hover {
   .loop-legend-desc { grid-column: 1 / -1; margin-top: 2px; }
 }
 
-/* safety: keep new wrappers from sliding into colophon */
-.five-forces-wrap, .platform-wrap, .loop-wrap { margin-bottom: 24px; }
+/* New diagram wrappers: full width inside .hero-diagram grid, isolated block context */
+.five-forces-wrap, .platform-wrap, .loop-wrap {
+  width: 100%;
+  display: block;
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 32px;
+}
 
 /* ── Accessible breadcrumb (ol-based) ────────────────────── */
 
