@@ -47,35 +47,11 @@ function buildHome(courses) {
 }
 
 function main() {
-  const codes = ['lpo', 'fa', 'da', 'me', 'el'];
+  const codes = ['lpo', 'fa', 'da', 'me', 'el', 'sm', 'ms'];
   const courses = codes.map(readCourse);
   for (const c of codes) buildCourse(c);
 
-  // Courses not yet started — display as stubs on the shelf
-  const comingSoon = [
-    {
-      code: 'sm',
-      courseCode: 'CD52',
-      courseName: 'Strategic Management',
-      courseDisplayName: 'Strategic Management',
-      professor: 'LBS Faculty',
-      courseAccent: '--c-fa',
-      status: 'starts April 24',
-      modules: {}
-    },
-    {
-      code: 'ms',
-      courseCode: 'CD55',
-      courseName: 'Marketing Strategies',
-      courseDisplayName: 'Marketing Strategies',
-      professor: 'LBS Faculty',
-      courseAccent: '--c-ms',
-      status: 'starts April 24',
-      modules: {}
-    }
-  ];
-
-  buildHome([...courses, ...comingSoon]);
+  buildHome(courses);
 
   console.log('\n✓ Build complete.\n');
 }
