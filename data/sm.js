@@ -167,6 +167,27 @@ module.exports = {
           { label: 'Secure leadership and followership', detail: 'Identify who guides the realignment and who accepts the follower role. Without willing followership, structure collapses back to the legacy configuration.' }
         ]
       }
+    },
+    m08: {
+      id: 'm08', number: '08', topic: 'Make vs Buy',
+      title: 'The Boundary of the Firm',
+      hint: 'Pull an activity inside only when the market would punish you for the relationship-specific bets it requires.',
+      kicker: 'Coase and Williamson · transaction costs, asset specificity, and the hold-up problem.',
+      coreIdea: {
+        text: 'Markets coordinate by price; firms coordinate by authority. Each has a cost. You should make rather than buy when transacting in the open market would be more expensive than running the activity yourself — typically because the activity demands relationship-specific investments, repeats often under uncertainty, and would expose you to hold-up by a thin set of counterparties. When those conditions are absent, the market is faster, cheaper and more disciplined than your own org chart.',
+        attr: 'after Coase (1937) and Williamson'
+      },
+      diagram: {
+        type: 'decision-tree',
+        title: 'Where to draw the firm’s boundary',
+        intro: 'Walk a candidate activity down the tree. The price mechanism is the default — only step inside the firm when the transaction itself would misbehave on the open market.',
+        nodes: [
+          { id: 'n1', question: 'Is the activity strategically core — a source of differentiation, learning or rents?', branches: [{ label: 'No — it is generic, commoditised input', leadsTo: 'Buy. Use the market; let suppliers compete on price and innovation.' }, { label: 'Yes — it shapes how you compete', leadsTo: 'n2' }] },
+          { id: 'n2', question: 'Does it require relationship-specific assets — dedicated capacity, custom tooling, co-located plant, proprietary know-how?', branches: [{ label: 'Low specificity — assets are redeployable', leadsTo: 'Buy with a standard contract. Switching is cheap; the market disciplines the supplier.' }, { label: 'High specificity — once built, the asset only has value in this relationship', leadsTo: 'n3' }] },
+          { id: 'n3', question: 'Is the supplier market thin and the future hard to specify — few credible counterparties, high uncertainty, frequent re-negotiation?', branches: [{ label: 'Thick market, low uncertainty', leadsTo: 'Buy with safeguards. Long-term contract, dual sourcing, or reciprocal hostages.' }, { label: 'Thin market, high uncertainty — hold-up risk is real', leadsTo: 'n4' }] },
+          { id: 'n4', question: 'Can you absorb the activity without losing the market’s scale, focus and incentive intensity?', branches: [{ label: 'No — internalising would dull incentives or sub-scale the activity', leadsTo: 'Ally. Joint venture, equity stake, or deep partnership — share the specific assets, share the risk.' }, { label: 'Yes — you can run it at scale and keep it sharp', leadsTo: 'Make. Bring it inside; coordinate by authority rather than by price.' }] }
+        ]
+      }
     }
   }
 };
