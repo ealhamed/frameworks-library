@@ -101,20 +101,20 @@ function matrix2x2({ xAxis, yAxis, quadrants }) {
         <text x="${p.x}" y="${p.y}" text-anchor="middle" font-family="${FONT_LABEL}" font-size="22" font-weight="${textWeight}" fill="${textFill}">${esc(q.label)}</text>`;
   }).join('');
 
-  return `<svg viewBox="20 40 600 400" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
+  return `<svg viewBox="-10 30 660 470" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
       <title>2×2 matrix</title>
       <desc>Two-by-two matrix with ${esc(xAxis.label || 'x')} on the horizontal axis and ${esc(yAxis.label || 'y')} on the vertical axis, showing four quadrant positions.</desc>
       <g>
         ${cells}
       </g>
       <!-- axis labels -->
-      <g font-family="${FONT_SUB}" font-size="15" fill="${MUTED}" font-style="italic">
-        <text x="60" y="230" text-anchor="middle" transform="rotate(-90, 60, 230)">${esc(yAxis.label)}</text>
-        <text x="60" y="100" text-anchor="middle" transform="rotate(-90, 60, 100)">${esc(yAxis.hi)}</text>
-        <text x="60" y="360" text-anchor="middle" transform="rotate(-90, 60, 360)">${esc(yAxis.lo)}</text>
-        <text x="300" y="425" text-anchor="middle">${esc(xAxis.label)}</text>
-        <text x="180" y="410" text-anchor="middle">${esc(xAxis.lo)}</text>
-        <text x="420" y="410" text-anchor="middle">${esc(xAxis.hi)}</text>
+      <g font-family="${FONT_SUB}" font-size="14" fill="${MUTED}" font-style="italic">
+        <text x="32" y="230" text-anchor="middle" transform="rotate(-90, 32, 230)">${esc(yAxis.label)}</text>
+        <text x="-2" y="130" text-anchor="middle" transform="rotate(-90, -2, 130)">${esc(yAxis.hi)}</text>
+        <text x="-2" y="330" text-anchor="middle" transform="rotate(-90, -2, 330)">${esc(yAxis.lo)}</text>
+        <text x="300" y="475" text-anchor="middle">${esc(xAxis.label)}</text>
+        <text x="180" y="445" text-anchor="middle">${esc(xAxis.lo)}</text>
+        <text x="420" y="445" text-anchor="middle">${esc(xAxis.hi)}</text>
       </g>
     </svg>`;
 }
