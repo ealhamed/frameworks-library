@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beta and the CAPM · Corporate Finance</title>
+<meta name="description" content="Silva · Expected return is linear in beta only: r̄ᵢ = r_f + βᵢ(r̄ₘ − r_f).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m05.html" class="active" aria-current="page">m.05</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.05</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.05 · II · Risk, valuation &amp; financing · Portfolio Theory &amp; the CAPM</p>
+    <h1>Beta and the CAPM</h1>
+    <p class="sub">Silva · Expected return is linear in beta only: r̄ᵢ = r_f + βᵢ(r̄ₘ − r_f).</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Hold one stock and you carry all its drama. Hold fifty and the firm-specific noise cancels — what survives is co-movement with the whole market, and that is beta. Because diversification is free, markets do not pay for risk you could cancel yourself. The CAPM turns this into a price: required return equals the risk-free rate plus beta times the market premium. That line prices every project in the course.
+        <span class="attr">— after Silva, Portfolio Theory &amp; the CAPM</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · The umbrella-and-ice-cream portfolio.</p>
+        <div class="eli5-body">
+          <p>Own an ice-cream stand and your income swings with the weather. Add an umbrella stand and the swings <strong>cancel each other out</strong> — same businesses, calmer total. That cancelling is free, so the market refuses to pay extra for risk you could cancel yourself.</p>
+          <p>What cannot be cancelled is the risk that hits <strong>everything at once</strong> — recessions. Beta measures how hard a stock leans into those. The CAPM is just the market’s posted rate card: more beta, more required return. Nothing else earns a premium.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The Security Market Line.</h2>
+      <p class="prose muted">Every priced asset plots on one line: beta in, required return out. Off the line is mispricing — briefly.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Scatter with fit line" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Scatter plot with fit line</title>
+      <desc>Scatter plot of expected return against beta (systematic risk) with an OLS regression line and sample residuals highlighted, showing a positive trend.</desc>
+      <!-- axes -->
+      <line x1="90" y1="360" x2="570" y2="360" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="90" y1="360" x2="90" y2="50" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <!-- fitted line -->
+      <line x1="100" y1="309" x2="550" y2="111" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round"/>
+      <!-- residual drops -->
+      <g>
+        <line x1="153" y1="284" x2="153" y2="285" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+        <line x1="286" y1="239" x2="286" y2="227" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+        <line x1="414" y1="188" x2="414" y2="171" stroke="var(--accent, #b05a3a)" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.9"/>
+      </g>
+      <!-- dots -->
+      <g>
+        <circle cx="101" cy="280" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="100" cy="314" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="146" cy="325" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="153" cy="284" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="183" cy="296" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="191" cy="227" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="221" cy="280" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="247" cy="261" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="258" cy="214" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="286" cy="239" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="301" cy="181" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="327" cy="174" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="356" cy="218" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="382" cy="194" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="409" cy="162" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="414" cy="188" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="445" cy="189" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="485" cy="152" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="497" cy="122" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="527" cy="138" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="534" cy="114" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+        <circle cx="557" cy="75" r="4.5" fill="var(--text, #1a1714)" fill-opacity="0.78"/>
+      </g>
+      <!-- axis labels -->
+      <text x="325" y="408" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic">beta (systematic risk)</text>
+      <text x="54" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 54, 210)">expected return</text>
+      <text x="554" y="74" text-anchor="end" font-family="Inter, sans-serif" font-size="13" fill="var(--accent, #b05a3a)" font-style="italic">SML</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Diversification <em class="muted">· after Markowitz</em></div>
+        <div class="fw-comps mono muted">Idiosyncratic risk → cancels · Systematic risk → remains · Correlation drives the math</div>
+        <div class="fw-rule serif">Standard deviation is not the risk of a priced stock — only the undiversifiable part earns a premium.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Beta <em class="muted">· Sharpe · Treynor lineage</em></div>
+        <div class="fw-comps mono muted">Cov(rᵢ, rₘ) / Var(rₘ) · Market = 1 · Defensive &lt; 1 &lt; cyclical</div>
+        <div class="fw-rule serif">Beta measures how much market risk an asset adds to a diversified portfolio — that, not volatility, is what gets priced.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">CAPM / Security Market Line <em class="muted">· Sharpe · Lintner</em></div>
+        <div class="fw-comps mono muted">r_f · β · Market risk premium</div>
+        <div class="fw-rule serif">Required return is linear in beta only — the model behind every discount rate you will defend to a board.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Setting a discount rate you can defend.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Start from the project, not the firm.</strong> The beta you need is the beta of the cash flows being priced.</span></li>
+        <li><span class="txt"><strong>Estimate beta from comparables.</strong> Pure-play traded firms in the same business, unlevered — next module makes this mechanical.</span></li>
+        <li><span class="txt"><strong>Pick the premium and declare it.</strong> A 1% change in the market risk premium moves valuations more than most modelling debates.</span></li>
+        <li><span class="txt"><strong>Refuse volatility arguments.</strong> "This stock is risky, it swings 40%" prices nothing if the swings are diversifiable.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Berk &amp; DeMarzo · Corporate Finance, Ch. 10–12</p>
+      <h3 class="kr-title">From volatility to beta to the cost of capital.</h3>
+      <p class="kr-prose">The full chain the videos compress: why diversification changes what risk means, how beta is estimated in practice, and where the CAPM’s assumptions creak. Worth reading before you ever unlever a comparable.</p>
+      
+      
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m04.html">← m.04 Bond Pricing &amp; the Yield Curve</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m06.html">m.06 WACC →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

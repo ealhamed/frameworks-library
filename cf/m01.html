@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The NPV Rule · Corporate Finance</title>
+<meta name="description" content="Hennessy · NPV measures value created — and it is priced: it shows up in market cap the day the market believes your project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m01.html" class="active" aria-current="page">m.01</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.01</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.01 · I · Investment decisions · Net Present Value &amp; Investment Decision</p>
+    <h1>The NPV Rule</h1>
+    <p class="sub">Hennessy · NPV measures value created — and it is priced: it shows up in market cap the day the market believes your project.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        A project is worth the cash it returns, shrunk by when it arrives and how risky it is. The discount rate is not what your bank charges; it is the return investors could earn on traded assets of the same risk. With no rival project and no option to wait, invest exactly when NPV > 0. One subtlety earns the module: NPV is value created, not value your current shareholders keep.
+        <span class="attr">— after Hennessy, NPV &amp; Capital Budgeting</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Paying today for a machine that spits out cash later.</p>
+        <div class="eli5-body">
+          <p>A project is a vending machine: you pay upfront, it pays you back over years. <strong>Money later is worth less than money now</strong>, because you could have invested elsewhere meanwhile. So you shrink each future payout by what the market would have paid you at the same risk — then compare the shrunken total to the price tag.</p>
+          <p>If the total beats the price, buy the machine. That is the whole rule. The fine print — <strong>whose pocket the gain lands in</strong> — is what the rest of the course is about.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The only formula that matters this term.</h2>
+      <p class="prose muted">Every later module — cash flow, WACC, valuation, financing — is an argument about one of these inputs.</p>
+      <div class="hero-diagram">
+        <div class="equation"><span class="lhs">NPV</span> <span class="eq">=</span> <span class="rhs">Σ CFₜ / (1 + r)ᵗ − OUTLAY</span></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">NPV Rule <em class="muted">· Fisher · Hirshleifer tradition</em></div>
+        <div class="fw-comps mono muted">Expected cash flows · Project cost of capital · Invest iff NPV &gt; 0</div>
+        <div class="fw-rule serif">Positive NPV means the project beats the market alternative at equal risk — that, not accounting profit, is value creation.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Perpetuity &amp; Annuity Toolkit <em class="muted">· incl. Gordon Growth Model</em></div>
+        <div class="fw-comps mono muted">Perpetuity C/r · Growing perpetuity C₁/(r−g) · Annuity factor A(r,T)</div>
+        <div class="fw-rule serif">Four closed forms price almost any cash-flow stream — memorise them and long horizons stop being scary.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">NPVCS Decomposition <em class="muted">· Hennessy</em></div>
+        <div class="fw-comps mono muted">NPV to current shareholders · to current lenders · to new shareholders · to new lenders</div>
+        <div class="fw-rule serif">NPV splits across claimants — a positive-NPV project can still be a bad deal for the shareholders who approve it.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Before you approve any capital request.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Check the discount rate is a risk price.</strong> It must come from traded assets of similar risk — not the loan rate, not a house hurdle.</span></li>
+        <li><span class="txt"><strong>Collapse the stream with the right closed form.</strong> Perpetuity, growing perpetuity, or annuity. Confirm r > g before using Gordon.</span></li>
+        <li><span class="txt"><strong>Ask who captures the NPV.</strong> If financing dilutes current shareholders, compute NPVCS, not just NPV.</span></li>
+        <li><span class="txt"><strong>Ask what the rule assumes.</strong> No mutually exclusive rival, no option to wait. If either exists, plain NPV > 0 is not enough.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Berk &amp; DeMarzo · Corporate Finance, Ch. 4 &amp; 7</p>
+      <h3 class="kr-title">Time value and the investment decision rules, done properly.</h3>
+      <p class="kr-prose">The named course reference for this module. Chapter 4 builds the discounting machinery; Chapter 7 shows why NPV survives every alternative rule thrown at it. Read the worked examples with a calculator, not a highlighter.</p>
+      
+      
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./">← back to CF</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m02.html">m.02 Free Cash Flow →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

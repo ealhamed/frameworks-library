@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bond Pricing &amp; the Yield Curve · Corporate Finance</title>
+<meta name="description" content="Hennessy · Price and yield move inversely — that single fact is interest-rate risk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m04.html" class="active" aria-current="page">m.04</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.04</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.04 · I · Investment decisions · Debt Markets in Corporate Finance</p>
+    <h1>Bond Pricing &amp; the Yield Curve</h1>
+    <p class="sub">Hennessy · Price and yield move inversely — that single fact is interest-rate risk.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Debt is the cleanest laboratory for discounting: promised coupons, a face value, a date. Price each cash flow at the zero-coupon spot rate for its maturity — one flat yield is an approximation that breaks whenever the curve slopes. Yield to maturity summarises the price; it does not set it. Above the risk-free curve sits the credit spread: the market’s live estimate of default.
+        <span class="attr">— after Hennessy, Lecture on Debt Markets</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Why old bonds go on sale.</p>
+        <div class="eli5-body">
+          <p>A bond is an IOU with fixed payments. If new IOUs start paying 5% and yours pays 3%, <strong>nobody buys yours at full price</strong> — it has to go on sale until its buyer earns 5% too. Rates up, price down. Always.</p>
+          <p>The <strong>yield curve</strong> is just the price of waiting, listed by how long you wait. And the extra yield on a company IOU over a government one is the market whispering <strong>how likely it thinks you are to not pay</strong>.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">How a bond gets its price.</h2>
+      <p class="prose muted">The market works left to right. Most people read the quote screen right to left and think YTM comes first.</p>
+      <div class="hero-diagram">
+        <div class="linear"><svg viewBox="0 0 640 140" role="img" aria-label="Linear flow" xmlns="http://www.w3.org/2000/svg" class="linear-h">
+      <title>Linear flow</title>
+      <desc>Left-to-right sequential flow: Spot rates → Discount each coupon → Bond price → YTM (the summary).</desc>
+      <g>
+        
+        <text x="80" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Spot rates</text>
+        <text x="160" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="240" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Discount each coupon</text>
+        <text x="320" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="400" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Bond price</text>
+        <text x="480" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="560" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">YTM (the summary)</text>
+        
+      </g>
+    </svg><div class="linear-v">
+        <div class="lin-step">Spot rates</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">Discount each coupon</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">Bond price</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">YTM (the summary)</div>
+        
+      </div></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Price–Yield Inversion <em class="muted">· bond arithmetic</em></div>
+        <div class="fw-comps mono muted">Fixed promised flows · Rate up → price down · Duration scales the move</div>
+        <div class="fw-rule serif">Rates and prices are two ends of one seesaw — longer duration just means you are sitting further from the pivot.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Term Structure / Spot Rates <em class="muted">· after Hennessy</em></div>
+        <div class="fw-comps mono muted">Zero-coupon rates by maturity · Discount each flow at its own rate · Curve shape carries expectations</div>
+        <div class="fw-rule serif">Use spot rates, not one flat yield, to discount a stream — the curve is the market’s price list for time.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Credit Spread <em class="muted">· ratings &amp; markets</em></div>
+        <div class="fw-comps mono muted">Corporate yield − govt yield · Default probability × loss · Ratings as coarse bins</div>
+        <div class="fw-rule serif">The spread is the market’s live default estimate — it reprices daily while ratings move in quarters.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Reading a debt quote like a corporate treasurer.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Split the yield in two.</strong> Risk-free for the maturity, plus spread. Only the spread is about your firm.</span></li>
+        <li><span class="txt"><strong>Check duration before judging risk.</strong> A 2% rate move hurts a 10-year bond roughly five times more than a 2-year.</span></li>
+        <li><span class="txt"><strong>Never discount a stream at one flat rate.</strong> When the curve is steep, flat-rate pricing misprices every leg — arbitrage lives in that gap.</span></li>
+        <li><span class="txt"><strong>Watch spreads, not ratings.</strong> The market downgrades weeks before the agencies do.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m03.html">← m.03 IRR and Its Traps</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m05.html">m.05 Beta and the CAPM →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

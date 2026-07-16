@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRR and Its Traps · Corporate Finance</title>
+<meta name="description" content="Hennessy · IRR and NPV agree only for a conventional, standalone project — this module is about the exceptions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m03.html" class="active" aria-current="page">m.03</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.03</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.03 · I · Investment decisions · Alternative Investment Criteria</p>
+    <h1>IRR and Its Traps</h1>
+    <p class="sub">Hennessy · IRR and NPV agree only for a conventional, standalone project — this module is about the exceptions.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        IRR is the discount rate that sets NPV to zero, and boards love it because it looks like a return. It breaks twice. Non-conventional cash flows produce multiple IRRs, or a borrowing-type project where a high IRR is bad news. And for mutually exclusive projects, the higher-IRR project can be the smaller-NPV one. Rank by NPV, or by incremental IRR — never by standalone IRR.
+        <span class="attr">— after Hennessy, Lecture on IRR</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · A percentage that flatters.</p>
+        <div class="eli5-body">
+          <p>IRR answers "what return does this project earn on itself?" Sounds perfect — until you notice that a tiny project can earn <strong>a huge return on almost nothing</strong>, while a big project earns a decent return on a lot. The second one buys the yacht.</p>
+          <p>NPV counts money, not percentages. <strong>When the two disagree, money wins.</strong></p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">When can you trust an IRR?</h2>
+      <p class="prose muted">Two questions decide it: does the sign of the cash flows flip more than once, and are you ranking rivals? Only one cell is safe.</p>
+      <div class="hero-diagram">
+        <svg viewBox="-10 30 660 470" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
+      <title>2×2 matrix</title>
+      <desc>Two-by-two matrix with Cash-flow pattern on the horizontal axis and Decision setting on the vertical axis, showing four quadrant positions.</desc>
+      <g>
+        
+        <rect x="70" y="60" width="220" height="140" fill="var(--accent, #b05a3a)" fill-opacity="0.92" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--bg-elevated, #fffdf8)">IRR works</text>
+        <rect x="310" y="60" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Multiple IRRs</text>
+        <rect x="70" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Ranking fails</text>
+        <rect x="310" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Use NPV only</text>
+      </g>
+      <!-- axis labels -->
+      <g font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">
+        <text x="32" y="230" text-anchor="middle" transform="rotate(-90, 32, 230)">Decision setting</text>
+        <text x="-2" y="130" text-anchor="middle" transform="rotate(-90, -2, 130)">Standalone</text>
+        <text x="-2" y="330" text-anchor="middle" transform="rotate(-90, -2, 330)">Ranking rivals</text>
+        <text x="300" y="475" text-anchor="middle">Cash-flow pattern</text>
+        <text x="180" y="445" text-anchor="middle">Conventional</text>
+        <text x="420" y="445" text-anchor="middle">Non-conventional</text>
+      </g>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">IRR Rule &amp; Failure Modes <em class="muted">· after Hennessy</em></div>
+        <div class="fw-comps mono muted">NPV(r*) = 0 · Multiple sign changes → multiple roots · Lending vs borrowing type</div>
+        <div class="fw-rule serif">An IRR is only a return if the project is lending-type with one sign change — check the pattern before quoting the number.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Incremental IRR <em class="muted">· standard treatment</em></div>
+        <div class="fw-comps mono muted">Difference the cash flows · IRR of the increment · Compare to cost of capital</div>
+        <div class="fw-rule serif">To choose between rivals with IRR at all, compute the IRR of the difference — or just use NPV and go home early.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Payback &amp; Profitability Index <em class="muted">· practitioner screens</em></div>
+        <div class="fw-comps mono muted">Years to recover outlay · PV per unit of capital · Capital rationing</div>
+        <div class="fw-rule serif">Payback is a liquidity screen and PI a rationing tool — neither is an investment rule on its own.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">When someone leads with “the IRR is 30%”.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Count the sign changes.</strong> More than one — decommissioning costs, staged outlays — and the 30% may have siblings.</span></li>
+        <li><span class="txt"><strong>Ask lending or borrowing.</strong> If cash comes in first and goes out later, you want a LOW IRR. Most audiences have never checked.</span></li>
+        <li><span class="txt"><strong>Refuse IRR rankings.</strong> Scale and timing distort them. Mutually exclusive projects get ranked by NPV, full stop.</span></li>
+        <li><span class="txt"><strong>Keep payback in its lane.</strong> Fine as a cash-at-risk screen. The moment it vetoes a positive-NPV project, it is destroying value.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m02.html">← m.02 Free Cash Flow</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m04.html">m.04 Bond Pricing &amp; the Yield Curve →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

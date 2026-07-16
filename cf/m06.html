@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WACC · Corporate Finance</title>
+<meta name="description" content="Silva · WACC is the cost of the firm’s average asset. The trap is using it for projects that are not average.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m06.html" class="active" aria-current="page">m.06</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.06</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.06 · II · Risk, valuation &amp; financing · WACC &amp; Company Valuation</p>
+    <h1>WACC</h1>
+    <p class="sub">Silva · WACC is the cost of the firm’s average asset. The trap is using it for projects that are not average.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Debt and equity holders each require a return; WACC blends the two at market-value weights, with debt tax-adjusted because interest shields profit. It discounts unlevered free cash flow into enterprise value. The trap is scope: WACC prices the firm’s average risk. For a division, a private firm, or an unusual project, unlever a pure-play comparable’s beta, relever to the target, and build the rate from there.
+        <span class="attr">— after Silva, WACC and company valuation</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · The blended interest rate on everything you owe everyone.</p>
+        <div class="eli5-body">
+          <p>A company runs on two kinds of money: borrowed (cheaper, and the tax office gives a discount on the interest) and shareholders’ (pricier, because they get paid last). <strong>WACC is the blended rate</strong> across both, weighted by how much of each you use.</p>
+          <p>Any project must clear that blended bar or it makes your investors poorer. One catch: it is the bar for your <strong>average</strong> project. Using the company-wide bar for a wildly different venture is how safe divisions end up subsidising reckless ones.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">The blended price of capital.</h2>
+      <p class="prose muted">Market-value weights, always. The (1 − τ) is the tax shield showing up in the rate — never in the cash flows too.</p>
+      <div class="hero-diagram">
+        <div class="equation"><span class="lhs">WACC</span> <span class="eq">=</span> <span class="rhs">(E/V)·r_E + (D/V)·r_D·(1 − τ)</span></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">WACC Identity <em class="muted">· standard corporate finance</em></div>
+        <div class="fw-comps mono muted">Market-value weights · Cost of equity via CAPM · After-tax cost of debt</div>
+        <div class="fw-rule serif">Blend at market values and tax-adjust the debt leg — book weights and coupon rates both produce confident nonsense.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Unlever / Relever Beta <em class="muted">· pure-play method</em></div>
+        <div class="fw-comps mono muted">Comparable equity beta · Strip its leverage → asset beta · Relever at target D/E</div>
+        <div class="fw-rule serif">Asset betas travel across firms; equity betas do not — always move risk through the unlevered form.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Divisional Cost of Capital <em class="muted">· after Silva</em></div>
+        <div class="fw-comps mono muted">Per-division comparables · Division-specific WACC · Firm WACC ≠ cost of assets</div>
+        <div class="fw-rule serif">One firm-wide rate subsidises risky divisions and starves safe ones — capital flows to the wrong place by construction.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Building a WACC that survives review.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Weight at market values.</strong> Equity at market cap, debt at market or fair value. Book equity is history, not price.</span></li>
+        <li><span class="txt"><strong>Build r_E from a relevered asset beta.</strong> Comparables → unlever → median → relever at the target capital structure.</span></li>
+        <li><span class="txt"><strong>Take r_D from current yields.</strong> The rate the firm would pay today — not the coupon on debt issued years ago.</span></li>
+        <li><span class="txt"><strong>Match the rate to the asset.</strong> New business line? Different country risk? Rebuild the WACC; do not reuse the house number.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m05.html">← m.05 Beta and the CAPM</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m07.html">m.07 Enterprise DCF →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Cash Flow · Corporate Finance</title>
+<meta name="description" content="Hennessy · Cash flow is not net income — the gap is interest, depreciation, working capital and capex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">CF</a>
+      <a href="./m02.html" class="active" aria-current="page">m.02</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">CF</a></li>
+      <li>m.02</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.02 · I · Investment decisions · Computing Cash Flow</p>
+    <h1>Free Cash Flow</h1>
+    <p class="sub">Hennessy · Cash flow is not net income — the gap is interest, depreciation, working capital and capex.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        The number you discount is free cash flow: after-tax operating profit, plus non-cash charges back, minus what you must reinvest in capex and working capital. Two disciplines produce it. Count only incremental flows — the ones that exist because the project does. And weight by probability: a launch case that ignores the failure branch is a forecast of luck, not of cash.
+        <span class="attr">— after Hennessy, Cash Flow lecture</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Profit is opinion; cash is fact.</p>
+        <div class="eli5-body">
+          <p>Accountants spread big purchases over years and book sales before the money arrives. Useful for reports, useless for deciding whether a project pays. <strong>You can only reinvest actual cash</strong>, so you rebuild the number: real money in, real money out, in the year it actually moves.</p>
+          <p>And you only count money that moves <strong>because of this project</strong>. The money you already burned deciding? Gone either way. It gets no vote.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">From operating profit to the number you discount.</h2>
+      <p class="prose muted">Five moves, in order. Every valuation in this course starts by walking this bridge.</p>
+      <div class="hero-diagram">
+        <ol class="flow">
+        <li class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">EBIT</div>
+            <div class="flow-step-desc">Operating profit before financing. Interest stays out — financing lives in the discount rate, not the numerator.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">× (1 − τ)</div>
+            <div class="flow-step-desc">Tax the operating profit as if unlevered. The debt tax benefit is captured later, in WACC.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">+ D&amp;A</div>
+            <div class="flow-step-desc">Depreciation is an accounting memory of old spending, not a cash outflow. Add it back.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">− CAPX</div>
+            <div class="flow-step-desc">Real cash out the door for plant and equipment, counted when spent — not when depreciated.</div>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-step-num">5</div>
+          <div class="flow-step-body">
+            <div class="flow-step-label">− ΔNWC</div>
+            <div class="flow-step-desc">Inventory and receivables tie up cash as sales grow; recover it when the project winds down.</div>
+          </div>
+        </li>
+      </ol>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Free Cash Flow Identity <em class="muted">· standard corporate finance</em></div>
+        <div class="fw-comps mono muted">EBIT(1−τ) · + D&amp;A · − CAPX · − ΔNWC</div>
+        <div class="fw-rule serif">Discount unlevered cash flow — put financing effects in the rate, never in the numerator, or you count them twice.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Incremental Cash-Flow Principle <em class="muted">· after Hennessy</em></div>
+        <div class="fw-comps mono muted">Ignore sunk costs · Charge opportunity costs · Charge cannibalization</div>
+        <div class="fw-rule serif">Value the world with the project minus the world without it — nothing else belongs in the model.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Expected Cash Flow <em class="muted">· probability weighting</em></div>
+        <div class="fw-comps mono muted">Scenario flows · Probabilities · Probability-weighted mean</div>
+        <div class="fw-rule serif">Discount the expectation across scenarios, not the single case the sponsor happens to believe in.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Auditing a sponsor’s spreadsheet.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Find interest in the cash flows.</strong> If it is there, the model double-counts financing. Send it back.</span></li>
+        <li><span class="txt"><strong>Hunt the sunk costs.</strong> R&D already spent and consultants already paid do not belong. Delete them without mercy.</span></li>
+        <li><span class="txt"><strong>Charge the project for what it steals.</strong> The land it uses, the sales it takes from your existing product — both are real costs.</span></li>
+        <li><span class="txt"><strong>Ask for the downside branch.</strong> One scenario is a story. Probability-weight at least two before you call it an expectation.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m01.html">← m.01 The NPV Rule</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m03.html">m.03 IRR and Its Traps →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>
