@@ -29,6 +29,8 @@
   --c-el: #888480;   /* Executive Leadership */
   --c-sm: #b05a3a;   /* Strategic Mgmt */
   --c-ms: #7a9d4e;   /* Marketing Strat */
+  --c-cv: #a35a86;   /* Customer Value */
+  --c-cf: #2e6e8a;   /* Corporate Finance */
 
   /* Typography */
   --serif-display: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
