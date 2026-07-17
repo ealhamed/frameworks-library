@@ -52,7 +52,7 @@ function buildAllFrameworks(courses) {
 }
 
 function main() {
-  const codes = ['lpo', 'fa', 'da', 'me', 'el', 'sm', 'ms', 'cv', 'cf'];
+  const codes = ['lpo', 'fa', 'da', 'me', 'el', 'sm', 'ms', 'cv', 'cf', 'ge'];
   const courses = codes.map(readCourse);
   for (const c of codes) buildCourse(c);
 
