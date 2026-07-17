@@ -12,12 +12,12 @@ module.exports = {
   school: 'London Business School',
   cohort: 'EMBA Dubai 2027',
   arc: {
-    tagline: 'Two blocks. Nine modules.',
+    tagline: 'Two blocks. Ten modules.',
     pullquote: 'Read the industry first, then choose where to play and how to win.',
     attr: 'the course, told in one line',
     blocks: [
       { label: 'I · Position the firm', modules: ['m01', 'm02', 'm03', 'm04'] },
-      { label: 'II · Choose strategic moves', modules: ['m05', 'm06', 'm07', 'm08', 'm09'] }
+      { label: 'II · Choose strategic moves', modules: ['m05', 'm06', 'm07', 'm08', 'm09', 'm10'] }
     ]
   },
   modules: {
@@ -614,6 +614,73 @@ module.exports = {
           'You want to serve a new dish. You could buy the restaurant next door (acquisition), hire their chef on contract (alliance), or train your own chef over time (build). All three get you to the dish eventually — but at very different costs, speeds, and risks.',
           'If the dish requires a fully equipped kitchen you do not have, buy it. If the dish requires a specific chef\'s knowledge that would walk out the door the moment you take over, make a deal instead. If you just need the recipe and can train someone, build it yourself.',
           'The mistake most companies make is choosing based on which option their finance team or business development team knows how to do — not which option the situation actually calls for.'
+        ]
+      }
+    },
+    m10: {
+      id: 'm10', number: '10', topic: 'Strategy & Sustainability',
+      title: 'Sustainability as Strategy',
+      hint: 'Before writing sustainability into the deck, ask whether it moves willingness to pay or the cost structure — bolted-on virtue is the trap.',
+      kicker: 'Porter & Kramer · shared value · sustainability wins when it is the business model, not the PR.',
+      coreIdea: {
+        text: 'Doing good only counts as strategy when it changes what customers pay or what the firm spends. Bolted on, sustainability is a cost centre with a marketing budget. Embedded, it can raise willingness to pay for a values-aligned segment and force a leaner operating model at the same time. The test is not sincerity but economics: does the green choice widen the wedge?',
+        attr: 'after Porter & Kramer'
+      },
+      diagram: {
+        type: '2x2',
+        title: 'Where sustainability lives x whether a segment pays for it',
+        intro: 'Two questions decide whether sustainability is strategy or decoration. Is it embedded in how the firm actually operates, and does a reachable segment reward it? Only one cell compounds. TwoThirds sits there: small-batch nearshoring and a direct channel back the claim, and a values-aligned segment pays the premium.',
+        xAxis: { label: 'Where it lives', lo: 'Bolted on', hi: 'In the business model' },
+        yAxis: { label: 'Segment willingness to pay', lo: 'Low', hi: 'High' },
+        quadrants: [
+          { pos: 'tl', label: 'Greenwash trap' },
+          { pos: 'tr', label: 'Shared value', highlight: true },
+          { pos: 'bl', label: 'CSR as line item' },
+          { pos: 'br', label: 'Costly virtue' }
+        ]
+      },
+      frameworks: [
+        {
+          name: 'Creating Shared Value',
+          author: 'Porter & Kramer · HBR 2011',
+          components: ['Reconceive products and markets', 'Redefine productivity in the value chain', 'Enable local cluster development'],
+          rule: 'Sustainability earns a place in strategy only where societal value and firm economics reinforce each other.'
+        },
+        {
+          name: 'The Sustainable Pivot',
+          author: 'CD52 Module 10 · TwoThirds case',
+          components: ['Values-based differentiation that raises willingness to pay', 'Nearshoring: higher unit cost traded for speed and lower inventory risk', 'Direct-to-consumer channel: capture the margin that funds the model'],
+          rule: 'A sustainability pivot works when each green choice also moves the value wedge: willingness to pay up, or the cost structure redesigned.'
+        },
+        {
+          name: 'When Sustainability Strategies Fail',
+          author: 'CD52 Module 10',
+          components: ['No segment that pays: virtue without a buyer', 'Claims that outrun operations: greenwash exposure', 'Unpriced trade-offs: green costs erode the margin that funds them'],
+          rule: 'Sustainability fails as strategy when it adds cost without moving willingness to pay, or promises what operations cannot back.'
+        }
+      ],
+      apply: {
+        title: 'Before putting sustainability into the strategy.',
+        steps: [
+          { strong: 'Name the segment that pays.', rest: 'Which customers reward the sustainable choice with a premium, loyalty, or preference? If you cannot name them, it is philanthropy, not positioning.' },
+          { strong: 'Trace each green choice to the value wedge.', rest: 'Does it raise willingness to pay, restructure cost, or neither? TwoThirds\' nearshoring cost more per unit and still paid, because speed cut inventory risk.' },
+          { strong: 'Check that operations back the claim.', rest: 'Greenwash is positioning debt. The moment the claim outruns the supply chain, the premium collapses and takes the brand with it.' },
+          { strong: 'Price the trade-offs explicitly.', rest: 'Sustainable models refuse revenue: mass channels, deep discounting, fast trend cycles. Write down what you are giving up and what funds the refusal.' },
+          { strong: 'Treat the chosen cell like any position.', rest: 'Shared value obeys the same discipline as Module 3: every activity either reinforces the position or erodes it.' }
+        ]
+      },
+      keyReading: {
+        cite: 'Key reading · Porter & Kramer · HBR January-February 2011',
+        title: 'Creating Shared Value.',
+        prose: 'Porter and Kramer argue that firms treating social impact as peripheral — a donation here, a compliance report there — leave both value and legitimacy on the table. Reconceiving products, value chains, and local clusters around genuine societal needs opens new markets and new productivity, turning CSR from a tax on profit into a source of advantage. The TwoThirds case is the argument in miniature: the pivot from losing money to margins above forty per cent came from making sustainability the operating model, not the message.',
+        kicker: 'The firms that profit from sustainability are the ones for whom it was never a department.'
+      },
+      eli5: {
+        title: 'The t-shirt company that made ethics the product.',
+        body: [
+          'TwoThirds sold sustainable clothes the ordinary way — through shops, at shop prices — and lost money. The ethics were real, but they were a cost on top of a normal business, so the normal business sank under them.',
+          'Then the pivot: sell directly to the people who actually care, on Instagram, and make the clothes close to home in small batches so nothing sits unsold in a warehouse. Suddenly the same ethics were doing work. The story raised what customers would pay, and the short supply chain cut the cost of guessing wrong. Margins passed forty per cent within five years.',
+          'That is the whole lesson. Sustainability bolted onto a business is a charity drive with a logo. Sustainability built into the business is a strategy — and it has to pass the same test as any other: someone, somewhere, pays for it.'
         ]
       }
     }
