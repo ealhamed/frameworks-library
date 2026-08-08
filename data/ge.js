@@ -197,9 +197,15 @@ module.exports = {
           rule: 'Micro-refinements deliver most productivity; occasional GPTs reset the ceiling. Even electricity took forty years to show up in the numbers.'
         },
         {
+          name: 'Displacement & Reinstatement',
+          author: 'Acemoglu & Restrepo, 2019 · Autor, 2015',
+          components: ['Displacement: machines take over tasks', 'Reinstatement: new tasks where labour keeps the edge', 'Polanyi\'s paradox: tacit skills resist automation'],
+          rule: 'Automation is a race between the two effects. History has reinstated, which is why there are still so many jobs, but nothing guarantees the balance.'
+        },
+        {
           name: 'The Secular Stagnation Debate',
-          author: 'Hansen 1938 · Summers 2013 · Gordon vs the optimists',
-          components: ['Symptoms: slowing growth, falling real rates', 'Gordon\'s six headwinds', 'Rebuttals: mismeasurement, J-curve diffusion'],
+          author: 'Hansen 1938 · Rachel & Summers 2019 · Gordon vs the optimists',
+          components: ['Symptoms: slowing growth, falling real rates', 'Gordon\'s six headwinds + Philippon\'s lost competition', 'Rebuttals: mismeasurement, J-curve diffusion'],
           rule: 'Hold both cases: R&D returns are falling (Bloom et al), but every GPT looked disappointing in its first decades.'
         }
       ],
@@ -324,20 +330,26 @@ module.exports = {
         },
         {
           name: 'The Money Multiplier',
-          author: 'CD56 Module 5',
-          components: ['Outside money: cash + reserves', 'Inside money: deposits from lending', 'Multiplier = 1/r — until banks stop lending'],
+          author: 'CD56 Module 5 · Brunnermeier & Koby on the floor',
+          components: ['Outside money: cash + reserves', 'Inside money: deposits from lending', 'Multiplier = 1/r — until banks stop lending', 'Reversal rate: where cuts shrink lending (Repullo: bank-specific; euro-area sub-zero still worked)'],
           rule: '£100 of base becomes £1,000 of deposits at a 10% reserve ratio, or £0 when lending freezes — most money is a private-sector decision.'
         },
         {
           name: 'Goldilocks Inflation',
           author: 'the 2% consensus',
-          components: ['Stable and low: costs vanish, planning works', 'High: shoe-leather and distorted prices', 'Deflation: also costly, policy paralysis'],
+          components: ['Stable and low: costs vanish, planning works', 'High: shoe-leather and distorted prices', 'Deflation: also costly, policy paralysis', 'The 2% itself: born in a 1988 New Zealand TV remark, hardened into convention'],
           rule: 'Target low AND stable — far from hyperinflation, safely clear of deflation, with room for policy to manoeuvre.'
         },
         {
+          name: 'The Flat Phillips Curve',
+          author: 'Del Negro, Lenza, Primiceri & Tambalotti, 2020',
+          components: ['Inflation decoupled from the cycle since the 1990s', 'Cause: muted pass-through of cost pressures, anchored expectations', 'MMT\'s opening: Kelton\'s deficits-until-inflation, Cochrane\'s rebuttal'],
+          rule: 'Flatness is a policy achievement, not a law of nature: credible central banks earned it, deficits leaned on it, and 2021 showed it can snap back.'
+        },
+        {
           name: 'The Future of Money',
-          author: 'Reichlin · Rey · Portes, 2025',
-          components: ['Bitcoin: fails the means-of-exchange test', 'CBDC: risk-free digital cash, cautious central banks', 'Stablecoins: fast, programmable, run-prone'],
+          author: 'Reichlin · Rey · Portes, 2025 · Fernández-Villaverde on competition',
+          components: ['Bitcoin: fails the means-of-exchange test', 'CBDC: risk-free digital cash, cautious central banks', 'Stablecoins: fast, programmable, run-prone', 'Currency competition disciplines the sovereign, yet under-supplies money'],
           rule: 'The live contest is CBDC versus stablecoins; run risk and reserve opacity are the referee. Bitcoin is an asset, not money.'
         }
       ],
