@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segments You Can Actually Find · Customer-centric Market Strategies</title>
+<meta name="description" content="the tablet exercise · k-means on attribute importance · the elbow · strategic vs tactical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">MS</a>
+      <a href="./m05.html" class="active" aria-current="page">m.05</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">MS</a></li>
+      <li>m.05</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.05 · I · Customer-first strategy · STP in Practice</p>
+    <h1>Segments You Can Actually Find</h1>
+    <p class="sub">the tablet exercise · k-means on attribute importance · the elbow · strategic vs tactical.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Given survey data on how much each respondent cares about each attribute, clustering finds groups with genuinely similar preferences. The judgement is not in the algorithm but in how many segments you keep: more clusters explain more variance and mean less. Then reality intrudes — you can only target segments whose must-have attributes you are able to deliver, which is what turns segmentation from description into strategy.
+        <span class="attr">— after the CD55 Module 5 exercise</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Four kinds of tablet buyer, and the one you cannot serve.</p>
+        <div class="eli5-body">
+          <p>Ask a few hundred people how much they care about price, screen size, battery and mobile data. Feed the answers to a clustering tool and the crowd splits into groups: bargain hunters who never leave the house, brand loyalists who will pay for the operating system they know, people who need data on the move.</p>
+          <p>The tricky judgement is how many groups to keep. Two groups is tidy but hides real differences; twenty explains the data beautifully and helps nobody decide anything. You look for the bend in the curve, where extra groups stop teaching you much.</p>
+          <p>Then the constraint bites. Your firm cannot ship mobile data at all, so every group built around it is unreachable no matter how big or rich it is. Strategy is what is left after the honest crossing-out.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">How many segments to believe.</h2>
+      <p class="prose muted">Too few segments and the groups are averages in disguise; too many and nobody can act on them. Usefulness peaks at the elbow, where added clusters stop buying much explained variance.</p>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 640 440" role="img" aria-label="Inverted-U curve" xmlns="http://www.w3.org/2000/svg" class="curve">
+      <title>Inverted-U curve</title>
+      <desc>Inverted-U relationship between number of segments (k) and usefulness, peaking at the elbow — performance rises then falls as the input increases.</desc>
+      <defs>
+        <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
+          <feDisplacementMap in="SourceGraphic" scale="1"/>
+        </filter>
+      </defs>
+      <line x1="70" y1="380" x2="570" y2="380" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <line x1="70" y1="380" x2="70" y2="60" stroke="var(--text, #1a1714)" stroke-width="1"/>
+      <path d="M 100 380 Q 300 80 500 380" fill="none" stroke="var(--text, #1a1714)" stroke-width="2" stroke-linecap="round" filter="url(#ink)"/>
+      <circle cx="300" cy="230" r="8" fill="var(--accent, #b05a3a)"/>
+      <text x="300" y="215" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="18" fill="var(--accent, #b05a3a)">the elbow</text>
+      <text x="320" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">number of segments (k)</text>
+      <text x="30" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic" transform="rotate(-90, 30, 220)">usefulness</text>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Needs-Based Clustering <em class="muted">· CD55 Module 5 · k-means</em></div>
+        <div class="fw-comps mono muted">Input: importance ratings per attribute, per respondent · Cluster on preferences, not demographics · Output: segment sizes and their attribute profiles</div>
+        <div class="fw-rule serif">Segment by what people want, then describe them demographically — never the reverse. Demographics are how you reach a segment, not how you find one.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Choosing k: The Elbow Method <em class="muted">· CD55 Module 5</em></div>
+        <div class="fw-comps mono muted">More clusters, more explained variance, always · Interpretability falls as k rises · Pick where the gain in explained variance drops off</div>
+        <div class="fw-rule serif">There is no correct k, only better and worse ones — it is an efficiency-effectiveness trade-off, and the elbow is where the trade stops paying.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Strategic vs Tactical Segmentation <em class="muted">· CD55 Module 5</em></div>
+        <div class="fw-comps mono muted">Strategic: a handful of broad segments, drives targeting and positioning · Tactical: tens to thousands, drives execution of the 4Ps · Different jobs, different granularity</div>
+        <div class="fw-rule serif">Do not run strategy off a thousand micro-segments or personalisation off four. Confusing the two is why segmentation projects die in the deck.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Feasibility-Constrained Targeting <em class="muted">· CD55 Module 5, the tablet case</em></div>
+        <div class="fw-comps mono muted">Score segments on value, company fit, competition · Eliminate segments whose must-have you cannot deliver · One segment focused, or two with distinct propositions</div>
+        <div class="fw-rule serif">The tablet firm cannot ship cellular, so every segment that prizes connectivity is off the board however attractive it looks. Capability is a targeting filter, not an afterthought.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Running the segmentation for real.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Collect importance, not opinion.</strong> Ask how much each attribute matters to each respondent. That matrix is what clusters; satisfaction scores do not.</span></li>
+        <li><span class="txt"><strong>Cluster at several values of k.</strong> Run three or four. Plot explained variance and look for the elbow rather than trusting one run.</span></li>
+        <li><span class="txt"><strong>Name every segment in a sentence.</strong> If a cluster cannot be described in plain language with a size attached ("budget at-home, 21%"), it will not survive a meeting.</span></li>
+        <li><span class="txt"><strong>Apply your constraint list.</strong> Cross off segments whose must-haves you cannot deliver. What remains is the honest target set.</span></li>
+        <li><span class="txt"><strong>Decide focus or dual proposition.</strong> One segment with everything pointed at it, or two with genuinely different value propositions. Not one product hedging across both.</span></li>
+        <li><span class="txt"><strong>Write it as a positioning statement.</strong> For [segment] who [need], [brand] is the [category] that [benefit]. Unlike [rival], we [differentiator].</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m04.html">← m.04 STP</a></span>
+    <span class="dots">···</span>
+    <span><a href="./">back to MS</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

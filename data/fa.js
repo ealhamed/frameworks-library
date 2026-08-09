@@ -17,7 +17,7 @@ module.exports = {
     attr: 'the course, in one line',
     blocks: [
       { label: 'I · Reading the Numbers', modules: ['m01', 'm02', 'm03', 'm04', 'm05'] },
-      { label: 'II · Using the Numbers', modules: ['m07', 'm08', 'm09', 'm10'] }
+      { label: 'II · Using the Numbers', modules: ['m06', 'm07', 'm08', 'm09', 'm10'] }
     ]
   },
   modules: {
@@ -251,6 +251,82 @@ module.exports = {
         title: 'Liabilities and debt.',
         prose: 'The hardest part of liability accounting is not recording what you owe — it is estimating what you might owe. That estimation is where management discretion lives, and where the most interesting stories in annual reports are hidden.',
         kicker: 'Read the provisions. Read the footnotes. Twice.'
+      }
+    },
+
+    m06: {
+      id: 'm06', number: '06', topic: 'Cost Concepts & Behaviour',
+      title: 'A Cost Is Not a Fact',
+      hint: 'Everyone quotes "the cost" as if it were measured. It is constructed — by choices about volume, traceability and allocation that someone made on your behalf.',
+      kicker: 'Likierman · management accounting begins · fixed, variable, sticky, direct, indirect, sunk.',
+      coreIdea: {
+        text: 'Financial accounting reports to outsiders under rules; management accounting informs insiders under judgement. The first lesson is that a cost figure is the output of assumptions, not an observation. The same expense is fixed or variable depending on the volume range, direct or indirect depending on what you are costing, sunk or not depending on whether cash still moves. Costs are not good or bad in themselves — the question is always what they buy.',
+        attr: 'after Likierman'
+      },
+      diagram: {
+        type: 'network',
+        title: 'Six questions behind one number.',
+        intro: 'Before accepting any cost figure, ask what was assumed on each of these axes. Change one assumption and the number changes, usually enough to flip the decision it was quoted to support.',
+        center: 'A COST',
+        satellites: [
+          { label: 'VOLUME' },
+          { label: 'STICKINESS' },
+          { label: 'TRACEABILITY' },
+          { label: 'CASH' },
+          { label: 'ALLOCATION' },
+          { label: 'COMPLEXITY' }
+        ]
+      },
+      frameworks: [
+        {
+          name: 'The Four Cost Distinctions',
+          author: 'Likierman · CD54 Module 6',
+          components: ['Fixed vs variable: does it move with volume?', 'Direct vs indirect: can it be traced to one unit?', 'Sunk vs not: does cash still leave the business?', '"Overhead" is a lazy word — say which of these you mean'],
+          rule: 'A cost carries three labels at once. Full-time staff are fixed, direct and not sunk; depreciation on owned kit is fixed, direct and sunk. Name all three before arguing.'
+        },
+        {
+          name: 'Cost Stickiness',
+          author: 'CD54 Module 6',
+          components: ['Semi-variable: "fixed" costs rise with volume', 'They do not fall symmetrically when volume drops', 'Discretionary (advertising) vs committed (leases)', 'In the long run all fixed costs are discretionary'],
+          rule: 'Costs ratchet. Budgeting a downturn with the ratios from the upturn understates what you will actually be carrying.'
+        },
+        {
+          name: 'Allocation & Cross-Subsidy',
+          author: 'CD54 Module 6, headline 4',
+          components: ['Indirect costs are apportioned by a chosen basis', 'Change the basis, change which product looks profitable', 'Cross-subsidy: new by established, prestige by mass, vanity by everything'],
+          rule: 'Every organisation cross-subsidises. The only real question is whether yours does it deliberately — and can name the beneficiary.'
+        },
+        {
+          name: 'Costs of Complexity',
+          author: 'CD54 Module 6, headline 7',
+          components: ['Variety adds set-ups, errors, coordination, management time', 'These land in indirect costs and vanish into averages', 'Rarely counted when comparing alternatives'],
+          rule: 'The extra product line looks profitable because the complexity it creates is charged to everyone. Ask what the alternative would cost in coordination, not just materials.'
+        },
+        {
+          name: 'Motivated Reasoning in Costing',
+          author: 'CD54 Module 6, headline 9',
+          components: ['An argument advanced to persuade, not to inform', 'The true objective stays unstated', 'Defence: check the numbers, and ask what basis was chosen'],
+          rule: 'When a cost case arrives pre-concluded, the manipulation is usually in the allocation basis, not the arithmetic. Audit the assumption, not the sum.'
+        }
+      ],
+      apply: {
+        title: 'Interrogating a cost number someone hands you.',
+        steps: [
+          { strong: 'Ask what is being costed.', rest: 'A product, a department, a customer? Direct and indirect only mean something once the cost object is named.' },
+          { strong: 'Test the volume range.', rest: 'Ask over what volumes the "fixed" costs stay fixed. Outside that band the number is fiction.' },
+          { strong: 'Strip out the non-cash.', rest: 'Depreciation sits in the total but no cash moves. For any decision about the asset, that portion is sunk.' },
+          { strong: 'Find the allocation basis.', rest: 'Headcount, floor space, revenue? Ask what the answer would be under a different basis. If it flips, the basis is the decision.' },
+          { strong: 'Name the cross-subsidy.', rest: 'Which line is carrying which? Deliberate subsidy is strategy; unintentional subsidy is a slow leak.' },
+          { strong: 'Ask what the cost buys.', rest: 'Costs are not inherently bad. Cutting one that produces disproportionate value is efficiency theatre.' }
+        ]
+      },
+      eli5: {
+        title: 'How much does the sandwich cost?',
+        body: [
+          'Ask a café what a sandwich costs and you get one number. But is the chef\'s wage in there? The rent? The manager who visits on Tuesdays? Whoever built the number chose, and different choices give very different answers for the same sandwich.',
+          'Some costs move with how many you sell (bread, ham). Some do not (rent). And some pretend not to: hire an extra assistant during a busy summer and the "fixed" wage bill has quietly grown — then refuses to shrink when autumn comes. Costs go up like a lift and down like the stairs.',
+          'This matters because someone will one day show you a spreadsheet proving a product loses money. Before believing it, ask what got allocated to it and why. The product may be paying for someone else\'s pet project.'
+        ]
       }
     },
 

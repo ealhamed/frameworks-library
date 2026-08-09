@@ -12,11 +12,11 @@ module.exports = {
   school: 'London Business School',
   cohort: 'EMBA Dubai 2027',
   arc: {
-    tagline: 'One block. Four modules.',
+    tagline: 'One block. Five modules.',
     pullquote: 'Start from the customer; segment, target, and position from there.',
     attr: 'the course, told in one line',
     blocks: [
-      { label: 'I · Customer-first strategy', modules: ['m01', 'm02', 'm03', 'm04'] }
+      { label: 'I · Customer-first strategy', modules: ['m01', 'm02', 'm03', 'm04', 'm05'] }
     ]
   },
   modules: {
@@ -290,6 +290,70 @@ module.exports = {
           'Imagine you are a runner. You could train for sprints, marathons, or hurdles. The market is everyone who runs. <strong>Segmentation</strong> says: these groups have different needs. <strong>Targeting</strong> says: which race are you actually going to enter, given your build and the competition? <strong>Positioning</strong> says: once you\'ve chosen the race, what do you want people to say about you when you line up?',
           'Mobil did this at petrol stations: five segments of drivers, each with different needs. They targeted Road Warriors and True Blues — not Price Shoppers — and built convenience stores designed for the people who stayed longest. They said no to 20% of their volume to win a different 32%.',
           'The mistake most companies make is trying to run all three races. <em class="serif">Averages mislead.</em> The person who is 40 years old on average is two people who are 25 and 55, with completely different needs.'
+        ]
+      }
+    },
+
+    m05: {
+      id: 'm05', number: '05', topic: 'STP in Practice',
+      title: 'Segments You Can Actually Find',
+      hint: 'STP stops being a slide when you cluster real preference data, choose how many segments to believe, and target only what you can actually build.',
+      kicker: 'the tablet exercise · k-means on attribute importance · the elbow · strategic vs tactical.',
+      coreIdea: {
+        text: 'Given survey data on how much each respondent cares about each attribute, clustering finds groups with genuinely similar preferences. The judgement is not in the algorithm but in how many segments you keep: more clusters explain more variance and mean less. Then reality intrudes — you can only target segments whose must-have attributes you are able to deliver, which is what turns segmentation from description into strategy.',
+        attr: 'after the CD55 Module 5 exercise'
+      },
+      diagram: {
+        type: 'curve-invertedU',
+        title: 'How many segments to believe.',
+        intro: 'Too few segments and the groups are averages in disguise; too many and nobody can act on them. Usefulness peaks at the elbow, where added clusters stop buying much explained variance.',
+        xAxis: 'number of segments (k)',
+        yAxis: 'usefulness',
+        peakLabel: 'the elbow'
+      },
+      frameworks: [
+        {
+          name: 'Needs-Based Clustering',
+          author: 'CD55 Module 5 · k-means',
+          components: ['Input: importance ratings per attribute, per respondent', 'Cluster on preferences, not demographics', 'Output: segment sizes and their attribute profiles'],
+          rule: 'Segment by what people want, then describe them demographically — never the reverse. Demographics are how you reach a segment, not how you find one.'
+        },
+        {
+          name: 'Choosing k: The Elbow Method',
+          author: 'CD55 Module 5',
+          components: ['More clusters, more explained variance, always', 'Interpretability falls as k rises', 'Pick where the gain in explained variance drops off'],
+          rule: 'There is no correct k, only better and worse ones — it is an efficiency-effectiveness trade-off, and the elbow is where the trade stops paying.'
+        },
+        {
+          name: 'Strategic vs Tactical Segmentation',
+          author: 'CD55 Module 5',
+          components: ['Strategic: a handful of broad segments, drives targeting and positioning', 'Tactical: tens to thousands, drives execution of the 4Ps', 'Different jobs, different granularity'],
+          rule: 'Do not run strategy off a thousand micro-segments or personalisation off four. Confusing the two is why segmentation projects die in the deck.'
+        },
+        {
+          name: 'Feasibility-Constrained Targeting',
+          author: 'CD55 Module 5, the tablet case',
+          components: ['Score segments on value, company fit, competition', 'Eliminate segments whose must-have you cannot deliver', 'One segment focused, or two with distinct propositions'],
+          rule: 'The tablet firm cannot ship cellular, so every segment that prizes connectivity is off the board however attractive it looks. Capability is a targeting filter, not an afterthought.'
+        }
+      ],
+      apply: {
+        title: 'Running the segmentation for real.',
+        steps: [
+          { strong: 'Collect importance, not opinion.', rest: 'Ask how much each attribute matters to each respondent. That matrix is what clusters; satisfaction scores do not.' },
+          { strong: 'Cluster at several values of k.', rest: 'Run three or four. Plot explained variance and look for the elbow rather than trusting one run.' },
+          { strong: 'Name every segment in a sentence.', rest: 'If a cluster cannot be described in plain language with a size attached ("budget at-home, 21%"), it will not survive a meeting.' },
+          { strong: 'Apply your constraint list.', rest: 'Cross off segments whose must-haves you cannot deliver. What remains is the honest target set.' },
+          { strong: 'Decide focus or dual proposition.', rest: 'One segment with everything pointed at it, or two with genuinely different value propositions. Not one product hedging across both.' },
+          { strong: 'Write it as a positioning statement.', rest: 'For [segment] who [need], [brand] is the [category] that [benefit]. Unlike [rival], we [differentiator].' }
+        ]
+      },
+      eli5: {
+        title: 'Four kinds of tablet buyer, and the one you cannot serve.',
+        body: [
+          'Ask a few hundred people how much they care about price, screen size, battery and mobile data. Feed the answers to a clustering tool and the crowd splits into groups: bargain hunters who never leave the house, brand loyalists who will pay for the operating system they know, people who need data on the move.',
+          'The tricky judgement is how many groups to keep. Two groups is tidy but hides real differences; twenty explains the data beautifully and helps nobody decide anything. You look for the bend in the curve, where extra groups stop teaching you much.',
+          'Then the constraint bites. Your firm cannot ship mobile data at all, so every group built around it is unreachable no matter how big or rich it is. Strategy is what is left after the honest crossing-out.'
         ]
       }
     }
