@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little's Law &amp; the Bottleneck · Operations Management</title>
+<meta name="description" content="Ocean Cove case · I = R × T · capacity = min of the stages · KPIs meet strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">OM</a>
+      <a href="./m02.html" class="active" aria-current="page">m.02</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">OM</a></li>
+      <li>m.02</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.02 · II · Capacity &amp; queues · Managing Capacity</p>
+    <h1>Little's Law &amp; the Bottleneck</h1>
+    <p class="sub">Ocean Cove case · I = R × T · capacity = min of the stages · KPIs meet strategy.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        A restaurant at lunch, a clinic, a visa office: each is a chain of stages, and the chain's capacity is the minimum of its stages' capacities. Around that hard truth sits a soft one — the KPIs a firm tracks either serve its strategic position or quietly fight it. Little's Law ties the visible symptom (a crowd) to the operational causes (arrival rate, time in system) with no statistics required.
+        <span class="attr">— after the CD59 Module 2 material</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Counting people in the queue tells you the wait.</p>
+        <div class="eli5-body">
+          <p>Stand outside a coffee shop. Twelve people inside, and the barista hands over four cups a minute. You now know the wait is three minutes — without a stopwatch, without asking anyone. That is Little's Law: how many, how fast, how long — know two and you get the third.</p>
+          <p>The second trick is knowing where the queue really comes from. The counter looks busy, but if the espresso machine can only do three cups a minute, the machine is the bottleneck and hiring another barista changes nothing.</p>
+          <p>Firms make both mistakes at scale: they never count the crowd, and they expand the visible stage instead of the binding one.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Little's Law, the process physicist's identity.</h2>
+      <p class="prose muted">Inventory equals throughput times time-in-system. Twenty orders waiting at a kitchen that clears two a minute means a ten-minute wait — always, on average, regardless of the distribution. Know two, get the third.</p>
+      <div class="hero-diagram">
+        <div class="equation"><span class="lhs">I</span> <span class="eq">=</span> <span class="rhs">R × T</span></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Little's Law <em class="muted">· Little, 1961</em></div>
+        <div class="fw-comps mono muted">I: units in the system · R: throughput rate · T: time in system</div>
+        <div class="fw-rule serif">An identity, not a model — it holds for any stable process, which makes it the fastest sanity check in operations: measure two quantities, infer the one you cannot see.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">The Bottleneck Rule <em class="muted">· CD59 Module 2 · Ocean Cove</em></div>
+        <div class="fw-comps mono muted">Stage capacity = realistic rate per stage · System capacity = min{kitchen, waiters, tables} · Adding capacity off-bottleneck adds nothing</div>
+        <div class="fw-rule serif">Before recommending more seats, check whether the dining room is actually the binding stage. At Ocean Cove's lunch, it usually is not.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Operations-Strategy Fit <em class="muted">· CD59 Module 2</em></div>
+        <div class="fw-comps mono muted">Strategic position: who you serve, on what promise · Operational configuration: what your process is good at · KPIs: what behaviour you are actually buying</div>
+        <div class="fw-rule serif">Critique a KPI by asking which position it serves. A speed metric in a firm selling intimacy is a strategy leak, not a dashboard detail.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Utilisation &amp; Congestion <em class="muted">· airline scheduling illustration</em></div>
+        <div class="fw-comps mono muted">High utilisation = an asset rarely idle · Rarely idle = no slack to absorb disruption · Delays propagate through the day</div>
+        <div class="fw-rule serif">The utilisation your CFO loves and the delays your customers hate are the same number seen from two sides.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Reading a congested operation without a simulation.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Count the crowd.</strong> I, the number in the system, is usually visible. It is the cheapest measurement you will ever take.</span></li>
+        <li><span class="txt"><strong>Divide by throughput.</strong> T = I/R turns the crowd into a wait time. If the answer embarrasses the service promise, you have your headline.</span></li>
+        <li><span class="txt"><strong>Locate the binding stage.</strong> Compute per-stage capacity and take the minimum. Intuition reliably picks the most visible stage, not the slowest one.</span></li>
+        <li><span class="txt"><strong>Interrogate the KPIs.</strong> List what is measured. Ask which strategic position each metric serves. Expect at least one that serves none.</span></li>
+        <li><span class="txt"><strong>Price the slack.</strong> Before pushing utilisation higher, name what the remaining idle time is currently buying you: resilience, quality, or recovery speed.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m01.html">← m.01 The Process View</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m03.html">m.03 The Physics &amp; Psychology of Waiting →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

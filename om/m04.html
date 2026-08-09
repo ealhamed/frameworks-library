@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bullwhip &amp; the Shared Ledger · Operations Management</title>
+<meta name="description" content="potato game · W'Up Bottlery &amp; Barilla · bullwhip causes · MTS/MTO, reorder policies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">OM</a>
+      <a href="./m04.html" class="active" aria-current="page">m.04</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">OM</a></li>
+      <li>m.04</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.04 · III · Supply chains · Supply Chains</p>
+    <h1>The Bullwhip &amp; the Shared Ledger</h1>
+    <p class="sub">potato game · W'Up Bottlery & Barilla · bullwhip causes · MTS/MTO, reorder policies.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Play four stages of a supply chain with steady end-demand and watch orders at the factory swing wildly: the bullwhip is produced by the players' own rational behaviour. Each stage forecasts from its neighbour's orders rather than real demand, batches, hedges against shortages — and amplifies. The fixes share one principle: let one decision-maker see one truth, from vendor-managed inventory to simply sharing the sell-through data.
+        <span class="attr">— after Lee, Padmanabhan &amp; Whang</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Whisper down the supply chain.</p>
+        <div class="eli5-body">
+          <p>Play the whisper game with numbers. The shop sells 100 units like clockwork, but rounds its order up "to be safe". The depot sees a bigger order, assumes demand is rising, and adds its own cushion. By the factory, a flat 100 has become an order for 400 — followed next month by zero.</p>
+          <p>Nobody was foolish. Everyone reacted sensibly to the only number they could see: the order in front of them. That is the bullwhip — the chain amplifies its own echo.</p>
+          <p>The cure is embarrassingly simple and organisationally hard: show everyone the till data, or let one party manage the whole shelf. The pasta company Barilla fought this battle in the 1990s; the potato game makes you fight it yourself.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Where the whip cracks.</h2>
+      <p class="prose muted">Steady demand at the shop becomes lumpy at the depot, wild at the plant. Every hand-off adds forecast-on-forecast error, batching and gaming — amplification grows with distance from the customer.</p>
+      <div class="hero-diagram">
+        <div class="linear"><svg viewBox="0 0 640 140" role="img" aria-label="Linear flow" xmlns="http://www.w3.org/2000/svg" class="linear-h">
+      <title>Linear flow</title>
+      <desc>Left-to-right sequential flow: Shopper → Store → Depot → Plant.</desc>
+      <g>
+        
+        <text x="80" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Shopper</text>
+        <text x="160" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="240" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Store</text>
+        <text x="320" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="400" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Depot</text>
+        <text x="480" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" fill="var(--accent, #b05a3a)">→</text>
+        <text x="560" y="78" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="24" fill="var(--text, #1a1714)">Plant</text>
+        
+      </g>
+    </svg><div class="linear-v">
+        <div class="lin-step">Shopper</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">Store</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">Depot</div>
+        <div class="lin-arrow">↓</div>
+        <div class="lin-step">Plant</div>
+        
+      </div></div>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">The Bullwhip Effect <em class="muted">· Lee, Padmanabhan &amp; Whang, 1997</em></div>
+        <div class="fw-comps mono muted">Demand-signal processing: forecasting from orders, not demand · Order batching · Price fluctuations and forward buying · Shortage gaming</div>
+        <div class="fw-rule serif">The whip is endogenous — four rational local behaviours produce collective madness, so exhorting people to forecast better cannot fix it.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Vendor-Managed Inventory <em class="muted">· Barilla &amp; W'Up Bottlery cases</em></div>
+        <div class="fw-comps mono muted">Supplier sees true sell-through · Supplier decides replenishment · Customer sets service-level guardrails</div>
+        <div class="fw-rule serif">Move the ordering decision to whoever has the best information. Barilla's distributors resisted giving up control — the selling of VMI matters as much as the maths.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Inventory Policy Menu <em class="muted">· CD59 Module 4</em></div>
+        <div class="fw-comps mono muted">Strategic: make-to-stock vs make-to-order · Continuous review: reorder point R, quantity Q · Periodic review: order-up-to level · Safety stock against lead-time demand</div>
+        <div class="fw-rule serif">Pick the policy before arguing the numbers: MTS buys speed with inventory risk, MTO buys certainty with waiting, and the review policy decides who checks what, when.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Diagnosing amplification in a chain you sit inside.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Plot demand vs your orders.</strong> If your order variance exceeds your demand variance, you are the whip — before blaming anyone upstream.</span></li>
+        <li><span class="txt"><strong>Name which of the four causes you commit.</strong> Batching for freight, hedging orders in shortages, buying ahead of promotions: all locally sensible, all amplifying.</span></li>
+        <li><span class="txt"><strong>Share sell-through, not orders.</strong> The cheapest intervention is letting upstream see real demand. Information beats inventory.</span></li>
+        <li><span class="txt"><strong>Consider moving the decision.</strong> VMI works when the supplier has better visibility and the customer keeps guardrails. Expect political resistance to exceed technical difficulty.</span></li>
+        <li><span class="txt"><strong>Match policy to product.</strong> Steady runners: continuous review with safety stock. Lumpy or seasonal: periodic order-up-to. One-shot: newsvendor.</span></li>
+      </ol>
+    </section>
+    
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m03.html">← m.03 The Physics &amp; Psychology of Waiting</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m05.html">m.05 Quality as a System →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

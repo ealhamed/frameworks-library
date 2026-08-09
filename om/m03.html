@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Physics &amp; Psychology of Waiting · Operations Management</title>
+<meta name="description" content="Beau Ties case · four waiting-line truths · Maister's psychology · the newsvendor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">Ebrahim Alhamed<span class="dot" aria-hidden="true"></span>Frameworks Library</div>
+    <nav aria-label="Primary">
+      <a href="../">Courses</a>
+      <a href="../all/">All frameworks</a>
+      <a href="./">OM</a>
+      <a href="./m03.html" class="active" aria-current="page">m.03</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <nav class="crumb-nav" aria-label="Breadcrumb">
+    <ol class="crumb">
+      <li><a href="../">Courses</a></li>
+      <li><a href="./">OM</a></li>
+      <li>m.03</li>
+    </ol>
+  </nav>
+
+  <header class="module-hero">
+    <p class="kicker">m.03 · II · Capacity &amp; queues · Waiting Lines</p>
+    <h1>The Physics &amp; Psychology of Waiting</h1>
+    <p class="sub">Beau Ties case · four waiting-line truths · Maister's psychology · the newsvendor.</p>
+  </header>
+
+  <nav class="sub-nav" aria-label="Section navigation">
+    <a href="#idea">Idea</a>
+    <a href="#diagram">Diagram</a>
+    
+    
+    <a href="#frameworks">Frameworks</a>
+    <a href="#apply">Apply</a>
+    <a href="#reading">Reading</a>
+  </nav>
+
+  <article class="module">
+    
+    <section id="idea">
+      <p class="section-tag">The core idea</p>
+      <p class="lede">
+        Queues obey factory physics: waits explode as utilisation approaches 100%, and variability makes everything worse at every level. But customers experience waits psychologically — occupied, explained, fair waits feel shorter than they are. The cheapest capacity decision is often not another server but a managed perception, and the staffing question is always a cost trade-off, never a target picked from air.
+        <span class="attr">— after the CD59 Module 3 material</span>
+      </p>
+      <aside class="idea-eli5">
+        <p class="eli5-tag">Put simply · Why the queue feels worse than it is.</p>
+        <div class="eli5-body">
+          <p>Two queues, same ten-minute wait. In one you stand in silence with no idea when your turn comes. In the other a screen says "9 minutes", someone hands you a menu, and the line visibly moves. The second wait feels half as long. Nothing about the service changed.</p>
+          <p>Underneath, queues follow physics: run a system near full capacity and waits do not grow gently, they explode. And the more unpredictable the arrivals, the worse it gets at every load level.</p>
+          <p>So the playbook has two moves: make the wait feel fair and occupied (cheap), and keep a little slack or flexible helpers for the spikes (worth it). Firms that skip the first move pay for the second twice.</p>
+        </div>
+      </aside>
+    </section>
+    
+    <section id="diagram">
+      <p class="section-tag">The hero diagram</p>
+      <h2 class="display">Where waits come from.</h2>
+      <p class="prose muted">Two dials govern every queue: how loaded the system is, and how variable arrivals and service are. The dangerous cell is the one most operations drift into while chasing efficiency.</p>
+      <div class="hero-diagram">
+        <svg viewBox="-10 30 660 470" role="img" aria-label="2x2 matrix" xmlns="http://www.w3.org/2000/svg" class="matrix">
+      <title>2×2 matrix</title>
+      <desc>Two-by-two matrix with Utilisation on the horizontal axis and Variability on the vertical axis, showing four quadrant positions.</desc>
+      <g>
+        
+        <rect x="70" y="60" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Calm &amp; costly</text>
+        <rect x="310" y="60" width="220" height="140" fill="var(--accent, #b05a3a)" fill-opacity="0.92" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="130" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--bg-elevated, #fffdf8)">Waits explode</text>
+        <rect x="70" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="180" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Efficient &amp; calm</text>
+        <rect x="310" y="260" width="220" height="140" fill="var(--text, #1a1714)" fill-opacity="0.06" stroke="var(--text, #1a1714)" stroke-width="2"/>
+        <text x="420" y="330" text-anchor="middle" font-family="DM Serif Display, Cormorant Garamond, serif" font-size="22" font-weight="500" fill="var(--text, #1a1714)">Fragile efficiency</text>
+      </g>
+      <!-- axis labels -->
+      <g font-family="Inter, sans-serif" font-size="14" fill="var(--muted, #4a4640)" font-style="italic">
+        <text x="32" y="230" text-anchor="middle" transform="rotate(-90, 32, 230)">Variability</text>
+        <text x="-2" y="130" text-anchor="middle" transform="rotate(-90, -2, 130)">Spiky</text>
+        <text x="-2" y="330" text-anchor="middle" transform="rotate(-90, -2, 330)">Steady</text>
+        <text x="300" y="475" text-anchor="middle">Utilisation</text>
+        <text x="180" y="445" text-anchor="middle">Slack</text>
+        <text x="420" y="445" text-anchor="middle">Near 100%</text>
+      </g>
+    </svg>
+      </div>
+    </section>
+    
+    
+    
+    <section id="frameworks">
+      <p class="section-tag">Frameworks in this module</p>
+      <h2 class="display">Named ideas to remember.</h2>
+      <div class="fw-list">
+      <div class="fw-row">
+        <div class="fw-name">Four Waiting-Line Truths <em class="muted">· CD59 Module 3</em></div>
+        <div class="fw-comps mono muted">Higher utilisation, longer waits · The same increase hurts more from a higher base · More variability, worse waits at any load · More capacity flexibility, shorter waits</div>
+        <div class="fw-rule serif">The curves differ by industry; the shapes never do. Any staffing argument that ignores the non-linearity near full utilisation is wrong before it starts.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">The Psychology of Waiting <em class="muted">· Maister, 1985</em></div>
+        <div class="fw-comps mono muted">Unoccupied and uncertain waits feel longer · Unexplained and unfair waits feel longer · Anxiety stretches time; company shrinks it</div>
+        <div class="fw-rule serif">Perceived waits are manageable at near-zero cost — entertain, explain, and make the queue visibly fair before you buy a single extra server.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">Queueing Approximation <em class="muted">· CD59 Module 3</em></div>
+        <div class="fw-comps mono muted">Inputs: utilisation U, servers M, variability CVa and CVs · Output: average queue length Lq, hence wait via Little's Law · Good enough for staffing decisions</div>
+        <div class="fw-rule serif">You do not need simulation to size a call centre — the approximation formula turns a target wait into a number of servers you can defend.</div>
+      </div>
+      <div class="fw-row">
+        <div class="fw-name">The Newsvendor Model <em class="muted">· single-period ordering canon</em></div>
+        <div class="fw-comps mono muted">Order once, demand uncertain · Overage cost vs underage cost · Optimal service level balances the two</div>
+        <div class="fw-rule serif">When you can only order once, the question is never &quot;what will demand be?&quot; but &quot;which mistake is cheaper?&quot; — and the answer sets your order.</div>
+      </div>
+      </div>
+    </section>
+    
+    <section id="apply">
+      <p class="section-tag">How to apply</p>
+      <h2 class="display">Fixing a wait people complain about.</h2>
+      
+      <ol class="apply">
+        <li><span class="txt"><strong>Split actual from perceived.</strong> Measure the real wait, then walk the queue as a customer. The complaint is usually about the experience, not the minutes.</span></li>
+        <li><span class="txt"><strong>Deploy Maister first.</strong> Occupy the wait, explain it, guarantee its fairness. This costs almost nothing and often ends the complaint.</span></li>
+        <li><span class="txt"><strong>Then do the physics.</strong> Compute utilisation and variability. If U is above ~85% at peak, no amount of psychology will save you.</span></li>
+        <li><span class="txt"><strong>Buy flexibility before capacity.</strong> Cross-trained staff who flex to the queue beat a permanent extra server on cost, because they absorb variability.</span></li>
+        <li><span class="txt"><strong>Frame staffing as a trade-off.</strong> Cost of waiting vs cost of servers, newsvendor-style. A 1-minute target is a choice with a price tag, not a virtue.</span></li>
+      </ol>
+    </section>
+    
+    <section id="reading" class="key-reading">
+      <p class="kr-cite">Key reading · Katz, Larson &amp; Larson · Sloan Management Review</p>
+      <h3 class="kr-title">Prescription for the Waiting-in-Line Blues.</h3>
+      <p class="kr-prose">The paper behind the module's soft half: entertain, enlighten and engage the queue. Read with the Beau Ties case, it completes the argument — Beau Ties supplies the physics of a small call centre choosing staffing levels; the SMR piece supplies everything the physics cannot see.</p>
+      
+      <p class="kr-kicker">The mirror by the lift did not make the lift faster. Complaints stopped anyway.</p>
+    </section>
+  </article>
+
+  <script>
+  (function(){
+    var SEL = '.reveal, .pentagon, .hexagon, .matrix, .curve, .network';
+    var nodes = document.querySelectorAll(SEL);
+    if (typeof IntersectionObserver === 'undefined') {
+      nodes.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    nodes.forEach(function(el){ io.observe(el); });
+    // Safety net: anything still hidden after 1.4s gets revealed regardless.
+    // Covers below-fold diagrams on tall pages and automated test tools that don't scroll.
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){ el.classList.add('in'); });
+    }, 1400);
+  })();
+</script>
+
+  <div class="colophon">
+    <span><a href="./m02.html">← m.02 Little's Law &amp; the Bottleneck</a></span>
+    <span class="dots">···</span>
+    <span><a href="./m04.html">m.04 The Bullwhip &amp; the Shared Ledger →</a></span>
+  </div>
+
+</main>
+
+</body>
+</html>

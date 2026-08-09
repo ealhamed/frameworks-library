@@ -32,6 +32,8 @@
   --c-cv: #a35a86;   /* Customer Value */
   --c-cf: #2e6e8a;   /* Corporate Finance */
   --c-ge: #96454f;   /* Global Economic Environment */
+  --c-om: #5b7c99;   /* Operations Management */
+  --c-mf: #6b4a72;   /* Managing the Firm */
 
   /* Typography */
   --serif-display: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
