@@ -4,12 +4,24 @@
 const fs = require('fs');
 const path = require('path');
 const render = require('./render.js');
+const audioOverviews = require(path.join(__dirname, '..', 'data', 'audio.js'));
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
 
 function readCourse(code) {
-  return require(path.join(DATA_DIR, `${code}.js`));
+  const course = require(path.join(DATA_DIR, `${code}.js`));
+  applyAudioOverviews(course);
+  return course;
+}
+
+function applyAudioOverviews(course) {
+  const courseAudio = audioOverviews[course.code] || {};
+  for (const [moduleId, audio] of Object.entries(courseAudio)) {
+    if (course.modules && course.modules[moduleId]) {
+      course.modules[moduleId].audioOverview = audio;
+    }
+  }
 }
 
 function writeFile(outPath, contents) {

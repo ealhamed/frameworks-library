@@ -416,6 +416,137 @@ article.module > section:last-of-type {
   .hero-diagram svg { max-height: 340px; }
 }
 
+/* ── Audio overview ─────────────────────────────────────── */
+
+.audio-overview {
+  max-width: 860px;
+}
+
+.audio-overview,
+.audio-panel,
+.audio-copy,
+.audio-player,
+.audio-frame {
+  min-width: 0;
+}
+
+.audio-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.58fr);
+  gap: 28px;
+  align-items: stretch;
+  padding: 24px;
+  border: 1px solid rgba(176,90,58,0.22);
+  background: var(--bg-elevated);
+  border-radius: 2px;
+  box-shadow: 0 18px 60px rgba(26,23,20,0.08);
+}
+
+.audio-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.audio-overview .display {
+  margin-bottom: 10px;
+}
+
+.audio-intro {
+  max-width: 45ch;
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.audio-open {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.audio-player {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  padding: 16px;
+  border-left: 2px solid var(--accent);
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(176,90,58,0.10), rgba(90,107,63,0.05)),
+    var(--bg-sunken);
+}
+
+.audio-wave {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+  height: 26px;
+}
+
+.audio-wave span {
+  display: block;
+  width: 3px;
+  height: 10px;
+  background: var(--accent);
+  opacity: 0.72;
+}
+
+.audio-wave span:nth-child(2) { height: 18px; opacity: 0.58; }
+.audio-wave span:nth-child(3) { height: 26px; opacity: 0.84; }
+.audio-wave span:nth-child(4) { height: 14px; opacity: 0.50; }
+.audio-wave span:nth-child(5) { height: 22px; opacity: 0.68; }
+
+.audio-frame {
+  padding: 8px;
+  border: 1px solid rgba(26,23,20,0.12);
+  background: rgba(26,23,20,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.audio-frame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  background: var(--bg-sunken);
+}
+
+.audio-note {
+  margin: 8px 0 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .audio-panel {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 18px;
+  }
+  .audio-intro { font-size: 16.5px; }
+  .audio-player {
+    padding: 14px;
+    border-left: 0;
+    border-top: 2px solid var(--accent);
+  }
+  .audio-frame { padding: 6px; }
+  .audio-note { letter-spacing: 0.08em; }
+}
+
 /* ── ELI5 aside inside Core Idea ─────────────────────────── */
 .idea-eli5 {
   margin-top: 26px;
@@ -432,6 +563,9 @@ article.module > section:last-of-type {
   text-transform: uppercase;
   color: var(--muted);
   margin: 0 0 8px;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .idea-eli5 .eli5-body p {
   font-family: var(--serif, 'Cormorant Garamond', serif);
@@ -897,6 +1031,9 @@ ol.apply li .txt {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 10px;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .module-hero h1 {
@@ -912,6 +1049,13 @@ ol.apply li .txt {
   font-style: italic;
   font-size: 18px;
   color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .module-hero .kicker {
+    letter-spacing: 0.10em;
+    line-height: 1.5;
+  }
 }
 
 /* ── Equation display ─────────────────────────────────────── */

@@ -98,6 +98,35 @@ function renderDiagram(diagram) {
     </section>`;
 }
 
+function renderAudioOverview(audio) {
+  if (!audio || !audio.driveId) return '';
+  const title = audio.fileName
+    ? `NotebookLM audio overview (${audio.fileName})`
+    : 'NotebookLM audio overview';
+  const previewUrl = `https://drive.google.com/file/d/${esc(audio.driveId)}/preview`;
+  const openUrl = `https://drive.google.com/file/d/${esc(audio.driveId)}/view`;
+  return `
+    <section id="audio" class="audio-overview">
+      <div class="audio-panel">
+        <div class="audio-copy">
+          <p class="section-tag">Audio overview</p>
+          <h2 class="display">Listen or keep reading.</h2>
+          <p class="audio-intro">A NotebookLM pass through the module. Use it as a first scan, or skip straight to the written framework notes below.</p>
+          <a class="audio-open" href="${openUrl}" target="_blank" rel="noopener">Open audio in Drive &rarr;</a>
+        </div>
+        <div class="audio-player">
+          <div class="audio-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="audio-frame">
+            <iframe src="${previewUrl}"
+              width="100%" height="74" allow="autoplay" loading="lazy"
+              title="${esc(title)}"></iframe>
+          </div>
+          <p class="audio-note">Plays from Drive &middot; needs access to the course folder.</p>
+        </div>
+      </div>
+    </section>`;
+}
+
 function renderMethod(method) {
   if (!method || !method.steps) return '';
   const steps = method.steps.map(s => `
@@ -337,6 +366,11 @@ function renderModulePage({ course, module, prevNext }) {
   const blockLabel = findBlockLabel(course, module.id);
   const title = `${module.title} · ${course.courseName}`;
   const desc = module.kicker || '';
+  const audioLink = module.audioOverview ? '<a href="#audio">Audio</a>\n    ' : '';
+  const audioSection = module.audioOverview
+    ? `${renderAudioOverview(module.audioOverview)}
+    `
+    : '';
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -380,7 +414,7 @@ ${FONTS_LINK}
   </header>
 
   <nav class="sub-nav" aria-label="Section navigation">
-    <a href="#idea">Idea</a>
+    ${audioLink}<a href="#idea">Idea</a>
     ${module.diagram ? '<a href="#diagram">Diagram</a>' : ''}
     ${module.method ? '<a href="#steps">Steps</a>' : ''}
     ${module.diagnostics ? '<a href="#diagnostics">Diagnose</a>' : ''}
@@ -390,7 +424,7 @@ ${FONTS_LINK}
   </nav>
 
   <article class="module">
-    ${renderCoreIdea(module.coreIdea, module.eli5)}
+    ${audioSection}${renderCoreIdea(module.coreIdea, module.eli5)}
     ${renderDiagram(module.diagram)}
     ${renderMethod(module.method)}
     ${renderDiagnostics(module.diagnostics)}
