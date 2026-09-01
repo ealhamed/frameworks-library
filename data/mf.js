@@ -197,6 +197,12 @@ module.exports = {
           author: 'CD61 live session 1',
           components: ['What is measured gets optimised', 'Delayed costs hide in unmeasured stocks', 'Coyle: progress needs better counting'],
           rule: 'Before accepting a "profitable" strategy, ask which stock it is drawing down — trust, environment, staff, brand — and when the bill arrives.'
+        },
+        {
+          name: 'Shadow Pricing',
+          author: 'CD61 Module 3 handout',
+          components: ['Marginal social value of a constraint or untraded good', 'Estimate it through stated preference, revealed preference, damage costs or experiments', 'Expect nonlinear values and trial-and-error calibration', 'Draw the boundary wide enough to expose the externality'],
+          rule: 'Purpose decides what counts as progress; if something material carries no price or measure, the system will quietly value it at zero.'
         }
       ],
       apply: {
@@ -248,6 +254,12 @@ module.exports = {
           author: 'the governance debate',
           components: ['Primacy: one clear objective, accountable boards', 'Stakeholder view: licence to operate is negotiated', 'The firm as open system needs both lenses'],
           rule: 'The debate is really about time horizons: most "stakeholder" arguments are shareholder arguments with a longer clock.'
+        },
+        {
+          name: 'Govern to the Widest Boundary',
+          author: 'CD61 Module 4 handout',
+          components: ['Legal: ownership, contracts and liability', 'Economic: suppliers, channels and capital', 'Social and political: affected communities and regulators', 'Reputational: what the firm is known and held responsible for'],
+          rule: 'Outsourcing can move the legal boundary without moving the harm, purpose or reputation; the board and GM must govern to the widest boundary.'
         }
       ],
       apply: {
@@ -287,6 +299,12 @@ module.exports = {
           author: 'CD61 live session 3',
           components: ['Culture shapes behaviour through norms', 'Behaviour reshapes culture through repetition', 'Managerial style is the visible input'],
           rule: 'You cannot install a culture; you can only change the behaviours that are rewarded and let the loop do the rest.'
+        },
+        {
+          name: 'Strategic Dashboard',
+          author: 'Kaplan & Norton, via CD61 Module 5 handout',
+          components: ['Financial outcomes', 'Customer objectives', 'Brand as the articulation of strategy', 'People and process measures that drive behaviour'],
+          rule: 'The dashboard should expose a causal chain, not a pile of KPIs: people and processes enable the brand promise, which creates customer value and financial results.'
         }
       ],
       apply: {
@@ -338,6 +356,12 @@ module.exports = {
           author: 'CD61 live session 4',
           components: ['Strategy fails at interfaces, not in decks', 'Hand-offs and decision rights are where value leaks', 'Cross-functional cooperation is designed, not exhorted'],
           rule: 'When execution disappoints, look for an interface where two functions\' incentives disagree — the gap is almost never a motivation problem.'
+        },
+        {
+          name: 'Gaining-Traction Cascade',
+          author: 'CD61 Module 6 handout',
+          components: ['Vision, purpose and strategy', 'Customer promise', 'Values, culture and signature behaviours', 'Hiring, development, systems, metrics and rewards'],
+          rule: 'Use the customer journey as the cross-functional spine, then trace every promise downward until the operating system makes the required behaviour likely.'
         }
       ],
       apply: {
@@ -383,6 +407,12 @@ module.exports = {
           author: 'Tavassoli, Background Note',
           components: ['Coinage: uniformity, then debasement', 'Bank money: elasticity, then runs', 'Digital money: efficiency, then systemic cyber risk'],
           rule: 'Every monetary upgrade solves a coordination constraint by creating a new fragility — ask what the new one is before adopting the upgrade.'
+        },
+        {
+          name: 'Incentives Carry Meaning',
+          author: 'CD61 Module 7 handout',
+          components: ['Prices can reframe a moral relationship as a transaction', 'Goodhart\'s Law: a target can corrupt its measure', 'Balance goals that correct each other; separate goals that destroy each other', 'Adapt incentives to the culture and situation'],
+          rule: 'Design the metric, structure and narrative together: people respond not only to the amount, but to what the incentive says the system values.'
         }
       ],
       apply: {
@@ -435,6 +465,12 @@ module.exports = {
           author: 'CD61 live session 6',
           components: ['Demand sensed in real time across the ecosystem', 'Supply flexes through partners, not just capacity', 'The platform captures value from the match'],
           rule: 'Ecosystems beat pipelines when matching, not making, is the scarce skill — the boundary of the firm moves to wherever the match is made.'
+        },
+        {
+          name: 'Platform-Ecosystem Polymorphism',
+          author: 'CD61 Module 8 handout',
+          components: ['Integration binds parts through ownership', 'Platforms bind sides through network effects', 'Ecosystems bind partners through supermodular complementarities', 'Co-opetition separates joint value creation from competitive value capture'],
+          rule: 'A firm can operate across all three forms; choose the governance mechanism that matches how value is actually created, rather than calling every digital boundary a platform.'
         }
       ],
       apply: {
@@ -487,6 +523,12 @@ module.exports = {
           author: 'CD61 live session 7',
           components: ['Currency, regulatory and political exposures couple', 'Local shocks propagate through global platforms', 'Geopolitics moves the boundary conditions'],
           rule: 'International risk is systemic, not additive: the dangerous scenario is never one country\'s problem but the correlation you imported with the platform.'
+        },
+        {
+          name: 'Targeting for Value and Fit',
+          author: 'CD61 Module 9 handout',
+          components: ['Available value: potential and structural profitability', 'Risk and strategic option value', 'Ability to capture: transferable resources and business-model fit', 'Replicability of practices, complementors and firm-specific advantage'],
+          rule: 'Enter where attractive value meets a model you can transfer; purpose guides the choice, but local stocks and flows decide whether you can capture it.'
         }
       ],
       apply: {
@@ -526,6 +568,12 @@ module.exports = {
           author: 'CD61 live session 8',
           components: ['Formative background as positioning, not baggage', 'Consistency between story, values and behaviour', 'Purpose as the through-line others can follow'],
           rule: 'The strongest professional brands are the least invented: they are a true origin story, edited for direction rather than image.'
+        },
+        {
+          name: 'Brand DNA',
+          author: 'CD61 Module 10 handout',
+          components: ['Founder or founders', 'Place and era', 'The original act of creation', 'Shaping clients who helped define the brand'],
+          rule: 'Distil the few inherited genes that form a coherent DNA, then connect them to a current customer truth so heritage becomes a source of purpose and innovation.'
         }
       ],
       apply: {
